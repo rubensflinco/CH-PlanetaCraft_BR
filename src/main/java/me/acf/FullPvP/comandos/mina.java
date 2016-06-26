@@ -1,0 +1,41 @@
+package me.acf.FullPvP.comandos;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import me.acf.FormatText.Format;
+import me.acf.FullPvP.FPConfig;
+import me.acf.FullPvP.Teleport;
+import me.acf.FullPvP.API.HomeAPI;
+import me.hub.API.Util.message.Message;
+import me.hub.comandos.ComandosAPI;
+
+public class mina implements CommandExecutor {
+
+	public String[] atalhos = new String[] { "minerar" };
+    public String desc = "Ir para mina";
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+	  {
+		   if (ComandosAPI.VerConsole(sender).equals("sim"))
+		   {
+			   sender.sendMessage(Message.Console_Não);
+  			   return true;
+		   }
+		  
+		   final Player jogador = (Player) sender;
+		   
+		   Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"),-37, 100, -130), jogador);
+		   
+		return false;
+	  }
+	
+	
+
+	
+
+}
+

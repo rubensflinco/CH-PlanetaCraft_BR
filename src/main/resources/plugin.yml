@@ -1,0 +1,5 @@
+name: CHub
+version: ${project.version}${project.build.number}
+description: Plugin do PlanetaCraft.
+authors: [AdrianCF]
+main: net.acf.ch.Main
