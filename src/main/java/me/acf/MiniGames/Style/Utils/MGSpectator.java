@@ -125,9 +125,15 @@ public class MGSpectator extends MiniPlugin
 		        if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aTP Players"))
 		        {
 		        	if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
+		        		if (MiniGamesMananger.Specter.contains(p)){
 		           p.closeInventory();
 		           MGSpectator.Menu2(p);
 		           p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+		        		}else{
+			        		p.sendMessage("§cOPS §7Você não é um espectador.");
+			        		p.closeInventory();
+			        		p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);	
+		        		}
 		        	}else{
 		        		p.sendMessage("§cOPS §7Jogo ainda não começou..");
 		        		p.closeInventory();

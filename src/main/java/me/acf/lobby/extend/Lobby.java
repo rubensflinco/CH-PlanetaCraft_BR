@@ -449,7 +449,6 @@ public class Lobby extends MiniPlugin{
 		  public void onPlayerInteractNPC(PlayerInteractEntityEvent e) {
 				if (e.getRightClicked() instanceof Player)
 				{
-					if (!UtilNPC.location.get(e.getRightClicked().getLocation()).isEmpty()){
 						try {
 		      String nome = UtilNPC.location.get(e.getRightClicked().getLocation()).replace("§a§o", "");
 		      
@@ -476,7 +475,6 @@ public class Lobby extends MiniPlugin{
 		    		  e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ANVIL_LAND, 0.5F, 0.2F);
 		    	  }
 				  }catch (Exception ec) {}
-				}
 		      }
 	
 				

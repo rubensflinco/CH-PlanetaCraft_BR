@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.comphenix.protocol.injector.PluginVerifierTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.995 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.021 sec
