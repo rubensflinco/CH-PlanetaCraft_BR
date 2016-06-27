@@ -89,37 +89,39 @@ public class Lobby extends MiniPlugin{
 			Bukkit.getPluginManager().registerEvents(new MobSpawn(), Main.plugin);
 			Bukkit.getPluginManager().registerEvents(new ChestMagic(), Main.plugin);
 	        
-			UtilNPC.SpawnEntity("§a§oFullPvP","§e0 / 0", "§a§oFullPvP","Miner", new Location(Bukkit.getWorld("world"), -47.50,164.50,-64.50, 0,0));
-			UtilNPC.SpawnEntity("§a§oKitPvP","§e0 / 0", "§a§oKitPvP","Reav_", new Location(Bukkit.getWorld("world"),-49.50,164.50,-66.50, 0,0));
-			UtilNPC.SpawnEntity("§a§oSkyBlock","§e0 / 0", "§a§oSkyBlock","MHF_Chest", new Location(Bukkit.getWorld("world"),-51.50,164.50,-68.50, 0,0));
-			UtilNPC.SpawnEntity("§a§oSkyWars","§e0 / 0", "§a§oSkyWars","doodoo123987", new Location(Bukkit.getWorld("world"),-53.50,164.50,-70.50, 0,0));
-			UtilNPC.SpawnEntity("§a§oHungerGames","§e0 / 0", "§a§oHungerGames","HellCatcher", new Location(Bukkit.getWorld("world"),-55.50,164.50,-71.50, 0,0));
-			UtilNPC.SpawnEntity("§a§oOneInTheChamber","§e0 / 0", "§a§oOneInTheChamber","Twilizer5953", new Location(Bukkit.getWorld("world"),-57.50,164.50,-71.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 1","§e0 / 0", "§c§lEM BREVE","Project22", new Location(Bukkit.getWorld("world"),-59.50,164.50,-71.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 2","§e0 / 0", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-61.50,164.50,-71.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 3","§e0 / 0", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-63.50,164.50,-70.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 4","§e0 / 0", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-65.50,164.50,-69.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 5","§e0 / 0", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-67.50,164.50,-67.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 6","§e0 / 0", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-68.50,164.50,-65.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 7","§e0 / 0", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-69.50,164.50,-63.50, -90,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 8","§e0 / 0", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-69.50,164.50,-61.50, -90,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 9","§e0 / 0", "§c§lEM BREVE","Project22", new Location(Bukkit.getWorld("world"),-69.50,164.50,-59.50, -90,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 10","§e0 / 0", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-69.50,164.50,-57.50, -90,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 11","§e0 / 0", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-68.50,164.50,-55.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 12","§e0 / 0", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-67.50,164.50,-53.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 13","§e0 / 0", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-65.50,164.50,-51.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 14","§e0 / 0", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-63.50,164.50,-50.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 15","§e0 / 0", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-61.50,164.50,-49.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 16","§e0 / 0", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-59.50,164.50,-49.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 17","§e0 / 0", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-57.50,164.50,-49.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 18","§e0 / 0", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-55.50,164.50,-49.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 19","§e0 / 0", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-53.50,164.50,-50.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 20","§e0 / 0", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-51.50,164.50,-51.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 21","§e0 / 0", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-49.50,164.50,-53.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 22","§e0 / 0", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-48.50,164.50,-55.50, 180,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 23","§e0 / 0", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-47.50,164.50,-57.50, 180,0));
+			UtilNPC.SpawnEntity("§a§oFullPvP","§eCarregando...", "§a§oFullPvP","Miner", new Location(Bukkit.getWorld("world"), -47.50,164.50,-64.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oKitPvP","§eCarregando...", "§a§oKitPvP","Reav_", new Location(Bukkit.getWorld("world"),-49.50,164.50,-66.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oSkyBlock","§eCarregando...", "§a§oSkyBlock","MHF_Chest", new Location(Bukkit.getWorld("world"),-51.50,164.50,-68.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oSkyWars","§eCarregando...", "§a§oSkyWars","doodoo123987", new Location(Bukkit.getWorld("world"),-53.50,164.50,-70.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oHungerGames","§eCarregando...", "§a§oHungerGames","HellCatcher", new Location(Bukkit.getWorld("world"),-55.50,164.50,-71.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oOneInTheChamber","§eCarregando...", "§a§oOneInTheChamber","Twilizer5953", new Location(Bukkit.getWorld("world"),-57.50,164.50,-71.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 1","§eCarregando...", "§c§lEM BREVE","Project22", new Location(Bukkit.getWorld("world"),-59.50,164.50,-71.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 2","§eCarregando...", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-61.50,164.50,-71.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 3","§eCarregando...", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-63.50,164.50,-70.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 4","§eCarregando...", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-65.50,164.50,-69.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 5","§eCarregando...", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-67.50,164.50,-67.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 6","§eCarregando...", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-68.50,164.50,-65.50, 0,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 7","§eCarregando...", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-69.50,164.50,-63.50, -90,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 8","§eCarregando...", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-69.50,164.50,-61.50, -90,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 9","§eCarregando...", "§c§lEM BREVE","Project22", new Location(Bukkit.getWorld("world"),-69.50,164.50,-59.50, -90,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 10","§eCarregando...", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-69.50,164.50,-57.50, -90,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 11","§eCarregando...", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-68.50,164.50,-55.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 12","§eCarregando...", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-67.50,164.50,-53.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 13","§eCarregando...", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-65.50,164.50,-51.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 14","§eCarregando...", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-63.50,164.50,-50.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 15","§eCarregando...", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-61.50,164.50,-49.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 16","§eCarregando...", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-59.50,164.50,-49.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 17","§eCarregando...", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-57.50,164.50,-49.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 18","§eCarregando...", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-55.50,164.50,-49.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 19","§eCarregando...", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-53.50,164.50,-50.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 20","§eCarregando...", "§c§lEM BREVE","maradopt", new Location(Bukkit.getWorld("world"),-51.50,164.50,-51.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 21","§eCarregando...", "§c§lEM BREVE","Planetacraft_BR", new Location(Bukkit.getWorld("world"),-49.50,164.50,-53.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 22","§eCarregando...", "§c§lEM BREVE","Jotinha_BR", new Location(Bukkit.getWorld("world"),-48.50,164.50,-55.50, 180,0));
+			UtilNPC.SpawnEntity("§c§lEM BREVE 23","§eCarregando...", "§c§lEM BREVE","MHF_Herobrine", new Location(Bukkit.getWorld("world"),-47.50,164.50,-57.50, 180,0));
 			
 			Loader(Main.site+ "/API/reikdr.php","lobby");
+			
+			UtilNPC.DarUpdate_All();
 			
 	        Top3 top3 = new Top3(plugin);
 	}
@@ -528,7 +530,7 @@ public class Lobby extends MiniPlugin{
 			
 		    @EventHandler
 		    public void UpdateNPC(Atualizar event)  {
-		      if (event.getType() != ModosUpdate.MIN_01) {
+		      if (event.getType() != ModosUpdate.MIN_02) {
 		        return;
 		      }
 		      UtilNPC.DarUpdate_All();

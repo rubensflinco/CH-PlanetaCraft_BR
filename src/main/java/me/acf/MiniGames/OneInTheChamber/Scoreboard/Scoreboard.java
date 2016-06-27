@@ -47,15 +47,13 @@ public class Scoreboard {
 	            }
 	            MiniGamesMananger.Vivos.add(p);
          }
-         
          Scoreboard.CriarScoreboard(p);
-         
 	  }
 	 
 	 public static void UpdateScoreboard()
 	 {
 		 for (Player player : Bukkit.getOnlinePlayers()) {
-			 
+			 try {
 			 if (Arcade.estilo.equals(ArcadeType.JOGANDO)){ 
 
 				 for (Player p : Bukkit.getOnlinePlayers())
@@ -122,12 +120,12 @@ public class Scoreboard {
 							 ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lPvP Offline");
 							}
 							if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
-							 ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lBatalhando");
+							 ScoreboardAPI.build(player, "§a§l25 §c§l| §f§lKills primeiro GG");
 							}
 							if (Arcade.estilo.equals(ArcadeType.FIM)){
 							 ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lFIM ");
 					        }
-			     	
+			       } catch (Exception exception) { }	
 		      }		
 		 }
 

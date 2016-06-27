@@ -340,8 +340,8 @@ public class OneInTheChamber extends MiniPlugin {
 	@EventHandler
 	public void EmJogo(GameJogandoEvent event)
 	{
-		GameEvents.ProtegerGG = true;
 		UtilsWin.Check_Vitoria();
+		GameEvents.ProtegerGG = true;
 	}
 	
 	

@@ -15,6 +15,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -40,6 +41,7 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Chat;
 import me.hub.API.Util.Schematic;
+import me.hub.API.Util.UtilBlockText;
 import me.hub.API.Util.UtilSchematic;
 import me.hub.API.Util.UtilSchematic.Modo;
 import me.hub.API.Util.UtilServer;
@@ -94,6 +96,12 @@ public class MiniGamesMananger extends MiniPlugin {
 	    GameEvents event = new GameEvents(Main.plugin);
 	    Blood blod = new Blood(Main.plugin);
 	    MGSpectator MGSpectator = new MGSpectator(Main.plugin);
+	    
+		Location Status = new Location(Bukkit.getWorld("world"), 192 ,60, 899);
+		BlockFace faceComp = BlockFace.EAST;
+		UtilBlockText.MakeText(Main.plugin.getConfig().getString("Carregar"), Status.clone().add(0,0,0), faceComp, 159, (byte)14, UtilBlockText.TextAlign.CENTRO, true, false);
+		UtilBlockText.MakeText(Main.plugin.getConfig().getString("Carregar"), Status.clone().add(0,0,-1), faceComp, 159, (byte)15, UtilBlockText.TextAlign.CENTRO, true, false);
+	    
 	}
 
 	@EventHandler

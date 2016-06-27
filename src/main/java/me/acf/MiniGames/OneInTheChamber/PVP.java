@@ -29,6 +29,7 @@ import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Enchant;
+import me.hub.API.Util.UtilInv;
 import me.hub.Scoreboard.ScoreboardAPI;
 
 /**
@@ -86,9 +87,10 @@ public class PVP extends MiniPlugin {
 			      TempoRenacer(p);
 			      clearEffects(p);
 			      p.setGameMode(GameMode.SPECTATOR);
-			   		MiniGamesMananger.Specter.remove(p);
-			   		MiniGamesMananger.Vivos.remove(p);
-			   		MiniGamesMananger.Vivos.add(p);
+			   	  MiniGamesMananger.Specter.remove(p);
+			   	  MiniGamesMananger.Vivos.remove(p);
+			   	  MiniGamesMananger.Vivos.add(p);
+			   	  UtilInv.AddItem(p.getKiller().getInventory(), false, Material.ARROW, 1,(byte)0, "", 0);
 		      }
 		    }
 		    , 5L);

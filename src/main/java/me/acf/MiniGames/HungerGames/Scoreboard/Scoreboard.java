@@ -36,7 +36,7 @@ public class Scoreboard {
 		 public static void UpdateScoreboard()
 		 {
 			 for (Player player : Bukkit.getOnlinePlayers()) {
-				 try {		 
+				 try {
 				int jgn = MiniGamesMananger.necessario;
 				
 				ScoreboardAPI.add("§1 "); //12

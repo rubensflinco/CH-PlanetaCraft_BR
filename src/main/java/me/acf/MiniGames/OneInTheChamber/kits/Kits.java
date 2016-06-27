@@ -35,7 +35,7 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitDefault");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.STONE_AXE, 1, (byte)0, "§aMachado default", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.BOW, 1, (byte)0, "§aArco default", ""));
-	    pvp.addItem(UtilInv.AddItemReturn(Material.ARROW, 1, (byte)0, "§aFlecha default", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.ARROW, 1, (byte)0, "", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    AddKit(Material.STONE_AXE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.");
 	}
