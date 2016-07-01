@@ -197,7 +197,7 @@ public class OneInTheChamber extends MiniPlugin {
 	    
 	    @EventHandler
 	    public void VoltarArena(Atualizar event)  {
-	      if (event.getType() != ModosUpdate.SEC_10) {
+	      if (event.getType() != ModosUpdate.SEC) {
 	        return;
 	      }
 	      
@@ -292,6 +292,7 @@ public class OneInTheChamber extends MiniPlugin {
 					p.setGameMode(GameMode.SURVIVAL);
 					p.getInventory().clear();
 					Kit.GiveKit(p);
+					Scoreboard.Tkills.put(p, "0");
 					GameEvents.ProtegerGG = true;
 			           }
 				}
@@ -367,19 +368,6 @@ public class OneInTheChamber extends MiniPlugin {
 	    	  
 	    	  if (MiniGamesMananger.Specter.contains(((Player)ent))){
 	    		  
-		           if (Main.plugin.getConfig().getString("Mapa1.Nome") == Main.plugin.getConfig().getString("MapaDeJogo")){
-		        	   Location l = new Location(ent.getWorld(), Main.plugin.getConfig().getInt("Espectador.Mapa1.X"), Main.plugin.getConfig().getInt("Espectador.Mapa1.Y"), Main.plugin.getConfig().getInt("Espectador.Mapa1.Z"));
-			    		  ((Player)ent).teleport(l);
-		            }else{
-		                if (Main.plugin.getConfig().getString("Mapa2.Nome") == Main.plugin.getConfig().getString("MapaDeJogo")){
-		                	Location l = new Location(ent.getWorld(), Main.plugin.getConfig().getInt("Espectador.Mapa2.X"), Main.plugin.getConfig().getInt("Espectador.Mapa2.Y"), Main.plugin.getConfig().getInt("Espectador.Mapa2.Z"));
-		  	    		  ((Player)ent).teleport(l);
-		                }else{
-		             	Bukkit.getServer().broadcastMessage("§4ERRO §cOcorreu um erro não exite mapa para teleportar nem mapa1 nem o mapa2");
-		             	Bukkit.getServer().broadcastMessage("§4ERRO §cOcorreu um erro não exite mapa para teleportar nem mapa1 nem o mapa2");
-		             	Bukkit.getServer().broadcastMessage("§4ERRO §cOcorreu um erro não exite mapa para teleportar nem mapa1 nem o mapa2");
-		                }
-		            }
 
 		        ((Player)ent).setFallDistance(0.0F);
 		        event.setCancelled(true);

@@ -290,3 +290,11 @@ Palavras-proibidas:
   - xvideos
   - sexuais
   - playboy
+protection:
+  country:
+    enabled: false
+    countriesWhitelist:
+    - BR
+    - PT
+    countriesBlacklist:
+    - A1

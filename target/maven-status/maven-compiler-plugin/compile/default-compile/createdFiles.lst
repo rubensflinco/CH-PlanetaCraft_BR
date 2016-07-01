@@ -39,8 +39,10 @@ me\acf\KitPvP\kitAPI\Habilidade\Drain.class
 me\acf\KitPvP\kitAPI\Habilidade\Disable.class
 me\acf\lobby\gadgets\utils\Tsunami$2.class
 me\acf\MiniGames\eventos\Utils\UtilsWin$1.class
+me\acf\MiniGames\HungerGames\Sair$1.class
 me\acf\FullPvP\comandos\spawn.class
 me\acf\MiniGames\OneInTheChamber\kits\Habilidades\MorteDaVida.class
+me\acf\MiniGames\OneInTheChamber\Sair$1.class
 me\acf\lobby\gadgets\particles\ParticleEffectCapMagic.class
 me\acf\MiniGames\Arcade$ArcadeType.class
 me\acf\MiniGames\SkyWars\kits\Menu.class
@@ -273,6 +275,7 @@ me\acf\MiniGames\tipos\Lobby.class
 me\acf\SkyBlock\Scoreboard.class
 me\acf\FullPvP\Baltop.class
 me\acf\FullPvP\comandos\Delhome.class
+me\acf\MiniGames\SkyWars\Sair$1.class
 me\acf\SkyBlock\Conta.class
 me\acf\FullPvP\Sair.class
 me\acf\lobby\chair\Chair.class
@@ -292,6 +295,7 @@ me\acf\MiniGames\eventos\GameJogandoEvent.class
 me\acf\lobby\gadgets\morph\Chicken.class
 me\acf\KitPvP\kitAPI\Habilidade\Hulk.class
 me\acf\FullPvP\comandos\dropinv.class
+me\acf\MiniGames\OneInTheChamber\Scoreboard\Scoreboard$1.class
 me\acf\KitPvP\JumpBlocos.class
 me\acf\MiniGames\OneInTheChamber\kits\Menu.class
 me\acf\KitPvP\kitAPI\Habilidade\Anchor$1.class

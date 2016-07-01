@@ -304,8 +304,6 @@ public class GameEvents extends MiniPlugin {
 		   {
 				Player jogador = event.getPlayer();
 				
-				Servidor.AddLeave();
-				
 				int jogadores = MiniGamesMananger.jogadores.size()-1;
 				
 				event.setQuitMessage("§8§lSaiu §f"+jogador.getName()+" §7("+jogadores+"/"+Bukkit.getServer().getMaxPlayers()+")");

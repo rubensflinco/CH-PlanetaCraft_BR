@@ -10,8 +10,10 @@ import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.OneInTheChamber.kits.Kit;
+import me.acf.MiniGames.Style.UserData.Style;
 import me.hub.Main;
 import me.hub.API.Util.UtilNumber;
+import me.hub.API.Util.UtilServer;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.site.account.Account;
 import me.site.account.rank.Rank;
@@ -35,17 +37,24 @@ public class Scoreboard {
 	    }
 	 
 	 @SuppressWarnings("deprecation")
-	  public static void AtualizarKill(Player p)
+	  public static void AtualizarKill(final Player p)
 	  {
 		 String GET = Tkills.get(p);
 		 int kills = Integer.parseInt(GET)+1;
 		 Tkills.put(p, ""+kills);
-         if (kills >= 25){
-	            for (Player on : Bukkit.getOnlinePlayers())
+		 
+         if (kills >= 24){
+        	 for (final Player on : UtilServer.Jogadores())
 	            {
 	            	MiniGamesMananger.Vivos.remove(on);
+			 		MiniGamesMananger.Specter.remove(on);
 	            }
+             Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+          	   public void run() {
 	            MiniGamesMananger.Vivos.add(p);
+   	        }
+     	    }
+     	   , 5L);
          }
          Scoreboard.CriarScoreboard(p);
 	  }
@@ -53,9 +62,8 @@ public class Scoreboard {
 	 public static void UpdateScoreboard()
 	 {
 		 for (Player player : Bukkit.getOnlinePlayers()) {
-			 try {
-			 if (Arcade.estilo.equals(ArcadeType.JOGANDO)){ 
-
+			 if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
+				 
 				 for (Player p : Bukkit.getOnlinePlayers())
 		            {
 				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 15
@@ -74,6 +82,7 @@ public class Scoreboard {
 				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 2
 				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 1
 		            }
+				 
 			 }else{
 
 					int jgn = MiniGamesMananger.necessario;
@@ -97,7 +106,7 @@ public class Scoreboard {
 			        ScoreboardAPI.add("§fEvento §f: §aNenhum"); //2
 			        ScoreboardAPI.add("§5 "); //1
 			 }
-
+			 try {
 			         for (Player online : Bukkit.getOnlinePlayers()) {
 					    	String rank = "" + Account.getRank(online);
 					    	if (Account.getRank(online).Has(online, Rank.VIP, false))
@@ -110,6 +119,8 @@ public class Scoreboard {
 			            ((CraftPlayer)player.getPlayer()).getHandle().displayName = Account.getRank(player.getPlayer()).GetTag(false) + " " + Account.getPatente(player.getPlayer()).Cor+ player.getPlayer().getName();
 			            ((CraftPlayer)player.getPlayer()).getHandle().setCustomName(Account.getRank(player.getPlayer()).GetTag(false) + " "+ Account.getPatente(player.getPlayer()).Cor+ player.getPlayer().getName());
 			            ((CraftPlayer)player.getPlayer()).getHandle().setCustomNameVisible(true);
+			            
+			            
 						if (Arcade.estilo.equals(ArcadeType.AGUARDANDO)){
 						     ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lAguardando");
 							}
@@ -120,12 +131,14 @@ public class Scoreboard {
 							 ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lPvP Offline");
 							}
 							if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
-							 ScoreboardAPI.build(player, "§a§l25 §c§l| §f§lKills primeiro GG");
-							}
+								 ScoreboardAPI.build(player, "§a§l25 §c§l| §f§lKills GG");
+								}
 							if (Arcade.estilo.equals(ArcadeType.FIM)){
 							 ScoreboardAPI.build(player, "§a§l"+Bukkit.getServerName()+" §c§l| §f§lFIM ");
 					        }
-			       } catch (Exception exception) { }	
+							
+			 } catch (Exception exception) { }
+			 
 		      }		
 		 }
 

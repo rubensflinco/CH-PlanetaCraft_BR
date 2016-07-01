@@ -1,5 +1,6 @@
 package me.acf.MiniGames.SkyWars;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -20,8 +21,10 @@ public class Sair extends MiniPlugin {
 	@EventHandler
 	public void Quit(PlayerQuitEvent event)
 	{
-		Player jogador = event.getPlayer();
+		final Player jogador = event.getPlayer();
 		
+      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+	   public void run() {
 		Conta.Loader(jogador);
 		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/SW.php?modo=ADD-conta&nick=" + jogador.getName()));
 		
@@ -36,6 +39,10 @@ public class Sair extends MiniPlugin {
      		}
  		
  		SkyWars.VotouMapa.remove(jogador.getName());
+ 		
+              }
+           }
+      , 5L);
 		
 	}
 }

@@ -15,6 +15,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -82,7 +83,7 @@ public class PVP extends MiniPlugin {
 			      Conta.Reload(p);
 			      ScoreboardAPI.remover(p);
 			      Scoreboard.CriarScoreboard(p);
-			      Scoreboard.AtualizarKill(p.getKiller());
+			      Scoreboard.AtualizarKill(p.getKiller().getPlayer());
 			      mortos.add(p.getName());
 			      TempoRenacer(p);
 			      clearEffects(p);
@@ -90,7 +91,7 @@ public class PVP extends MiniPlugin {
 			   	  MiniGamesMananger.Specter.remove(p);
 			   	  MiniGamesMananger.Vivos.remove(p);
 			   	  MiniGamesMananger.Vivos.add(p);
-			   	  UtilInv.AddItem(p.getKiller().getInventory(), false, Material.ARROW, 1,(byte)0, "", 0);
+			   	  p.getKiller().getInventory().addItem(new ItemStack(Material.ARROW, 1));
 		      }
 		    }
 		    , 5L);

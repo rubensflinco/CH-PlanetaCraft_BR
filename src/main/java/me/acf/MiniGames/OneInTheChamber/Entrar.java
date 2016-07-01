@@ -35,8 +35,9 @@ public class Entrar extends MiniPlugin {
 
 		Player jogador = event.getPlayer();
 		
-		Conta.Loader(jogador);
 		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/OITC.php?modo=ADD-conta&nick=" + jogador.getName()));
+		
+		Conta.Loader(jogador);
 		
 		jogador.getPlayer().getInventory().setHeldItemSlot(0);
 		

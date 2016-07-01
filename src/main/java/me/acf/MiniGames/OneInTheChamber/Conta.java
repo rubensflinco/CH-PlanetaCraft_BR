@@ -52,7 +52,6 @@ public class Conta {
 		matou.remove(p);
 		morreu.remove(p);
 		ks.remove(p);
-
 	}
 	public static void Reload(Player p)
 	{
