@@ -100,6 +100,24 @@ public class Fechar {
 					AccountWeb.Conectar(Main.site + "/API/Salas/reiniciar.php?modo=UMA&servername="+Bukkit.getServerName());
 				 }
 			 
+			 if (Main.plugin.getConfig().getString("Carregar").equals("SpleggTnT")) {
+					File backupDir = new File("mapas");
+					for (File source : backupDir.listFiles())
+					 if (source.isDirectory()) {
+						 if (source.getName().contains("world")){
+						 }else{
+					   deletarArquivo(new File(""+source.getName()+""));
+						 }
+						}
+					deletarArquivo(new File("logs"));
+					deletarArquivo(new File("crash-reports"));
+					deletarArquivo(new File("CHLog.log"));
+					deletarArquivo(new File("plugins/CHub/config.yml"));
+					deletarArquivo(new File("plugins/CHub/comandos.yml"));
+					deletarArquivo(new File("plugins/CHub/UserData"));
+					AccountWeb.Conectar(Main.site + "/API/Salas/reiniciar.php?modo=UMA&servername="+Bukkit.getServerName());
+				 }
+			 
 			 if (Main.plugin.getConfig().getString("Carregar").equals("Registro")) {
 					deletarArquivo(new File("logs"));
 					deletarArquivo(new File("crash-reports"));

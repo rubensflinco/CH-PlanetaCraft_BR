@@ -28,15 +28,9 @@ public class Kits {
 	public void KitDefault()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitDefault");
-	    pvp.addItem(UtilInv.AddItemReturn(Material.APPLE, 3, (byte)0, "§aMaça kit default", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.EGG, 1, (byte)0, "§cOvO explosivo", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    AddKit(Material.APPLE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.");
-	}
-	public void KitVidaExtra()
-	{
-	    Inventory pvp = Bukkit.createInventory(null, 9, "KitVidaExtra");
-	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.APPLE,"§9VidaExtra §5[Vip+]", pvp, "Você tem 2 vidas no jogo.");
 	}
 	
 	public void AddKit(Material item, String nome, Inventory inv, String desc)

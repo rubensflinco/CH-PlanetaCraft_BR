@@ -14,7 +14,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.MiniGames.Arcade;
@@ -62,6 +64,23 @@ public class SpleggTnT extends MiniPlugin {
 		Kits Kits = new Kits();
 		Menu Menu = new Menu();
 	}
+	
+	  @EventHandler
+	  public void onPlayerEggThrowEvent(final PlayerEggThrowEvent event) {
+		    if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
+		    event.getEgg().getWorld().createExplosion(event.getEgg().getLocation(), 1.5F, true);
+		    }
+	  }
+	  
+		@EventHandler
+		  public void OvOReSpawn(final PlayerInteractEvent e) {
+		    Player p = e.getPlayer();
+	 	    if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
+	             if ((p.getItemInHand().getType() == Material.EGG)&& ((e.getAction() == Action.RIGHT_CLICK_AIR) || (e.getAction() == Action.RIGHT_CLICK_BLOCK))) {
+	            	p.getInventory().addItem(new ItemStack(Material.EGG, 1));
+	            }
+		    }
+		}
 	
 	
     @EventHandler

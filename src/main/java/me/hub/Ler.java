@@ -9,6 +9,7 @@ import me.acf.MiniGames.API.CopyDirectory;
 import me.acf.MiniGames.HungerGames.HungerGames;
 import me.acf.MiniGames.OneInTheChamber.OneInTheChamber;
 import me.acf.MiniGames.SkyWars.SkyWars;
+import me.acf.MiniGames.SpleggTnT.SpleggTnT;
 import me.acf.Robo.RoboMananger;
 import me.acf.SkyBlock.SkyBlock;
 import me.acf.chat.Chat;
@@ -83,6 +84,10 @@ public class Ler {
 		 Main.plugin.getConfig().set("Carregar", "OneInTheChamber");
 		 Main.plugin.saveConfig();
 		 }
+		 if (Bukkit.getServerName().contains("STNT")){
+		 Main.plugin.getConfig().set("Carregar", "SpleggTnT");
+		 Main.plugin.saveConfig();
+		 }
 		 ChatManager chat = new ChatManager();
 		 if (Main.plugin.getConfig().getString("Carregar").equals("Lobby")) {
 		    BlockRestore blockRestore = new BlockRestore(Main.plugin);
@@ -131,6 +136,13 @@ public class Ler {
 		    LerOneInTheChamber(blockRestore);   
 		    DonateMananger.USAR = false;
 		 }
+		 if (Main.plugin.getConfig().getString("Carregar").equals("SpleggTnT")) {
+			 BlockRestore blockRestore = new BlockRestore(Main.plugin);
+		    new CriadorComandos().Ler_Comandos(Main.plugin);
+		    new CriadorComandos().Ler_Comandos(Main.plugin, "me.acf.MiniGames.API");
+		    LerSpleggTnT(blockRestore);   
+		    DonateMananger.USAR = false;
+		 }
 		 if (Main.plugin.getConfig().getString("Carregar").equals("Registro")) {
 			 LoginManager manager = new LoginManager(Main.plugin);
 			 Bungee bungee = new Bungee(Main.plugin);
@@ -152,6 +164,45 @@ public class Ler {
 		     DonateMananger donate = new DonateMananger(Main.plugin);
 		     Servidor server = new Servidor();
 		 }
+	 }
+	 
+	 private static void LerSpleggTnT(BlockRestore blockRestore)
+	 {
+			 _blockRestore = blockRestore;
+				System.out.print("Plugins Carregados");
+		        Account account = new Account(Main.plugin);
+		        Chat chat = new Chat(Main.plugin);
+		        me.security.SecurityManager security = new me.security.SecurityManager(Main.plugin);
+		        AdminEvents AdminEvents = new AdminEvents(Main.plugin);
+
+		        PunishMananger punish = new PunishMananger(Main.plugin);
+		    	DonateMananger donate = new DonateMananger(Main.plugin);
+		    	SpleggTnT SpleggTnT = new SpleggTnT(Main.plugin);
+		    	
+		    	CopyDirectory CopyDirectory = new CopyDirectory();
+		    	
+		    	CopyDirectory.importWorlds();
+		    	
+		    	me.acf.MiniGames.SpleggTnT.PVP PVP = new me.acf.MiniGames.SpleggTnT.PVP(Main.plugin);
+		    	me.acf.MiniGames.API.Bussola Bussola = new me.acf.MiniGames.API.Bussola(Main.plugin);
+		    
+		    	me.acf.MiniGames.SpleggTnT.Utils.EventoComandos EventoComandos = new me.acf.MiniGames.SpleggTnT.Utils.EventoComandos(Main.plugin);
+		    	me.acf.MiniGames.SpleggTnT.Utils.EscolherMapa EscolherMapa = new me.acf.MiniGames.SpleggTnT.Utils.EscolherMapa(Main.plugin);
+		    	
+		        Enchant enchant = new Enchant(Main.plugin);
+		        Recharge.Initialize(Main.plugin);
+		        Bungee bungee = new Bungee(Main.plugin);
+		        AntiHack.Initialize(Main.plugin, bungee);
+		        Servidor server = new Servidor();
+		        Admin admin = new Admin(Main.plugin);
+		        BarAPI bar = new BarAPI(Main.plugin);
+		       
+		         if (!Servidor.GetMain())
+		        server.ModoGame("ON");
+		         else
+		        	 System.out.print("Servidor em manutencao");
+		         Main.plugin.getServer().setWhitelist(false);
+		        Anuncios anun = new Anuncios(Main.plugin);
 	 }
 	 
 	 private static void LerOneInTheChamber(BlockRestore blockRestore)
