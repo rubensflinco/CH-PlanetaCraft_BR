@@ -34,9 +34,6 @@ public class Sair extends MiniPlugin {
 		event.setQuitMessage(null);
 		Conta.Remove(event.getPlayer());
 		Kit.arena.remove(event.getPlayer());
-		PVP.arena1.remove(event.getPlayer());
-		PVP.arena2.remove(event.getPlayer());
-		PVP.arena3.remove(event.getPlayer());
 		if (CombatLog.EstaEmCombat(event.getPlayer()))
 		{
 			try {

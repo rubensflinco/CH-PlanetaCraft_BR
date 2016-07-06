@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.acf.MiniGames.HungerGames.kits.Kit;
+import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.MiniPlugin;
 import me.hub.recharge.Recharge;
 
@@ -39,11 +39,10 @@ public class Urgal extends MiniPlugin{
 	    if (event.getAction().name().contains("RIGHT"))
 	    {
 	      Player p = event.getPlayer();
-	      if ((Kit.verkit(p).contains("Urgal")) &&  
-	        (event.getItem() != null) && (event.getItem().getType() == Material.GOLD_NUGGET))
+	      if ((Kit.verkit(p).contains("urgal")) && (event.getItem() != null) && (event.getItem().getType() == Material.GOLD_NUGGET))
 	      {
 	        event.setCancelled(true);
-	 	   if (!Recharge.Instance.use(p, "Urgal", 26900L, true, false)) {
+	 	   if (!Recharge.Instance.use(p, "urgal", 26900L, true, false)) {
                return;
              }
 	        p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0), true);

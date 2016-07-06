@@ -48,52 +48,9 @@ public class Arena extends MiniPlugin {
 		 
 	    }
 	
-	@EventHandler
-	public void Click(PlayerInteractEntityEvent event)
-	{
-	    if ((event.getRightClicked() instanceof ArmorStand) || (event.getRightClicked() instanceof Sheep)) {{
-		  if (Verificar(event.getPlayer()))
-		  {
-			  if (event.getRightClicked().getCustomName() == null)
-				  return;
-			  
-		    if (event.getRightClicked().getCustomName().contains("Arena 1"))
-		    {
-				  PVP.arena1.add(event.getPlayer());
-				  Kit.arena.add(event.getPlayer());
-				  GiveKit(event.getPlayer());
-				  Random r = new Random();
-		    	  Arena1(event.getPlayer(),r.nextInt(5));
-		    	  event.getRightClicked().setCustomName("§5§lArena 1 §f"+PVP.arena1.size()+"/∞");
-		    	
-		    }
-		    if (event.getRightClicked().getCustomName().contains("Arena 2"))
-		    {
-				  PVP.arena2.add(event.getPlayer());
-				  Kit.arena.add(event.getPlayer());
-				  GiveKit(event.getPlayer());
-				  Random r = new Random();
-		    	  Arena2(event.getPlayer(),r.nextInt(5));
-		    	  event.getRightClicked().setCustomName("§5§lArena 2 §f"+PVP.arena2.size()+"/∞");
-		    	
-		    }
-		    if (event.getRightClicked().getCustomName().contains("Arena 3"))
-		    {
-				  PVP.arena3.add(event.getPlayer());
-				  Kit.arena.add(event.getPlayer());
-				  GiveKit(event.getPlayer());
-				  Random r = new Random();
-		    	  Arena3(event.getPlayer(),r.nextInt(5));
-		    	  event.getRightClicked().setCustomName("§5§lArena 3 §f"+PVP.arena3.size()+"/∞");
-		    	
-		    }
-		  }
-		}
-	    }
-	}
 	
 
-	public void GiveKit(Player p)
+	public static void GiveKit(Player p)
 	{
 		p.getInventory().clear();
 		p.getInventory().addItem(Kits.Espada(p));
@@ -131,34 +88,5 @@ public class Arena extends MiniPlugin {
 		return false;
 	}
 
-/*     Cords da Arena 1 Spawns
-       1504, 73, 1524
-	   1522, 76, 1456
-	   1437, 75, 1474
-       1604, 83, 151  
-       1660, 81, 1476
-	   1414, 84, 1634
-*/
-	public void Arena1(Player p, int aleatorio)
-	{
-		if (aleatorio <= 1)
-			p.teleport(new Location(p.getWorld(), 1504, 79, 1524));
-		if (aleatorio == 2)
-			p.teleport(new Location(p.getWorld(), 1522, 78, 1456));
-		if (aleatorio == 3)
-			p.teleport(new Location(p.getWorld(), 1437, 78, 1474));
-		if (aleatorio == 4)
-			p.teleport(new Location(p.getWorld(), 1660, 89, 1476));
-		if (aleatorio == 5)
-			p.teleport(new Location(p.getWorld(), 1414, 85, 1634));
-	}
-	
-	public void Arena2(Player p, int aleatorio)
-	{
-		p.teleport(new Location(p.getWorld(), 35000, 78, 35000));
-	}
-	public void Arena3(Player p, int aleatorio)
-	{
-		p.teleport(new Location(p.getWorld(), -65078, 87, -64883));
-	}
+
 }

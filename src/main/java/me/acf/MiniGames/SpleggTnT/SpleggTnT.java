@@ -9,6 +9,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Egg;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -66,22 +68,44 @@ public class SpleggTnT extends MiniPlugin {
 	}
 	
 	  @EventHandler
+	  public void onPlayerInteract(PlayerInteractEvent event)
+	  {
+	    Player p = event.getPlayer();
+	    ItemStack hand = p.getItemInHand();
+	    if (event.getAction() == Action.RIGHT_CLICK_AIR)
+	    {
+	      if ((hand.getType() == Material.WOOD_SPADE) && (Kit.verkit(p).contains("default"))){
+		          p.launchProjectile(Egg.class);
+		        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+		      }
+	      if ((hand.getType() == Material.IRON_SPADE) && (Kit.verkit(p).contains("Ferro"))){
+	    	  for (Integer i = Integer.valueOf(0); i.intValue() < 2; i = Integer.valueOf(i.intValue() + 1)) {
+		        p.launchProjectile(Egg.class);
+	    	  }
+		        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+		      }
+	      if ((hand.getType() == Material.GOLD_SPADE) && (Kit.verkit(p).contains("Ouro"))){
+	        for (Integer i = Integer.valueOf(0); i.intValue() < 3; i = Integer.valueOf(i.intValue() + 1)) {
+	          p.launchProjectile(Egg.class);
+	        }
+	        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+	      }
+	      if ((hand.getType() == Material.DIAMOND_SPADE) && (Kit.verkit(p).contains("Diamante"))){
+	        for (Integer i = Integer.valueOf(0); i.intValue() < 4; i = Integer.valueOf(i.intValue() + 1)) {
+	          p.launchProjectile(Egg.class);
+	        }
+	        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+	      }
+	    }
+	  }
+	
+	  @EventHandler
 	  public void onPlayerEggThrowEvent(final PlayerEggThrowEvent event) {
 		    if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
 		    event.getEgg().getWorld().createExplosion(event.getEgg().getLocation(), 1.5F, true);
 		    }
 	  }
 	  
-		@EventHandler
-		  public void OvOReSpawn(final PlayerInteractEvent e) {
-		    Player p = e.getPlayer();
-	 	    if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
-	             if ((p.getItemInHand().getType() == Material.EGG)&& ((e.getAction() == Action.RIGHT_CLICK_AIR) || (e.getAction() == Action.RIGHT_CLICK_BLOCK))) {
-	            	p.getInventory().addItem(new ItemStack(Material.EGG, 1));
-	            }
-		    }
-		}
-	
 	
     @EventHandler
     public void ScoreBoard(Atualizar event)  {

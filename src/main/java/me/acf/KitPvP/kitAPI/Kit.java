@@ -22,9 +22,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.FormatText.Format;
-
+import me.acf.KitPvP.Arena;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilServer;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.hub.config.Config;
 import me.site.account.Account;
@@ -51,6 +52,7 @@ public class Kit extends MiniPlugin {
 	public static Map<String,ItemStack> kits = new HashMap<>();
 	public static Map<String,ItemStack> kitsMENU = new HashMap<>();
 	public static List<Entity> arena = new ArrayList<>();
+	public static List<Entity> semkit = new ArrayList<>();
 	
 	public static void AddKit(Player p, String kit)
 	{
@@ -58,6 +60,14 @@ public class Kit extends MiniPlugin {
 	  kitapi.put(p, kit);
 	  ScoreboardAPI.remover(p);
 	  System.out.print("Kit> Setado kit do jogador " + p.getName() + " para " + kit);
+		 for (Player all : UtilServer.Jogadores())
+		 {
+			 all.showPlayer(p);
+		 }
+	       Kit.arena.add(p);
+	       if (!kit.contains("§9Nenhum")){
+		   Arena.GiveKit(p);
+	       }
 	}
 	
 	public static void DelKit(Player p)

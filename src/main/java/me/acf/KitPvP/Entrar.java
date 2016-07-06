@@ -34,6 +34,7 @@ import me.hub.API.Util.UtilServer;
 import me.hub.config.Config;
 import me.site.account.Account;
 import me.site.account.AccountWeb;
+import me.site.account.rank.Rank;
 
 /**
  * @author adriancf
@@ -55,7 +56,6 @@ public class Entrar extends MiniPlugin {
 	@EventHandler
 	public void Entrar(final PlayerJoinEvent event)
 	{
-		Kit.AddKit(event.getPlayer(), "§9pvp ");
 		
 		event.setJoinMessage(null);
 		
@@ -76,9 +76,19 @@ public class Entrar extends MiniPlugin {
 	     Config.addn(event.getPlayer(), "kitpvp.regenerar", "6");
 	     Config.addn(event.getPlayer(), "kitpvp.sword", "§a§lEspada de Pedra");
 	     Scoreboard.CriarScoreboard(event.getPlayer());
-	     Kit.AddKit(event.getPlayer(), Config.retornar(event.getPlayer(), "kitpvp.Kit"));
 	     System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/KP.php?modo=ADD-conta&nick=" + event.getPlayer().getName()));
 	     Conta.Loader(event.getPlayer());
+	     
+		 for (Player all : UtilServer.Jogadores())
+		 {
+			 all.hidePlayer(event.getPlayer());
+		 }
+		 
+	  	 Entrar.Give(event.getPlayer());
+		
+		Kit.AddKit(event.getPlayer(), "§9Nenhum ");
+	
+	     
 	     if (!joins.contains(event.getPlayer()))
 	    {
 	    	 Account.AddExp(event.getPlayer(), "10");

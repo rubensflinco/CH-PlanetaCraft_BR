@@ -49,9 +49,6 @@ public class PVP extends MiniPlugin {
 	
 	public static HashMap<Player,Integer> ks = new HashMap<>();
 
-	public static List<Entity> arena1 = new ArrayList<>();
-	public static List<Entity> arena2 = new ArrayList<>();
-	public static List<Entity> arena3 = new ArrayList<>();
 	
 	public PVP(JavaPlugin plugin) {
 		super("PVP", plugin);
@@ -79,9 +76,6 @@ public class PVP extends MiniPlugin {
 	    p.closeInventory();
 	    Scoreboard.CriarScoreboard(p);
 	    Kit.arena.remove(p);
-	    arena1.remove(p);
-	    arena2.remove(p);
-	    arena3.remove(p);
 		p.teleport(Bukkit.getWorld("world").getSpawnLocation());
 	}
 	
@@ -106,9 +100,10 @@ public class PVP extends MiniPlugin {
 	    p.closeInventory();
 	    Scoreboard.CriarScoreboard(p);
 	    Kit.arena.remove(p);
-	    arena1.remove(p);
-	    arena2.remove(p);
-	    arena3.remove(p);
+		 for (Player all : UtilServer.Jogadores())
+		 {
+			 all.hidePlayer(p);
+		 }
 	    Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable()
 	    {
 	    public void run()
@@ -133,9 +128,10 @@ public class PVP extends MiniPlugin {
 			       {
 				p.teleport(Bukkit.getWorld("world").getSpawnLocation());
 			    Kit.arena.remove(p);
-			    arena1.remove(p);
-			    arena2.remove(p);
-			    arena3.remove(p);
+				 for (Player all : UtilServer.Jogadores())
+				 {
+					 all.hidePlayer(p);
+				 }
 			       }
 			       }, 10L);
 			    Conta.AddMorreu(p);
@@ -231,8 +227,12 @@ public class PVP extends MiniPlugin {
 	    if ((event.getDamager() instanceof Player))
 	    {
 	        Player jogador = (Player)event.getDamager();
-	        if (!Kit.arena.contains(jogador))
+	        if ((event.getEntity() instanceof Player)){
+	        if ((Kit.verkit((Player) event.getEntity()).contains("Nenhum")) || (Kit.verkit(jogador).contains("Nenhum"))){
+	        	event.setCancelled(true);
 	        	return;
+	         }
+	        }
 	        if (jogador.getItemInHand().getEnchantments() != Enchant.DAMAGE_ALL)
 	        {
 	        if (jogador.getItemInHand().getType() == Material.AIR)

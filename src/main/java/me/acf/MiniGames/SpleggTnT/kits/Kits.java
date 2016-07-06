@@ -24,13 +24,37 @@ public class Kits {
 	public Kits()
 	{
 		KitDefault();
+		KitFerro();
+		KitOuro();
+		KitDiamante();
 	}
 	public void KitDefault()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitDefault");
-	    pvp.addItem(UtilInv.AddItemReturn(Material.EGG, 1, (byte)0, "§cOvO explosivo", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.WOOD_SPADE, 1, (byte)0, "§6§lCLICK §c§l| §a§l TnT OvO §c§l| §e§lLv§f§l1", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.APPLE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.");
+	    AddKit(Material.WOOD_SPADE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.");
+	}
+	public void KitFerro()
+	{
+	    Inventory pvp = Bukkit.createInventory(null, 9, "KitFerro");
+	    pvp.addItem(UtilInv.AddItemReturn(Material.IRON_SPADE, 1, (byte)0, "§6§lCLICK §c§l| §a§l TnT OvO §c§l| §e§lLv§f§l2", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
+	    AddKit(Material.IRON_SPADE,"§9Ferro §c[Pago-Planets]", pvp, "Com esse kit sua velocidade de tiro de ovos aumenta.");
+	}
+	public void KitOuro()
+	{
+	    Inventory pvp = Bukkit.createInventory(null, 9, "KitOuro");
+	    pvp.addItem(UtilInv.AddItemReturn(Material.GOLD_SPADE, 1, (byte)0, "§6§lCLICK §c§l| §a§l TnT OvO §c§l| §e§lLv§f§l3", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
+	    AddKit(Material.GOLD_SPADE,"§9Ouro §6[Vip]", pvp, "Kit sem habilidade.");
+	}
+	public void KitDiamante()
+	{
+	    Inventory pvp = Bukkit.createInventory(null, 9, "KitDiamante");
+	    pvp.addItem(UtilInv.AddItemReturn(Material.DIAMOND_SPADE, 1, (byte)0, "§6§lCLICK §c§l| §a§l TnT OvO §c§l| §e§lLv§f§l4", ""));
+	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
+	    AddKit(Material.DIAMOND_SPADE,"§9Diamante §5[Vip+]", pvp, "Kit sem habilidade.");
 	}
 	
 	public void AddKit(Material item, String nome, Inventory inv, String desc)

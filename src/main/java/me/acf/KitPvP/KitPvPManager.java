@@ -33,6 +33,11 @@ import me.site.account.Account;
 import me.site.account.rank.Rank;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPCRegistry;
+import net.minecraft.server.v1_8_R3.BlockPosition;
+import net.minecraft.server.v1_8_R3.EntityPlayer;
+import net.minecraft.server.v1_8_R3.IBlockData;
+import net.minecraft.server.v1_8_R3.PacketPlayOutBlockAction;
+import net.minecraft.server.v1_8_R3.World;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -40,6 +45,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Sign;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -100,15 +107,18 @@ public class KitPvPManager extends MiniPlugin{
 		JumpBlocos jump = new JumpBlocos(plugin);
 	    new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");
 		 me.security.SecurityManager security = new me.security.SecurityManager(Main.plugin);
-		 SpawnOvelha(EntityType.SHEEP, "§5§lArena 1 §f0/∞", new Location(Bukkit.getWorld("world"),-4,61,-20));
-		 SpawnOvelha(EntityType.SHEEP, "§5§lArena 2 §f0/∞", new Location(Bukkit.getWorld("world"),-1,61,-20));
-		 SpawnOvelha(EntityType.SHEEP, "§5§lArena 3 §f0/∞", new Location(Bukkit.getWorld("world"),1,61,-20));
+		SpawnOvelha(EntityType.SHEEP, "§7Tecnologia §8§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),-130,57,636));
 	}
 
 	public void Disable()
 	{
 	
 	}
+	
+    public static void TEst(Player p)
+    {
+     p.sendBlockChange(new Location(p.getWorld(), -1300, 58, 639), Material.DIAMOND_BLOCK, (byte) 0);
+    }
 	
 	public void SpawnOvelha(EntityType e, String nome, Location loc)
 	{
@@ -292,12 +302,13 @@ public class KitPvPManager extends MiniPlugin{
 	     {
 			   if (event.getEntity() instanceof Player)
 			   {
-			       if (Kit.arena.contains(event.getEntity()))
-			       {   
+			       if (!Kit.verkit((Player) event.getEntity()).contains("Nenhum"))
+			       {
 			    	   return;
 			       }
 			   }
 		       event.setCancelled(true);
+		       
 	     }
 	   }
 	   
@@ -317,25 +328,7 @@ public class KitPvPManager extends MiniPlugin{
 		    if (!Kit.arena.contains(jogador))
 		    e.setCancelled(true);
 		  }
-	
-		    @EventHandler
-		    public void Ovelhas(Atualizar event)  {
-		      if (event.getType() != ModosUpdate.MIN_01) {
-		        return;
-		      }
-		   
-		    	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
-		    	  for (Entity ov : entities){
-		    	  if (ov.getType() == EntityType.SHEEP)
-		    		  if (ov.getCustomName().contains("Arena")){
-		    			  ov.remove();
-		    		  }
-		          }
-		      
-		    	  SpawnOvelha(EntityType.SHEEP, "§5§lArena 1 §f"+PVP.arena1.size()+"/∞", new Location(Bukkit.getWorld("world"),-4,61,-20));
-		    	  SpawnOvelha(EntityType.SHEEP, "§5§lArena 2 §f"+PVP.arena2.size()+"/∞", new Location(Bukkit.getWorld("world"),-1,61,-20));
-		    	  SpawnOvelha(EntityType.SHEEP, "§5§lArena 3 §f"+PVP.arena3.size()+"/∞", new Location(Bukkit.getWorld("world"),1,61,-20));
-		    }
+
     @EventHandler
     public void Utils(Atualizar event)  {
       if (event.getType() != ModosUpdate.FAST) {
@@ -489,6 +482,7 @@ public class KitPvPManager extends MiniPlugin{
         }
       }
     }
+    
     @EventHandler
     public void click(PlayerInteractEvent e)
     {

@@ -5,6 +5,7 @@ import me.acf.KitPvP.Entrar;
 import me.acf.KitPvP.PVP;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.Main;
+import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.message.Message;
 import me.hub.comandos.ComandosAPI;
 import me.site.account.Account;
@@ -56,10 +57,11 @@ public class Spawn implements CommandExecutor {
 				  jogador.setFireTicks(0);
 				  jogador.closeInventory();
 				  Kit.arena.remove(jogador);
-				  PVP.arena1.remove(jogador);
-				  PVP.arena2.remove(jogador);
-				  PVP.arena3.remove(jogador);
 				  Entrar.Give(jogador);
+					 for (Player all : UtilServer.Jogadores())
+					 {
+						 all.hidePlayer(jogador);
+					 }
 			   }
 			 }, 60L);
 		   // 60 L == 3 sec, 20 ticks == 1 sec
