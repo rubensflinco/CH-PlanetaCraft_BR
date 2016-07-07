@@ -8,7 +8,6 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -26,9 +25,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.MiniGames.Arcade;
+import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.GameEvents;
 import me.acf.MiniGames.MiniGamesMananger;
-import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.OneInTheChamber.Scoreboard.Scoreboard;
 import me.acf.MiniGames.OneInTheChamber.Utils.TeleportPlayer;
 import me.acf.MiniGames.OneInTheChamber.kits.Kit;

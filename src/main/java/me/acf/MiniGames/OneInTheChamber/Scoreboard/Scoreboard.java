@@ -48,7 +48,6 @@ public class Scoreboard {
 	            {
         		 if (on != p)
 	            	MiniGamesMananger.Vivos.remove(on);
-        		 
 			 		MiniGamesMananger.Specter.remove(on);
 	            }
          }
@@ -64,7 +63,7 @@ public class Scoreboard {
 		            {
 					 String GET = Tkills.get(p);
 					 int kills = Integer.parseInt(GET);
-					 for (int i = 0; i > 15; i++)
+					 for (int i = 0; i<15; i++)
 				    ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName(),kills);
 		            }
 				 
