@@ -109,6 +109,7 @@ public class PVP extends MiniPlugin {
 	    public void run()
 	    {
 	  	Entrar.Give(p);
+	  	Kit.AddKit(p, "§9Nenhum ");
 		if ((e.getEntity().getKiller() instanceof Player))
 	    {
 	    final Player k = e.getEntity().getKiller();

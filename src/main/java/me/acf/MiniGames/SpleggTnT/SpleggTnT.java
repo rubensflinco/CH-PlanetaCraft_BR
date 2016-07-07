@@ -16,6 +16,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
+import org.bukkit.event.entity.ItemSpawnEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -66,6 +69,35 @@ public class SpleggTnT extends MiniPlugin {
 		Kits Kits = new Kits();
 		Menu Menu = new Menu();
 	}
+	
+    @EventHandler
+    public void ItemSpawn(ItemSpawnEvent event)
+    {
+    	event.setCancelled(true);
+    }
+	
+	  @EventHandler
+	  public void Dano(EntityDamageEvent event) {
+		  if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
+		    if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID))
+		    {
+			      Player p = (Player)event.getEntity();
+			      event.setCancelled(true);
+			      p.damage(20);
+		    }
+			  event.setCancelled(true);
+		  }
+	  }
+	  @EventHandler
+	  public void fome(FoodLevelChangeEvent event) {
+		  event.setCancelled(true);
+	  }
+	  
+	  @EventHandler
+	  public void Drop(PlayerDropItemEvent event)
+	  {
+		  event.setCancelled(true);
+	  }
 	
 	  @EventHandler
 	  public void onPlayerInteract(PlayerInteractEvent event)

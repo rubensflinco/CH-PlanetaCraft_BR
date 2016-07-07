@@ -347,6 +347,11 @@ public class KitPvPManager extends MiniPlugin{
     
 	  for (Player p : UtilServer.Jogadores())
 	  {
+		  if (Kit.verkit(p).contains("Nenhum")){
+			  p.hidePlayer(p);
+		  }else{
+			  p.showPlayer(p);
+		  }
 	      BarKit.BarKit(p);
 		  if (UtilPlayer.Ping(p) > 800)
 		  {

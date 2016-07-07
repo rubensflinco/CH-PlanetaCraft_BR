@@ -58,6 +58,7 @@ public class Spawn implements CommandExecutor {
 				  jogador.closeInventory();
 				  Kit.arena.remove(jogador);
 				  Entrar.Give(jogador);
+				  Kit.AddKit(jogador, "§9Nenhum ");
 					 for (Player all : UtilServer.Jogadores())
 					 {
 						 all.hidePlayer(jogador);

@@ -18,6 +18,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
@@ -72,6 +73,17 @@ public class OneInTheChamber extends MiniPlugin {
 		Menu Menu = new Menu();
 
 	}
+	
+	  @EventHandler
+	  public void Drop(PlayerDropItemEvent event)
+	  {
+		  event.setCancelled(true);
+	  }
+	
+	  @EventHandler
+	  public void fome(FoodLevelChangeEvent event) {
+		  event.setCancelled(true);
+	  }
 	
 	  @EventHandler
 	  public void onEntityDamage(EntityDamageEvent event)
