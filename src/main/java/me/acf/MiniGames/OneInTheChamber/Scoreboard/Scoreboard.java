@@ -46,15 +46,11 @@ public class Scoreboard {
          if (kills >= 25){
         	 for (final Player on : UtilServer.Jogadores())
 	            {
+        		 if (on != p)
 	            	MiniGamesMananger.Vivos.remove(on);
+        		 
 			 		MiniGamesMananger.Specter.remove(on);
 	            }
-             Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
-          	   public void run() {
-	            MiniGamesMananger.Vivos.add(p);
-   	        }
-     	    }
-     	   , 5L);
          }
          Scoreboard.CriarScoreboard(p);
 	  }
