@@ -36,14 +36,14 @@ public class Scoreboard {
 		   UpdateScoreboard();
 	    }
 	 
-	 @SuppressWarnings("deprecation")
+	
 	  public static void AtualizarKill(final Player p)
 	  {
 		 String GET = Tkills.get(p);
 		 int kills = Integer.parseInt(GET)+1;
 		 Tkills.put(p, ""+kills);
 		 
-         if (kills >= 24){
+         if (kills >= 25){
         	 for (final Player on : UtilServer.Jogadores())
 	            {
 	            	MiniGamesMananger.Vivos.remove(on);
@@ -66,21 +66,10 @@ public class Scoreboard {
 				 
 				 for (Player p : Bukkit.getOnlinePlayers())
 		            {
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 15
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 14
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 13
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 12
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 11
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 10
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 9
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 8
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 7
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 6
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 5
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 4
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 3
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 2
-				 ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName());// 1
+					 String GET = Tkills.get(p);
+					 int kills = Integer.parseInt(GET);
+					 for (int i = 0; i > 15; i++)
+				    ScoreboardAPI.add(Tkills.get(p)+"§a - §6"+p.getName(),kills);
 		            }
 				 
 			 }else{
