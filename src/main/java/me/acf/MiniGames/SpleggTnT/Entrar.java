@@ -6,12 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade;
-import me.acf.MiniGames.Arcade.ArcadeType;
-import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.SpleggTnT.kits.Kit;
-import me.acf.MiniGames.Style.Utils.MGSpectator;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;
@@ -34,7 +30,7 @@ public class Entrar extends MiniPlugin {
 
 		Player jogador = event.getPlayer();
 		
-		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/OITC.php?modo=ADD-conta&nick=" + jogador.getName()));
+		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/STNT.php?modo=ADD-conta&nick=" + jogador.getName()));
 		
 		Conta.Loader(jogador);
 		

@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 import org.bukkit.entity.Player;
 import org.json.JSONObject;
-
 import me.hub.Main;
 import me.site.account.AccountWeb;
 

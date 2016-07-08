@@ -4,14 +4,12 @@
 package me.acf.MiniGames.OneInTheChamber.kits;
 
 import java.util.ArrayList;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import me.acf.MiniGames.OneInTheChamber.kits.Habilidades.FlechasDrops;
 import me.acf.MiniGames.OneInTheChamber.kits.Habilidades.MorteDaVida;
 import me.hub.Main;

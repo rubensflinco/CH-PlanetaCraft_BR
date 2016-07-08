@@ -2,30 +2,21 @@ package me.acf.MiniGames.SkyWars;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-import org.bukkit.util.Vector;
-
 import me.acf.MiniGames.SkyWars.Scoreboard.Scoreboard;
 import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.acf.MiniGames.Style.Utils.MGPremios;
 import me.acf.MiniGames.Style.Utils.MGSpectator;
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Enchant;
 import me.hub.Scoreboard.ScoreboardAPI;
 
 /**

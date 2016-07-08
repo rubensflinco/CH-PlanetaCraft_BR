@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: ProtocolLib
-Implementation-Version: 3.6.5-SNAPSHOT
-Built-By: adriancf
-Build-Jdk: 1.8.0_91
-Created-By: Maven Integration for Eclipse
-Implementation-Vendor: dmulloy2
-Main-Class: com.comphenix.protocol.Application
-

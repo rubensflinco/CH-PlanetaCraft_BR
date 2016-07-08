@@ -1,15 +1,12 @@
 package me.acf.MiniGames.SpleggTnT.Scoreboard;
 
 import java.util.HashMap;
-
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.MiniGamesMananger;
-import me.acf.MiniGames.SpleggTnT.SpleggTnT;
 import me.acf.MiniGames.SpleggTnT.kits.Kit;
 import me.hub.Main;
 import me.hub.API.Util.UtilNumber;

@@ -6,6 +6,7 @@ me\acf\lobby\gadgets\utils\MelonBomba$1.class
 me\acf\KitPvP\kitAPI\Habilidade\Unix.class
 me\acf\lobby\gadgets\ViewPlayers.class
 me\acf\lobby\gadgets\particles\ParticleRain.class
+me\acf\MiniGames\OneInTheChamber\OneInTheChamber$3.class
 me\acf\MiniGames\SkyWars\kits\Menu$1$1$1.class
 me\acf\KitPvP\PVP.class
 me\acf\lobby\gadgets\pet\PetChicken.class
@@ -21,7 +22,6 @@ me\acf\lobby\gadgets\utils\Firework$1.class
 me\acf\lobby\gadgets\utils\PlanetsBomb$1.class
 me\acf\MiniGames\SpleggTnT\SpleggTnT.class
 me\acf\lobby\gadgets\Music.class
-me\acf\MiniGames\SpleggTnT\Utils\TeleportPlayer$1.class
 me\acf\FullPvP\loja\Comprar\ComprarAPI.class
 me\acf\MiniGames\OneInTheChamber\OneInTheChamber.class
 me\acf\FullPvP\comandos\feed.class
@@ -33,6 +33,7 @@ me\acf\MiniGames\HungerGames\kits\Menu$1.class
 me\hub\loja\ShopLog\ShopSave.class
 me\acf\lobby\gadgets\Gadgets.class
 me\acf\MiniGames\OneInTheChamber\PVP$2.class
+me\acf\MiniGames\SkyWars\SkyWars$2.class
 me\acf\FullPvP\comandos\ftpano.class
 me\acf\MiniGames\Style\Utils\MGPremios.class
 me\acf\KitPvP\PVP$2.class
@@ -51,6 +52,7 @@ me\acf\MiniGames\SkyWars\kits\Menu.class
 me\acf\MiniGames\SpleggTnT\kits\Menu$1$1.class
 me\acf\lobby\gadgets\morph\Pig.class
 me\acf\lobby\gadgets\particles\ParticleEffectCapFire.class
+me\acf\MiniGames\API\TeleportPlayer.class
 me\acf\MiniGames\SpleggTnT\kits\Kit.class
 me\acf\lobby\gadgets\utils\ColorBomb$1.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\ForceField.class
@@ -91,8 +93,10 @@ me\acf\MiniGames\SkyWars\SkyWars.class
 me\acf\lobby\gadgets\montaria\HorseFire.class
 me\acf\KitPvP\kitAPI\Habilidade\Fireman.class
 me\acf\KitPvP\kitAPI\Habilidade\Wither.class
+me\acf\MiniGames\OneInTheChamber\OneInTheChamber$4.class
 me\acf\lobby\gadgets\loader\PetLoader.class
 me\acf\MiniGames\HungerGames\kits\Menu.class
+me\acf\MiniGames\SkyWars\SkyWars$3.class
 me\acf\FullPvP\API\HomeAPI.class
 me\acf\lobby\comandos\tpa.class
 me\acf\KitPvP\kitAPI\Habilidade\Poseidon.class
@@ -137,7 +141,6 @@ me\acf\KitPvP\kitAPI\Habilidade\Viper.class
 me\acf\FullPvP\loja\LojaAPI.class
 me\acf\MiniGames\SkyWars\Sair.class
 me\hub\Fechar.class
-me\acf\MiniGames\SkyWars\Utils\TeleportPlayer.class
 me\acf\lobby\gadgets\morph\Enderman.class
 me\acf\KitPvP\Conta.class
 me\hub\loja\event\InventoryShopComplete.class
@@ -219,7 +222,6 @@ me\acf\lobby\gadgets\pet\PetCow.class
 me\acf\KitPvP\kitAPI\Menu$1.class
 me\hub\publicidade\PublicidadeMananger$1.class
 me\acf\lobby\gadgets\Armadura.class
-me\acf\MiniGames\OneInTheChamber\Utils\TeleportPlayer$1.class
 me\acf\KitPvP\kitAPI\Menu$1$1.class
 me\acf\MiniGames\SpleggTnT\kits\Menu$1.class
 me\acf\lobby\gadgets\Menu$1.class
@@ -230,7 +232,6 @@ me\acf\FullPvP\End.class
 me\acf\KitPvP\kitAPI\Kit.class
 me\acf\MiniGames\eventos\GameIniciandoEvent.class
 me\acf\SkyBlock\comandos\shop.class
-me\acf\MiniGames\SpleggTnT\Utils\TeleportPlayer.class
 me\acf\FullPvP\Teleport$1.class
 me\acf\lobby\servidores\Bussola.class
 me\acf\MiniGames\SkyWars\kits\Menu$1.class
@@ -242,7 +243,6 @@ me\acf\MiniGames\SpleggTnT\Utils\EventoComandos.class
 me\hub\loja\event\InventoryShopEvent$1.class
 me\acf\FullPvP\comandos\enderchest.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\Confusion.class
-me\acf\MiniGames\SkyWars\Utils\TeleportPlayer$1.class
 me\acf\FullPvP\comandos\dropinv$1.class
 me\acf\MiniGames\HungerGames\Feast\FeastGeradorCord.class
 me\acf\KitPvP\kitAPI\Habilidade\Vitality.class
@@ -305,6 +305,7 @@ me\acf\lobby\gadgets\utils\Firework.class
 me\acf\FullPvP\FPConfig.class
 me\acf\MiniGames\SkyWars\kits\Kits.class
 me\acf\KitPvP\kitAPI\Habilidade\Laucher.class
+me\acf\MiniGames\SpleggTnT\SpleggTnT$2.class
 me\acf\MiniGames\OneInTheChamber\OneInTheChamber$1.class
 me\acf\FullPvP\comandos\home.class
 me\acf\FullPvP\comandos\Fpcoins.class
@@ -316,12 +317,10 @@ me\acf\lobby\gadgets\morph\Chicken.class
 me\acf\KitPvP\kitAPI\Habilidade\Hulk.class
 me\acf\MiniGames\SpleggTnT\PVP.class
 me\acf\FullPvP\comandos\dropinv.class
-me\acf\MiniGames\OneInTheChamber\Scoreboard\Scoreboard$1.class
 me\acf\KitPvP\JumpBlocos.class
 me\acf\MiniGames\OneInTheChamber\kits\Menu.class
 me\acf\KitPvP\kitAPI\Habilidade\Anchor$1.class
 me\acf\lobby\gadgets\loader\HorseLoader.class
-me\acf\MiniGames\OneInTheChamber\Utils\TeleportPlayer.class
 me\acf\KitPvP\Arena.class
 me\acf\MiniGames\HungerGames\kits\Menu$1$1$1.class
 me\acf\FullPvP\comandos\Kit.class
@@ -333,5 +332,6 @@ me\acf\FullPvP\API\KitAPI.class
 me\acf\KitPvP\Sair.class
 me\acf\lobby\loja\Loja.class
 me\acf\KitPvP\kitAPI\Habilidade\Snail.class
+me\acf\MiniGames\SpleggTnT\SpleggTnT$3.class
 me\acf\MiniGames\HungerGames\kits\Menu$1$1$1$1.class
 me\acf\MiniGames\SkyWars\kits\Habilidades\VidaExtra.class

@@ -5,7 +5,6 @@ package me.acf.MiniGames.OneInTheChamber.kits;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -17,7 +16,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.FormatText.Format;
 import me.hub.Main;
 import me.hub.MiniPlugin;

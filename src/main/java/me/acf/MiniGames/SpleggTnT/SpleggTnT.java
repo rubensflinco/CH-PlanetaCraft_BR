@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Egg;
@@ -23,13 +22,12 @@ import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.GameEvents;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.Arcade.ArcadeType;
+import me.acf.MiniGames.API.TeleportPlayer;
 import me.acf.MiniGames.SpleggTnT.Scoreboard.Scoreboard;
-import me.acf.MiniGames.SpleggTnT.Utils.TeleportPlayer;
 import me.acf.MiniGames.SpleggTnT.kits.Kit;
 import me.acf.MiniGames.SpleggTnT.kits.Kits;
 import me.acf.MiniGames.SpleggTnT.kits.Menu;
@@ -78,7 +76,7 @@ public class SpleggTnT extends MiniPlugin {
 	
 	  @EventHandler
 	  public void Dano(EntityDamageEvent event) {
-		  if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
+		  if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
 		    if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID))
 		    {
 			      Player p = (Player)event.getEntity();
@@ -155,13 +153,19 @@ public class SpleggTnT extends MiniPlugin {
         return;
       }
       
-      for (Player player : Bukkit.getOnlinePlayers()) {
+      for (final Player player : Bukkit.getOnlinePlayers()) {
       if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){
       if (player.getWorld().getName().contains(Main.plugin.getConfig().getString("MapaDeJogo"))){
     	  
       }else{
     	  player.sendMessage("§4ERRO §cUm jogador está fora do mapa original !");
     	  TeleportPlayer.VoltarNaIlha(player);
+    	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+    		  public void run() {
+    		  EscolherMapa.remove(player);
+    		  } 
+    		  }
+    		  , 1L);
       }}}
     }
 	
@@ -241,7 +245,13 @@ public class SpleggTnT extends MiniPlugin {
 			            }
 					
 			           if (!MiniGamesMananger.Specter.contains(p)) {
-				      TeleportPlayer.JogadorTeleporteRegiao(p);
+				      TeleportPlayer.JogadorTeleporteRegiao();
+				      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+				    	  public void run() {
+				    	  EscolherMapa.remove(p);
+				    	  } 
+				    	  }
+				    	  , 1L);
 
 					p.setGameMode(GameMode.SURVIVAL);
 					p.getInventory().clear();

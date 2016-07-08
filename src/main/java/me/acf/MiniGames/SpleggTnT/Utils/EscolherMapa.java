@@ -7,18 +7,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Server;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import me.acf.MiniGames.OneInTheChamber.OneInTheChamber;
 import me.acf.MiniGames.SpleggTnT.SpleggTnT;
 import me.hub.Main;
 import me.hub.MiniPlugin;
@@ -111,13 +107,13 @@ metav.setDisplayName("§f");
             }
 		    Location l = new Location(Bukkit.getServer().getWorld(Main.plugin.getConfig().getString(""+source.getName()+".Nome")), Main.plugin.getConfig().getInt("Espectador."+source.getName()+".X"), Main.plugin.getConfig().getInt("Espectador."+source.getName()+".Y"), Main.plugin.getConfig().getInt("Espectador."+source.getName()+".Z"));
 		    p.teleport(l);
-			 if (!OneInTheChamber.EscolherMapa.contains(p)) {
+			 if (!SpleggTnT.EscolherMapa.contains(p)) {
 			 p.setGameMode(GameMode.SPECTATOR);
 		     p.setMaxHealth(20);
 		     p.setHealth(20);
 		     p.playSound(p.getLocation(), Sound.LEVEL_UP, 10.0F, 1.0F); 
-			 OneInTheChamber.EscolherMapa.remove(p);
-			 OneInTheChamber.EscolherMapa.add(p);
+		     SpleggTnT.EscolherMapa.remove(p);
+		     SpleggTnT.EscolherMapa.add(p);
 		      }
 		    
 	     	String GET1 = SpleggTnT.VotosMapa.get(mapa);

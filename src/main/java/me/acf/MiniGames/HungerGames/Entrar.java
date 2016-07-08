@@ -10,10 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.MiniGames.Arcade;
-import me.acf.MiniGames.Arcade.ArcadeType;
-import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.HungerGames.kits.Kit;
-import me.acf.MiniGames.Style.Utils.MGSpectator;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;

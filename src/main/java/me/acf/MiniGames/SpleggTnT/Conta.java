@@ -4,10 +4,8 @@
 package me.acf.MiniGames.SpleggTnT;
 
 import java.util.HashMap;
-
 import org.bukkit.entity.Player;
 import org.json.JSONObject;
-
 import me.hub.Main;
 import me.site.account.AccountWeb;
 
@@ -27,7 +25,7 @@ public class Conta {
 	public static void Loader(Player p)
 	{
 		try {
-	 	JSONObject json = new JSONObject(AccountWeb.Conectar(Main.site + "/API/MG/SW.php?modo=VER-conta&nick=" + p.getName()));
+	 	JSONObject json = new JSONObject(AccountWeb.Conectar(Main.site + "/API/MG/STNT.php?modo=VER-conta&nick=" + p.getName()));
 	    matou.put(p, json.getString("matou"));	
 	    morreu.put(p, json.getString("morreu"));
 	    ks.put(p, json.getString("ks"));
@@ -40,7 +38,7 @@ public class Conta {
 	
 	public static void Loader(String p)
 	{
-	 	JSONObject json = new JSONObject(AccountWeb.Conectar(Main.site + "/API/MG/SW.php?modo=VER-conta&nick=" + p));
+	 	JSONObject json = new JSONObject(AccountWeb.Conectar(Main.site + "/API/MG/STNT.php?modo=VER-conta&nick=" + p));
 	    matouo.put(p, json.getString("matou"));	
 	    morreuo.put(p, json.getString("morreu"));
 	    kso.put(p, json.getString("ks"));
@@ -61,10 +59,10 @@ public class Conta {
 	}
 	public static void AddMatou(Player p)
 	{
-		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/SW.php?modo=ADD-matou&nick=" + p.getName()));
+		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/STNT.php?modo=ADD-matou&nick=" + p.getName()));
 	}
 	public static void AddMorreu(Player p)
 	{
-		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/SW.php?modo=ADD-morreu&nick=" + p.getName()));
+		System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/STNT.php?modo=ADD-morreu&nick=" + p.getName()));
 	}
 }

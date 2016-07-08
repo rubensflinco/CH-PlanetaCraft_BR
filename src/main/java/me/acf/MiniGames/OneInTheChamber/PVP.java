@@ -2,8 +2,6 @@ package me.acf.MiniGames.OneInTheChamber;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -11,26 +9,18 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-import org.bukkit.util.Vector;
-
 import me.acf.MiniGames.MiniGamesMananger;
+import me.acf.MiniGames.API.TeleportPlayer;
 import me.acf.MiniGames.OneInTheChamber.Scoreboard.Scoreboard;
-import me.acf.MiniGames.OneInTheChamber.OneInTheChamber;
-import me.acf.MiniGames.OneInTheChamber.Utils.TeleportPlayer;
 import me.acf.MiniGames.OneInTheChamber.kits.Kit;
 import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Enchant;
-import me.hub.API.Util.UtilInv;
 import me.hub.Scoreboard.ScoreboardAPI;
 
 /**
