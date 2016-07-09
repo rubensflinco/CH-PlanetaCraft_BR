@@ -4,16 +4,21 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.GameEvents;
 import me.acf.MiniGames.MiniGamesMananger;
@@ -58,8 +63,38 @@ public class SkyWars extends MiniPlugin {
 	    Kit Kit = new Kit(plugin);
 		Kits Kits = new Kits();
 		Menu Menu = new Menu();
+		
+	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
+	   	  for (Entity ov : entities){
+	   	  if (ov.getType() == EntityType.ENDERMITE)
+	   			  ov.remove();
+	         }
+		  	  
+			MiniGamesMananger.PlanetsWEB(EntityType.ENDERMITE, "§fTecnologia §7§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),204,19,985));
 	}
 	
+    @EventHandler
+    public void onSpawn(CreatureSpawnEvent event) {
+    	 if ((Arcade.estilo.equals(ArcadeType.INVENCIVEL)) || (Arcade.estilo.equals(ArcadeType.JOGANDO))){  
+			  event.setCancelled(true);
+    	 }
+    }
+	
+	
+	  @EventHandler
+	  public void Dano(EntityDamageEvent event) {
+		  if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
+		    if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID))
+		    {
+			      final Player p = (Player)event.getEntity();
+			      event.setCancelled(true);
+			      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
+			      p.damage(20);
+				  }}, 6L);
+		    }
+			  event.setCancelled(true);
+		  }
+	  }
 	
     @EventHandler
     public void ScoreBoard(Atualizar event)  {
@@ -104,20 +139,6 @@ public class SkyWars extends MiniPlugin {
 				if (MiniGamesMananger.jogadores.get(p).style.equals(Style.VIVO))
 				{
 					final File backupDir = new File("mapas");
-					for (File source : backupDir.listFiles())
-					 if (source.isDirectory()) {
-						 if (source.getName().contains("world")){
-						 }else{
-								String GET = SkyWars.VotosMapa.get(source.getName());
-								if (GET == null){
-						        Main.plugin.getConfig().set(""+source.getName()+".Votos", Integer.valueOf(0));
-						        Main.plugin.saveConfig();
-								}else{
-								Main.plugin.getConfig().set(""+source.getName()+".Votos", Integer.valueOf(GET));
-								Main.plugin.saveConfig();
-								}
-						 }}
-					
 					int line = 0;
 					for (final File source : backupDir.listFiles())
 					 if (source.isDirectory()) {
@@ -169,9 +190,9 @@ public class SkyWars extends MiniPlugin {
 			            }
 					
 			           if (!MiniGamesMananger.Specter.contains(p)) {
-				      TeleportPlayer.JogadorTeleporteRegiao();
 			    	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
 			    		  public void run() {
+			    		  TeleportPlayer.JogadorTeleporteRegiao();
 			    		  EscolherMapa.remove(p);
 			    		  } 
 			    		  }

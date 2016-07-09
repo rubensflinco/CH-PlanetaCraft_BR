@@ -1,15 +1,20 @@
 package me.acf.MiniGames.HungerGames;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.MiniGames.Arcade;
+import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.HungerGames.kits.Kit;
 import me.hub.Main;
 import me.hub.MiniPlugin;
@@ -44,6 +49,14 @@ public class Entrar extends MiniPlugin {
 		
 		if (primeiro == 0){
 		primeiro = primeiro + 1;
+		
+	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
+	   	  for (Entity ov : entities){
+	   	  if (ov.getType() == EntityType.ENDERMITE)
+	   			  ov.remove();
+	         }
+		  	  
+			MiniGamesMananger.PlanetsWEB(EntityType.ENDERMITE, "§fTecnologia §7§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),12,206,14));
 		
 	         System.out.print("Iniciando GG");
 	       HungerGames.arc.world.setSpawnLocation(0, 200, 0);

@@ -4,6 +4,7 @@
 package me.acf.KitPvP;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -11,6 +12,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.BlockState;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -56,7 +59,7 @@ public class Entrar extends MiniPlugin {
 	@EventHandler
 	public void Entrar(final PlayerJoinEvent event)
 	{
-		
+
 		event.setJoinMessage(null);
 		
 		Chat.ActionBar(event.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO KITPVP DO PLANETACRAFT_BR");

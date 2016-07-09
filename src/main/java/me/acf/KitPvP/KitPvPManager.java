@@ -13,6 +13,7 @@ import me.acf.KitPvP.kitAPI.Kit;
 import me.acf.KitPvP.kitAPI.Kits;
 import me.acf.KitPvP.kitAPI.Menu;
 import me.acf.KitPvP.scoreboard.Scoreboard;
+import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.lobby.Lag.TPS;
 import me.acf.lobby.extend.MobSpawn;
 import me.hub.Main;
@@ -47,6 +48,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Sign;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.entity.Endermite;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -91,7 +93,6 @@ public class KitPvPManager extends MiniPlugin{
 	 */
 	
     public static NPCRegistry registry = CitizensAPI.getNPCRegistry();
-    public static List<Entity> ovelha = new ArrayList<>();
    
 	public KitPvPManager(JavaPlugin plugin) {
 		super("Kit-PvP", plugin);
@@ -107,7 +108,15 @@ public class KitPvPManager extends MiniPlugin{
 		JumpBlocos jump = new JumpBlocos(plugin);
 	    new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");
 		 me.security.SecurityManager security = new me.security.SecurityManager(Main.plugin);
-		SpawnOvelha(EntityType.SHEEP, "§7Tecnologia §8§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),-130,57,636));
+		 
+	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
+	   	  for (Entity ov : entities){
+	   	  if (ov.getType() == EntityType.ENDERMITE)
+	   			  ov.remove();
+	         }
+		  	  
+			MiniGamesMananger.PlanetsWEB(EntityType.ENDERMITE, "§fTecnologia §7§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),-1304,57,636));
+		
 	}
 
 	public void Disable()
@@ -120,15 +129,12 @@ public class KitPvPManager extends MiniPlugin{
      p.sendBlockChange(new Location(p.getWorld(), -1300, 58, 639), Material.DIAMOND_BLOCK, (byte) 0);
     }
 	
-	public void SpawnOvelha(EntityType e, String nome, Location loc)
+	public static void SpawnOvelha(EntityType e, String nome, Location loc)
 	{
-        Sheep ovelhas = (Sheep) loc.getWorld().spawnEntity(loc, e);
-        ovelhas.setCustomName(nome);
-        ovelhas.setCustomNameVisible(true);
-        ovelhas.setAgeLock(true);
-        MobSpawn.noAI(ovelhas);
-		
-		ovelha.add(ovelhas);
+		Endermite Endermite = (Endermite) loc.getWorld().spawnEntity(loc, e);
+		Endermite.setCustomName(nome);
+		Endermite.setCustomNameVisible(true);
+        MobSpawn.noAI(Endermite);
 	}
 
 	   
@@ -276,11 +282,6 @@ public class KitPvPManager extends MiniPlugin{
 	   
 	   @EventHandler(priority=EventPriority.HIGH)
 	   public void SemDano(EntityDamageEvent event) {
-		   if (ovelha.contains(event.getEntity()))
-		   {
-			   event.setCancelled(true);
-			   return;
-		   }
 	     if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
 	       event.setCancelled(true);
 

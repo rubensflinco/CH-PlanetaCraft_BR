@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\CLIENTE\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5344919782565251521.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\CLIENTE\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5881656533879602397.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_74\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files (x86)/Java/jre1.8.0_77/bin/client;C:/Program Files (x86)/Java/jre1.8.0_77/bin;C:/Program Files (x86)/Java/jre1.8.0_77/lib/i386;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;%localappdata%\Microsoft\WindowsApps;C:\Users\CLIENTE\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,6 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.comphenix.protocol.PacketTypeTest" name="ensureAllExist" time="0"/>
   <testcase classname="com.comphenix.protocol.PacketTypeTest" name="testFindCurrent" time="0"/>
+  <testcase classname="com.comphenix.protocol.PacketTypeTest" name="ensureAllExist" time="0"/>
 </testsuite>

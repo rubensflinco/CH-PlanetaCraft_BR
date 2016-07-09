@@ -8,6 +8,7 @@ me\acf\lobby\gadgets\ViewPlayers.class
 me\acf\lobby\gadgets\particles\ParticleRain.class
 me\acf\MiniGames\OneInTheChamber\OneInTheChamber$3.class
 me\acf\MiniGames\SkyWars\kits\Menu$1$1$1.class
+me\acf\MiniGames\SpleggTnT\SpleggTnT$4.class
 me\acf\KitPvP\PVP.class
 me\acf\lobby\gadgets\pet\PetChicken.class
 me\acf\KitPvP\CombatLog.class
@@ -231,6 +232,7 @@ me\acf\MiniGames\OneInTheChamber\kits\Menu$1.class
 me\acf\FullPvP\End.class
 me\acf\KitPvP\kitAPI\Kit.class
 me\acf\MiniGames\eventos\GameIniciandoEvent.class
+me\acf\MiniGames\SkyWars\SkyWars$4.class
 me\acf\SkyBlock\comandos\shop.class
 me\acf\FullPvP\Teleport$1.class
 me\acf\lobby\servidores\Bussola.class

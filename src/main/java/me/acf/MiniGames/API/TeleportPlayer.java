@@ -15,6 +15,7 @@ public class TeleportPlayer {
 
 	public static HashMap<Player, String> TP = new HashMap();
 	
+	
 
 	   public static void Teleportar(final Player jogador, final int numero) {
 		      Location loc = jogador.getLocation();
@@ -34,10 +35,10 @@ public class TeleportPlayer {
 					 if (source.getName().contains("world")){
 					 }else{
 				           if (Main.plugin.getConfig().get("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".X") == null){
-				        	   Location l = new Location(Bukkit.getServer().getWorld(Main.plugin.getConfig().getString(""+Main.plugin.getConfig().getString("MapaDeJogo")+".Nome")), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.X"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.Y"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.Z"));
+				        	   Location l = new Location(Bukkit.getServer().getWorld(""+Main.plugin.getConfig().getString("MapaDeJogo")), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.X"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.Y"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador1.Z"));
 				        	   jogador.teleport(l);
 				           }else{
-			        	   Location l = new Location(Bukkit.getServer().getWorld(Main.plugin.getConfig().getString(""+Main.plugin.getConfig().getString("MapaDeJogo")+".Nome")), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".X"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".Y"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".Z"));
+			        	   Location l = new Location(Bukkit.getServer().getWorld(""+Main.plugin.getConfig().getString("MapaDeJogo")), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".X"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".Y"), Main.plugin.getConfig().getInt("Spawn."+Main.plugin.getConfig().getString("MapaDeJogo")+".Jogador" + numero + ".Z"));
 			        	   jogador.teleport(l);
 				           }}}
 	   }
@@ -61,7 +62,7 @@ public class TeleportPlayer {
 	public static void JogadorTeleporteRandoOITC(Player p)
 	{
 		Random r = new Random();
-        int RandoTP = 1 + r.nextInt(Bukkit.getMaxPlayers());
+        int RandoTP = 1 + r.nextInt(Bukkit.getOnlinePlayers().size());
 		  int numero = 0;
 		   for (Player player : Bukkit.getOnlinePlayers()) {
 			 numero = numero+1;

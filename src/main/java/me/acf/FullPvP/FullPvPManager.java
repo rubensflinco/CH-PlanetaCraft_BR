@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -37,6 +38,7 @@ import me.acf.FullPvP.VIP.AreaVIP;
 import me.acf.FullPvP.comandos.dropinv;
 import me.acf.FullPvP.loja.LojaManager;
 import me.acf.FullPvP.scoreboard.Scoreboard;
+import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.lobby.Lag.TPS;
 import me.acf.lobby.patentes.Patente;
 import me.antiHack.autoclick.Click;
@@ -84,6 +86,14 @@ public class FullPvPManager extends MiniPlugin {
 		new CriadorComandos().Ler_Comandos(Main.plugin, "me.acf.FullPvP.comandos");
 	    new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");
 		 me.security.SecurityManager security = new me.security.SecurityManager(Main.plugin);
+		 
+	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
+	   	  for (Entity ov : entities){
+	   	  if (ov.getType() == EntityType.ENDERMITE)
+	   			  ov.remove();
+	         }
+		  	  
+			MiniGamesMananger.PlanetsWEB(EntityType.ENDERMITE, "§fTecnologia §7§lPlanets§1§lWEB", new Location(Bukkit.getWorld("world"),-4,104,-12));
 	}
 	
 

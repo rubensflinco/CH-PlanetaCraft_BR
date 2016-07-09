@@ -116,7 +116,7 @@ public class PVP extends MiniPlugin {
 	    		   clearEffects(p); 
 	    	   }
 	       }
-	     }, 200L);
+	     }, 100L);
 	 }
 
 

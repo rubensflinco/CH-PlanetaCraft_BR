@@ -16,6 +16,7 @@ import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.Endermite;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -36,6 +37,7 @@ import me.acf.MiniGames.eventos.GameInvencivelEvent;
 import me.acf.MiniGames.eventos.GameJogandoEvent;
 import me.acf.MiniGames.team.TeamData;
 import me.acf.MiniGames.tipos.Lobby;
+import me.acf.lobby.extend.MobSpawn;
 import me.acf.servidor.Servidor;
 import me.hub.Main;
 import me.hub.MiniPlugin;
@@ -102,6 +104,14 @@ public class MiniGamesMananger extends MiniPlugin {
 		UtilBlockText.MakeText(Main.plugin.getConfig().getString("Carregar"), Status.clone().add(0,0,0), faceComp, 159, (byte)14, UtilBlockText.TextAlign.CENTRO, true, false);
 		UtilBlockText.MakeText(Main.plugin.getConfig().getString("Carregar"), Status.clone().add(0,0,-1), faceComp, 159, (byte)15, UtilBlockText.TextAlign.CENTRO, true, false);
 	    
+	}
+	
+	public static void PlanetsWEB(EntityType e, String nome, Location loc)
+	{
+		Endermite Endermite = (Endermite) loc.getWorld().spawnEntity(loc, e);
+		Endermite.setCustomName(nome);
+		Endermite.setCustomNameVisible(true);
+        MobSpawn.noAI(Endermite);
 	}
 
 	@EventHandler

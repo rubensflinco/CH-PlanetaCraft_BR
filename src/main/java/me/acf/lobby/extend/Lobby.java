@@ -95,7 +95,7 @@ public class Lobby extends MiniPlugin{
 			UtilNPC.SpawnEntity("§a§oSkyWars","§eCarregando...", "§a§oSkyWars","doodoo123987", new Location(Bukkit.getWorld("world"),-53.50,164.50,-70.50, 0,0));
 			UtilNPC.SpawnEntity("§a§oHungerGames","§eCarregando...", "§a§oHungerGames","HellCatcher", new Location(Bukkit.getWorld("world"),-55.50,164.50,-71.50, 0,0));
 			UtilNPC.SpawnEntity("§a§oOneInTheChamber","§eCarregando...", "§a§oOneInTheChamber","Twilizer5953", new Location(Bukkit.getWorld("world"),-57.50,164.50,-71.50, 0,0));
-			UtilNPC.SpawnEntity("§c§lEM BREVE 1","§eCarregando...", "§c§lEM BREVE","Project22", new Location(Bukkit.getWorld("world"),-59.50,164.50,-71.50, 0,0));
+			UtilNPC.SpawnEntity("§a§oSpleggTnT","§eCarregando...", "§a§oSpleggTnT","Jotinha_BR", new Location(Bukkit.getWorld("world"),-59.50,164.50,-71.50, 0,0));
 			UtilNPC.SpawnEntity("§c§lEM BREVE 2","§eCarregando...", "§c§lEM BREVE","BrinePlay", new Location(Bukkit.getWorld("world"),-61.50,164.50,-71.50, 0,0));
 			UtilNPC.SpawnEntity("§c§lEM BREVE 3","§eCarregando...", "§c§lEM BREVE","BiancaGamer_HD", new Location(Bukkit.getWorld("world"),-63.50,164.50,-70.50, 0,0));
 			UtilNPC.SpawnEntity("§c§lEM BREVE 4","§eCarregando...", "§c§lEM BREVE","_Unix52", new Location(Bukkit.getWorld("world"),-65.50,164.50,-69.50, 0,0));

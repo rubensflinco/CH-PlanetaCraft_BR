@@ -21,7 +21,7 @@ public class MorteDaVida extends MiniPlugin{
 	}
 	
 	
-	  private float heal = 10.0F;
+	  private float heal = 20.0F;
 	  private float feed = 20.0F;
 
 	@EventHandler
@@ -33,7 +33,10 @@ public class MorteDaVida extends MiniPlugin{
 	      Player k = p.getKiller();
 		  if (Kit.verkit(k).contains("MorteDaVida"))
 		    {
+			  if (k.getHealth() == feed){
+			  }else{
 	        	  k.setHealth(k.getHealth() + this.heal);
+			  }
 		    }
 	    }
 	 }
