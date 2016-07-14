@@ -19,9 +19,7 @@ public class Conta {
 	public static HashMap<Player, String> matou = new HashMap<>();
 	public static HashMap<Player, String> morreu = new HashMap<>();
 	public static HashMap<Player, String> ks = new HashMap<>();
-	public static HashMap<String, String> matouo = new HashMap<>();
-	public static HashMap<String, String> morreuo = new HashMap<>();
-	public static HashMap<String, String> kso = new HashMap<>();
+	public static HashMap<Player, String> kits = new HashMap<>();
 	
 	public static void Loader(Player p)
 	{
@@ -30,6 +28,7 @@ public class Conta {
 	    matou.put(p, json.getString("matou"));	
 	    morreu.put(p, json.getString("morreu"));
 	    ks.put(p, json.getString("ks"));
+	    kits.put(p, json.getString("kits"));
 		}
 		  catch (Exception ex)
 		  {
@@ -37,21 +36,12 @@ public class Conta {
 		  }
 	}
 	
-	public static void Loader(String p)
-	{
-	 	JSONObject json = new JSONObject(AccountWeb.Conectar(Main.site + "/API/MG/HG.php?modo=VER-conta&nick=" + p));
-	    matouo.put(p, json.getString("matou"));	
-	    morreuo.put(p, json.getString("morreu"));
-	    kso.put(p, json.getString("ks"));
-	   
-	}
-	
 	public static void Remove(Player p)
 	{
 		matou.remove(p);
 		morreu.remove(p);
 		ks.remove(p);
-
+		kits.remove(p);
 	}
 	public static void Reload(Player p)
 	{

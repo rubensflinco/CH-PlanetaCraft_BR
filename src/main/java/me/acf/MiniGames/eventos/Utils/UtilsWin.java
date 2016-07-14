@@ -60,6 +60,7 @@ public class UtilsWin {
 	public static void Vitoria(Player jogador)
 	{
 		
+		
 		String msg;
 		
 	  if (jogador == null)
@@ -72,11 +73,12 @@ public class UtilsWin {
 		  msg = " " + jogador.getName();
 		  
 	  }
+		if (wim == "Ninguem"){
 	  MGPremios.Givar(jogador, true);
 	  
 	  Bukkit.broadcastMessage(" ");
 	  Bukkit.broadcastMessage("                   §f§lVENCEDOR DESTA PARTIDA ");
-	  Bukkit.broadcastMessage("                          §e§l " + jogador.getName().toUpperCase());
+	  Bukkit.broadcastMessage("                          §e§l " + msg.toUpperCase());
 	  Bukkit.broadcastMessage(" ");
 	  for (Player player : UtilServer.Jogadores()) {
 	  player.playSound(player.getLocation(), Sound.LEVEL_UP, 2f, 1f);
@@ -109,7 +111,7 @@ public class UtilsWin {
 			e.printStackTrace();
 		} 
       }
-	  
+		}
 	  
 		UtilTitle titulo = new UtilTitle("§f"+msg.toUpperCase()+"§5 Ganhou!","§7§lReiniciando...",4,9,4);
 		titulo.broadcast();

@@ -17,7 +17,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import me.acf.FormatText.Format;
+import me.acf.MiniGames.HungerGames.Conta;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.Scoreboard.ScoreboardAPI;
@@ -161,8 +163,14 @@ public class Kit extends MiniPlugin {
 	    	    		 if (Name.contains("§c[Pago-Planets]")){
 		    	    	       e.setCancelled(true);
 		    	    	       p.closeInventory();
+					  		if (!Conta.kits.get(p).contains(NomeKIT)){
 		    	    	       p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
-		    	    	       p.sendMessage("§cEM BREVE VAMOS TER ESSE KIT PRA VENDER!");
+		    	    	       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cVocê não tem esse kit você tenque comprar ele na LOJA !");
+					  		}else{
+	    					   p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
+	    		    	       Kit.AddKit(p, NomeKIT);
+	    		    	        p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+					  		}
 	    	    		 }else
 	    	    		 if (Name.contains("§6[Vip]")){
 	    					   if ((Account.getRank(p)).Has(p, Rank.VIP, true))

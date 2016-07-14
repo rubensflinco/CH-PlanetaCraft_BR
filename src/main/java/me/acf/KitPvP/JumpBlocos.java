@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
+import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilParticles;
@@ -32,6 +33,7 @@ public class JumpBlocos
   public void CkJumpBlocosAPI(PlayerMoveEvent e)
   {
     Player p = e.getPlayer();
+    if (!Kit.verkit(p).contains("Nenhum")){
       if ((e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SLIME_BLOCK) && (e.getTo().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN).getType() == Material.BEDROCK))
       {
         jump.remove(p.getName());
@@ -58,6 +60,7 @@ public class JumpBlocos
         p.getWorld().playEffect(p.getLocation(), Effect.ENDER_SIGNAL, 5);
   
       }
+    }
   }
   
   @EventHandler

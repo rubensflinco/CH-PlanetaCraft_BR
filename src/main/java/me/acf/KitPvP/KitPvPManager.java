@@ -21,12 +21,12 @@ import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
-import me.hub.Admin.Admin;
 import me.hub.Bungee.Bungee;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.blood.Blood;
 import me.hub.comandos.CriadorComandos;
+import me.hub.comandos.geral.Admin;
 import me.hub.comandos.geral.head;
 import me.hub.config.Config;
 import me.hub.recharge.Recharge;
@@ -344,7 +344,7 @@ public class KitPvPManager extends MiniPlugin{
       Bukkit.getWorld("world").setThundering(false);
       Bukkit.getWorld("world").setWeatherDuration(0);
       Bukkit.getWorld("world").setStorm(false);
-      Admin.SumirStaff();
+      me.hub.Admin.Admin.SumirStaff();
     
 	  for (Player p : UtilServer.Jogadores())
 	  {
@@ -353,7 +353,11 @@ public class KitPvPManager extends MiniPlugin{
 		  if (Kit.verkit(p).contains("Nenhum")){
 			  all.hidePlayer(p);
 		  }else{
+			  if (Admin.admin.contains(p)){
+				  all.hidePlayer(p);
+			  }else{
 			  all.showPlayer(p);
+			  }
 		  }
 		  }
 		  

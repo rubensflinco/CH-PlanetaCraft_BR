@@ -57,9 +57,8 @@ public class Entrar extends MiniPlugin {
 	public int evento = 100;
 	
 	@EventHandler
-	public void Entrar(final PlayerJoinEvent event)
+	public void Entrar(PlayerJoinEvent event)
 	{
-
 		event.setJoinMessage(null);
 		
 		Chat.ActionBar(event.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO KITPVP DO PLANETACRAFT_BR");
@@ -81,11 +80,6 @@ public class Entrar extends MiniPlugin {
 	     Scoreboard.CriarScoreboard(event.getPlayer());
 	     System.out.print(AccountWeb.Conectar(Main.site + "/API/MG/KP.php?modo=ADD-conta&nick=" + event.getPlayer().getName()));
 	     Conta.Loader(event.getPlayer());
-	     
-		 for (Player all : UtilServer.Jogadores())
-		 {
-			 all.hidePlayer(event.getPlayer());
-		 }
 		 
 	  	 Entrar.Give(event.getPlayer());
 		

@@ -92,7 +92,6 @@ public class SkyWars extends MiniPlugin {
 			      p.damage(20);
 				  }}, 6L);
 		    }
-			  event.setCancelled(true);
 		  }
 	  }
 	
