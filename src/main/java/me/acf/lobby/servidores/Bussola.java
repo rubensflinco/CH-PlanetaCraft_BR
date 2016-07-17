@@ -13,6 +13,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 public class Bussola extends MiniPlugin{
@@ -40,7 +42,7 @@ public class Bussola extends MiniPlugin{
 	          }
 	      jogador.sendMessage("§9§lINFO §fClique em um §7NPC §fcom o nome do jogo que você desejá jogar !");
 	      jogador.teleport(new Location(Bukkit.getWorld("world"), -46,164,-61, 90,0));
-	      jogador.playSound(new Location(Bukkit.getWorld("world"), -46,164,-61), Sound.LEVEL_UP, 10.0F, 1.0F);
+	      UtilSound.playSound(new Location(Bukkit.getWorld("world"), -46,164,-61), Sounds.LEVEL_UP, 10.0F, 1.0F);
 	      e.setCancelled(true);
 	    }
 	}

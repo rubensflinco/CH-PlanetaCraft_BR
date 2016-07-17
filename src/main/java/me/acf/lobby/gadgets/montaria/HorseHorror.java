@@ -9,7 +9,7 @@ import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftLivingEntity;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Bat;
 import org.bukkit.entity.EntityType;
@@ -29,7 +29,9 @@ import me.acf.lobby.gadgets.loader.HorseLoader;
 import me.hub.Main;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilParticles;
-import net.minecraft.server.v1_8_R3.GenericAttributes;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
+import net.minecraft.server.v1_10_R1.GenericAttributes;
 
 public class HorseHorror
   extends HorseLoader
@@ -120,7 +122,7 @@ public class HorseHorror
       }
 
       Paint(p.getLocation(),173,(byte) 0);
-        p.getWorld().playSound(p.getVehicle().getLocation(), Sound.HORSE_SKELETON_IDLE, 1.5F, 1.2F);
+      UtilSound.playSound(p.getVehicle().getLocation(), Sounds.HORSE_SKELETON_IDLE, 1.5F, 1.2F);
         UtilParticles.display(Particles.FLAME, 0.4f, 0.2f, 0.4f, p.getVehicle().getLocation().clone().add(0, -1, 0), 5);
         UtilParticles.display(Particles.CRIT, 0.4f, 0.2f, 0.4f, p.getVehicle().getLocation().clone().add(0, -1, 0), 5);
         UtilParticles.display(Particles.SMOKE_LARGE, 0.4f, 0.2f, 0.4f, p.getVehicle().getLocation().clone().add(0, 1, 0), 5);

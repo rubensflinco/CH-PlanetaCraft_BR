@@ -26,6 +26,8 @@ import me.hub.API.Util.BarAPI;
 import me.hub.API.Util.UtilEnchant;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilNPC;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ClickEvent.Action;
@@ -62,7 +64,7 @@ public class Entrar implements Listener {
 	    e.getPlayer().sendMessage("      §f§lSEJA BEM-VINDO; §7§l" + e.getPlayer().getName());
 	    e.getPlayer().sendMessage("                 §f§lAO LOBBY §a§l 1");
 	    e.getPlayer().sendMessage(" ");
-	    e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.NOTE_PLING, 1, 0);
+	    UtilSound.playSound(e.getPlayer().getLocation(), Sounds.NOTE_PLING, 1, 0);
 	    String text = ChatColor.translateAlternateColorCodes('&', "&aVeja nosso site do servidor &7Click!");
 	    
 	    BaseComponent[] converted = TextComponent.fromLegacyText(text);

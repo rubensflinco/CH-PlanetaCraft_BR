@@ -11,18 +11,20 @@ import me.hub.Main;
 import me.hub.API.Util.UtilBlock;
 import me.hub.API.Util.UtilMath;
 import me.hub.API.Util.UtilPlayer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
-import net.minecraft.server.v1_8_R3.EntityItem;
+import net.minecraft.server.v1_10_R1.EntityItem;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
@@ -86,7 +88,7 @@ private ArrayList playert = new ArrayList<Player>();
     setMetadata(item, "colorbomb", player.getName(), Main.plugin);
     item.setVelocity(player.getLocation().getDirection().add(new Vector(0.0D, 0.1313123444543524D, 0.0D)));
     playert.add(event.getPlayer());
-    player.getWorld().playSound(player.getLocation(), Sound.CHICKEN_EGG_POP, 1.5F, 1.2F);
+    UtilSound.playSound(player.getLocation(), Sounds.CHICKEN_EGG_POP, 1.5F, 1.2F);
     Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable()
     {
       public void run()
@@ -138,7 +140,7 @@ private ArrayList playert = new ArrayList<Player>();
               (i.getWorld().getBlockAt(i.getLocation().add(0.0D, -0.20000000298023224D, 0.0D)).getType() != Material.AIR) && (i.getWorld().getBlockAt(i.getLocation().add(0.0D, -0.20000000298023224D, 0.0D)).getType() != Material.STATIONARY_WATER) && (i.getWorld().getBlockAt(i.getLocation().add(0.0D, -0.20000000298023224D, 0.0D)).getType() != Material.WATER)))
             {
               Random random = new Random();
-              i.getWorld().playSound(i.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+              UtilSound.playSound(i.getLocation(), Sounds.CHICKEN_EGG_POP, 1.0F, 1.0F);
               i.getWorld().playEffect(i.getLocation(), Effect.FIREWORKS_SPARK, 103);
               i.getWorld().playEffect(i.getLocation(), Effect.WITCH_MAGIC, 103);
               i.getWorld().playEffect(i.getLocation(), Effect.FLAME, 103);

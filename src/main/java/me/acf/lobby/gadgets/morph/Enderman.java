@@ -28,6 +28,8 @@ import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.acf.lobby.gadgets.loader.MorphLoader;
 import me.hub.API.Util.UtilBlock;
 import me.hub.API.Util.UtilFirework;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 
@@ -108,7 +110,7 @@ public void teleport(PlayerInteractEvent event)
 		try 
 		{
 			UtilFirework.playFirework(player.getEyeLocation(), effect);
-			player.getWorld().playSound(player.getLocation(), Sound.ZOMBIE_UNFECT, 2f, 2f);
+			UtilSound.playSound(player.getLocation(), Sounds.ZOMBIE_UNFECT, 2f, 2f);
 		} 
 		catch (Exception e) 
 		{
@@ -121,7 +123,7 @@ public void teleport(PlayerInteractEvent event)
 		try 
 		{
 			UtilFirework.playFirework(player.getEyeLocation(), effect);
-			player.getWorld().playSound(player.getLocation(), Sound.ZOMBIE_UNFECT, 2f, 2f);
+			UtilSound.playSound(player.getLocation(), Sounds.ZOMBIE_UNFECT, 2f, 2f);
 		} 
 		catch (Exception e) 
 		{

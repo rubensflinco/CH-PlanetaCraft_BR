@@ -82,14 +82,14 @@ public class SkyWars extends MiniPlugin {
 	
 	
 	  @EventHandler
-	  public void Dano(EntityDamageEvent event) {
+	  public void Dano(final EntityDamageEvent event) {
 		  if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
 		    if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID))
 		    {
 			      final Player p = (Player)event.getEntity();
-			      event.setCancelled(true);
 			      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
 			      p.damage(20);
+			      event.setCancelled(true);
 				  }}, 6L);
 		    }
 		  }

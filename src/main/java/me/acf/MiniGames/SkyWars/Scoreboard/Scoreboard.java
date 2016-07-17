@@ -3,7 +3,7 @@ package me.acf.MiniGames.SkyWars.Scoreboard;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
@@ -21,7 +21,7 @@ public class Scoreboard {
 	  public static HashMap<Player, org.bukkit.scoreboard.Scoreboard> scoreboards = new HashMap();
 	  public static String texto = "§f§lSkyWars §6§lPC-BR";
 		 public static void CriarScoreboard(Player j)  {
-			   ScoreboardAPI scoreboard = new ScoreboardAPI(Main.NomeDoServidor);
+			   ScoreboardAPI scoreboard = new ScoreboardAPI();
 		
 			   scoreboard.send(j);
 			   

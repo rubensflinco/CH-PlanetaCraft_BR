@@ -3,7 +3,6 @@
 import java.io.PrintStream;
 import java.util.Random;
 
-import me.acf.FullPvP.End;
 import me.acf.FullPvP.Kits.Kits;
 import me.hub.Main;
 import me.hub.API.Chat;
@@ -99,7 +98,7 @@ public class dropinv
               pvp.addItem(new ItemStack[] { Kits.AddBowEnchantRandom(UtilInv.AddItemReturn(Material.BOW, 1, 0, "§a§lArco", ""), 80) });
             }
           }
-          System.out.print(End.Premio(p, random.nextInt(12600)));
+
           if (random.nextInt(15) < 5) {
             p.getInventory().addItem(new ItemStack[] { Kits.AddSwordEnchantRandom(UtilInv.AddItemReturn(Material.WOOD_SWORD, 1, 0, "§a§lEspada de DIAMOND", ""), 90) });
           }

@@ -47,8 +47,10 @@ import me.hub.API.Util.UtilBlockText;
 import me.hub.API.Util.UtilSchematic;
 import me.hub.API.Util.UtilSchematic.Modo;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTime;
 import me.hub.API.Util.UtilTitle;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
@@ -77,7 +79,7 @@ public class MiniGamesMananger extends MiniPlugin {
     private boolean anuncioplayer = false; 
 	private int max = 0;
 	private float level = 0.99F;
-	public Sound spawn = Sound.WITHER_SPAWN;
+	public Sounds spawn = Sounds.WITHER_SPAWN;
 	public static UtilTitle tituloIniciando = new UtilTitle("§a","§6Iniciando MiniGame",0,3,0);
 	public static UtilTitle tituloInvisibilidade = new UtilTitle("§a","§6Ativando PvP",0,3,0);
 	
@@ -120,22 +122,22 @@ public class MiniGamesMananger extends MiniPlugin {
 		Player p = event.getPlayer();
 		if (event.getMessage().contains("/lobby")){
 		       event.setCancelled(true);
-			   p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
 		if (event.getMessage().contains("/hub")){
 			   event.setCancelled(true);
-			   p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
 		if (event.getMessage().contains("/sair")){
 			   event.setCancelled(true);
-			   p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
 		if (event.getMessage().contains("/leave")){
 			   event.setCancelled(true);
-			   p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
 	}
@@ -188,10 +190,10 @@ public class MiniGamesMananger extends MiniPlugin {
 		}
 	}
 	
-	public void Som(Sound sound)
+	public void Som(Sounds spawn2)
 	{
 		 for (Player online : UtilServer.Jogadores()) {
-			 online.playSound(online.getLocation(), sound, 10.0F, 1.0F);
+			 UtilSound.playSound(online, spawn2, 10.0F, 1.0F);
 		 }
 	}
 	
@@ -206,19 +208,19 @@ public class MiniGamesMananger extends MiniPlugin {
         }
         if (tempo == 60) {
         	Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7Iniciando em §a§l1 Minuto");
-        	Som(Sound.NOTE_STICKS);
+        	Som(Sounds.NOTE_STICKS);
         }
         if (tempo == 30) {
         	Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7Iniciando em §a§l30 Segundos");
-        	Som(Sound.NOTE_STICKS);
+        	Som(Sounds.NOTE_STICKS);
         }
         if (tempo == 10) {
         	Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7Iniciando em §6§l10 Segundos");
-        	Som(Sound.NOTE_STICKS);
+        	Som(Sounds.NOTE_STICKS);
         }
         if (tempo <= 5) {
         	Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7Iniciando em §c§l" + tempo + " Segundos");
-        	Som(Sound.CLICK);
+        	Som(Sounds.CLICK);
         }
         if (tempo == 3) {
 		tituloIniciando.setTitle("§a3");

@@ -5,17 +5,19 @@ import java.util.Random;
 import me.acf.lobby.gadgets.Gadgets;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.hub.Main;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
-import net.minecraft.server.v1_8_R3.EntityItem;
+import net.minecraft.server.v1_10_R1.EntityItem;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -93,7 +95,7 @@ public void onPickUp(PlayerPickupItemEvent e)
     e.setCancelled(true);
     if (item.getItemStack().getType() == Material.MELON)
     {
-      p.playSound(p.getLocation(), Sound.EAT, 1.5F, 1.0F);
+      UtilSound.playSound(p, Sounds.EAT, 1.5F, 1.0F);
       item.remove();
       p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 80, 2));
     }
@@ -118,7 +120,7 @@ for (Player p : Bukkit.getOnlinePlayers())
           {
             i.remove();
             Random random = new Random();
-            i.getWorld().playSound(i.getLocation(), Sound.EXPLODE, 1.0F, 1.0F);
+            UtilSound.playSound(i.getLocation(), Sounds.EXPLODE, 1.0F, 1.0F);
             i.getWorld().playEffect(i.getLocation(), Effect.STEP_SOUND, 103);
             for (int k = 0; k < 5; k++)
             {

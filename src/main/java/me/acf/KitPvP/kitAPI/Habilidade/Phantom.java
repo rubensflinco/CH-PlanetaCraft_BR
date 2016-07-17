@@ -15,6 +15,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 /**
@@ -48,18 +50,18 @@ public class Phantom extends MiniPlugin{
              }
 	  	    p.setAllowFlight(true);
 	        p.setFlying(true);
-	        p.playSound(p.getLocation(), Sound.ENDERDRAGON_GROWL, 1.0F, 3.0F); 
+	        UtilSound.playSound(p, Sounds.ENDERDRAGON_GROWL, 1.0F, 3.0F); 
 	        for (Entity ent : p.getNearbyEntities(6.0D, 2.0D, 6.0D)) {
                 if ((ent instanceof Player))
                 {
-                    ((Player) ent).playSound(ent.getLocation(), Sound.ENDERDRAGON_GROWL, 1.0F, 3.0F);   	
+                    UtilSound.playSound(((Player) ent), Sounds.ENDERDRAGON_GROWL, 1.0F, 3.0F);   	
                 }
 	        }
 	        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable()
 	        {
 	          public void run()
 	          {
-	         p.playSound(p.getLocation(), Sound.ENDERDRAGON_HIT, 1.0F, 3.0F);
+	         UtilSound.playSound(p, Sounds.ENDERDRAGON_HIT, 1.0F, 3.0F);
 	         p.setFlying(false);
 	         p.setAllowFlight(false);
 	         p.setFallDistance(0);

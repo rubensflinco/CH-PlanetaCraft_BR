@@ -65,11 +65,12 @@ import me.hub.API.Util.UtilNPC;
 import me.hub.API.Util.UtilParticles;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.comandos.CriadorComandos;
-import me.hub.npc.SpawnNPC;
 import me.hub.recharge.Recharge;
 import me.site.account.Account;
 import me.site.account.AccountWeb;
@@ -211,7 +212,7 @@ public class Lobby extends MiniPlugin{
 				{
 					p.sendMessage("§c§lTP §7Teleportando você para Rank de KDR dos minigames !");
 					p.teleport(new Location(Bukkit.getWorld("world"), 149,172,-78));
-				    p.playSound(new Location(Bukkit.getWorld("world"), 149,172,-78), Sound.LEVEL_UP, 10.0F, 1.0F);
+					UtilSound.playSound(new Location(Bukkit.getWorld("world"), 149,172,-78), Sounds.LEVEL_UP, 10.0F, 1.0F);
 				    e.setCancelled(true);
 		        }
 		      }
@@ -350,7 +351,7 @@ public class Lobby extends MiniPlugin{
 	    if (e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SLIME_BLOCK) {
 	    	UtilAction.velocity(player, 1.4D, 0.5D, 1.0D, true);
 	    	UtilParticles.display(Particles.VILLAGER_HAPPY, 0.4f, 0.2f, 0.4f, e.getTo().getBlock().getLocation().clone().add(0, 1, 0), 5);
-	        player.playSound(player.getLocation(), Sound.PISTON_EXTEND, 0.5F, 0.5F);
+	    	UtilSound.playSound(player.getLocation(), Sounds.PISTON_EXTEND, 0.5F, 0.5F);
 	    }
 	    }
 
@@ -462,11 +463,11 @@ public class Lobby extends MiniPlugin{
 		    		  String Servidor = AccountWeb.Conectar(Main.site + "/API/sala.php?modo=CONSUTAR_ON&nome=" + nome, "nome");
 		    		  if (Servidor == null)
 		    		  {
-		    			  e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ANVIL_LAND, 0.5F, 0.2F);
+		    			  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
 		    			e.getPlayer().sendMessage("§cTodas as salas estão fechadas ou em jogos aguarde!");
 		    			  return;
 		    		  }
-		    	 e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.LEVEL_UP, 0.5F, 0.2F);
+		    		  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.LEVEL_UP, 0.5F, 0.2F);
 	             e.getPlayer().sendMessage("§cLocalizado a sala §a " + Servidor);
 			      Bungee.SendPlayerToServer(e.getPlayer(), Servidor);
 		    	  }
@@ -474,7 +475,7 @@ public class Lobby extends MiniPlugin{
 		    	  if (nome.contains("§c§lEM BREVE"))
 		    	  {
 		    		  e.getPlayer().sendMessage("§4§lNPC §fEi para de cliquar em min meu nome é em breve oque você esta esperando que saia da aqui ?");
-		    		  e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ANVIL_LAND, 0.5F, 0.2F);
+		    		  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
 		    	  }
 				  }catch (Exception ec) {}
 		      }

@@ -17,6 +17,8 @@ import org.bukkit.util.Vector;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 /**
@@ -64,7 +66,7 @@ public class Drain extends MiniPlugin{
 		                		if (Kit.PoderUsar(p, "drain")) {
 		                   d.damage(3,p);
 		                   p.setHealth(p.getHealth()+3);
-		                   d.playSound(d.getLocation(), Sound.AMBIENCE_CAVE, 1.0F, 1.0F);
+		                   UtilSound.playSound(d, Sounds.AMBIENCE_CAVE, 1.0F, 1.0F);
 		                		}
 		                		}
 		                	if (i < 0)

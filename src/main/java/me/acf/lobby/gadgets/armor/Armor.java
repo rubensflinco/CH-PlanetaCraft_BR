@@ -17,6 +17,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import me.acf.FormatText.Format;
 import me.acf.lobby.gadgets.Gadgets;
 import me.hub.API.Enchant;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.config.Config;
 
 /**
@@ -70,7 +72,7 @@ public class Armor {
     		try {
     		if (jogador.getInventory().getHelmet().equals(item))
     		{
-    			jogador.playSound(jogador.getLocation(), Sound.HORSE_SADDLE, 0.1F, 0.1F);
+    			UtilSound.playSound(jogador, Sounds.HORSE_SADDLE, 0.1F, 0.1F);
     			jogador.getInventory().setHelmet(null);
     	    	Gadgets.MsgFormat("Você removeu o " + item.getItemMeta().getDisplayName(), jogador);
     			return;
@@ -83,7 +85,7 @@ public class Armor {
     		try {
     		if (jogador.getInventory().getChestplate().equals(item))
     		{
-    			jogador.playSound(jogador.getLocation(), Sound.HORSE_SADDLE, 0.1F, 0.1F);
+    			UtilSound.playSound(jogador, Sounds.HORSE_SADDLE, 0.1F, 0.1F);
     	    	Gadgets.MsgFormat("Você removeu o " + item.getItemMeta().getDisplayName(), jogador);
     	 		jogador.getInventory().setChestplate(null);
     	    	return;
@@ -96,7 +98,7 @@ public class Armor {
     		try {
     		if (jogador.getInventory().getLeggings().equals(item))
     		{
-    			jogador.playSound(jogador.getLocation(), Sound.HORSE_SADDLE, 0.1F, 0.1F);
+    			UtilSound.playSound(jogador, Sounds.HORSE_SADDLE, 0.1F, 0.1F);
     	    	Gadgets.MsgFormat("Você removeu o " + item.getItemMeta().getDisplayName(), jogador);
     	    	jogador.getInventory().setLeggings(null);
     	    	return;
@@ -109,7 +111,7 @@ public class Armor {
     		try {
     		if (jogador.getInventory().getBoots().equals(item))
     		{
-    			jogador.playSound(jogador.getLocation(), Sound.HORSE_SADDLE, 0.1F, 0.1F);
+    			UtilSound.playSound(jogador, Sounds.HORSE_SADDLE, 0.1F, 0.1F);
     	    	Gadgets.MsgFormat("Você removeu o " + item.getItemMeta().getDisplayName(), jogador);
     	    	jogador.getInventory().setBoots(null);
     	    	return;
@@ -118,7 +120,7 @@ public class Armor {
     		jogador.getInventory().setBoots(item);
     	}
     	
-    	jogador.playSound(jogador.getLocation(), Sound.HORSE_SADDLE, 0.1F, 0.1F);
+    	UtilSound.playSound(jogador, Sounds.HORSE_SADDLE, 0.1F, 0.1F);
     	Gadgets.MsgFormat("Você vestiu o " + item.getItemMeta().getDisplayName(), jogador);
     }
     }

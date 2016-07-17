@@ -2,6 +2,7 @@ package me.acf.MiniGames.OneInTheChamber;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -14,6 +15,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
+
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.API.TeleportPlayer;
 import me.acf.MiniGames.OneInTheChamber.Scoreboard.Scoreboard;
@@ -21,6 +23,8 @@ import me.acf.MiniGames.OneInTheChamber.kits.Kit;
 import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Scoreboard.ScoreboardAPI;
 
 /**
@@ -51,7 +55,7 @@ public class PVP extends MiniPlugin {
 		e.getPlayer().getInventory().clear();
 		Scoreboard.CriarScoreboard(e.getPlayer());
 		final Player p = e.getPlayer();
-		p.playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 2.0F);
+		UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 2.0F);
 	    p.setFireTicks(0);
 	    Conta.Reload(p);
 	    ScoreboardAPI.remover(p);

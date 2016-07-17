@@ -12,8 +12,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.FireworkEffect.Type;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -34,11 +34,13 @@ import me.hub.Main;
 import me.hub.API.Util.UtilBlock;
 import me.hub.API.Util.UtilFirework;
 import me.hub.API.Util.UtilPlayer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
 import me.site.account.Account;
-import net.minecraft.server.v1_8_R3.EntityItem;
+import net.minecraft.server.v1_10_R1.EntityItem;
 
 public class PlanetsBomb extends GadGetsLoader
 
@@ -59,7 +61,7 @@ private ArrayList playert = new ArrayList<Player>();
 	   Item item = event.getItem();
 	   if (item.hasMetadata("Planets"))
 	   {
-		   event.getPlayer().playSound(event.getPlayer().getLocation(),Sound.LEVEL_UP,1.5F, 1.2F);
+		   UtilSound.playSound(event.getPlayer().getLocation(),Sounds.LEVEL_UP,1.5F, 1.2F);
 		   Account.AddCoins(event.getPlayer(), 1);
 		   event.getPlayer().sendMessage("§f§lVocê recebeu §6§l1 Planet.");
 	   }
@@ -100,7 +102,7 @@ private ArrayList playert = new ArrayList<Player>();
     setMetadata(item, "Planets", player.getName(), Main.plugin);
     item.setVelocity(player.getLocation().getDirection().add(new Vector(0.0D, 0.1313123444543524D, 0.0D)));
     playert.add(event.getPlayer());
-    player.getWorld().playSound(player.getLocation(), Sound.ORB_PICKUP, 1.5F, 1.2F);
+    UtilSound.playSound(player.getLocation(), Sounds.ORB_PICKUP, 1.5F, 1.2F);
     for (Player other : me.hub.API.Util.UtilServer.Jogadores())
 		UtilPlayer.message(other, player.getCustomName() + " esta fazendo a festa de §6§lPlanets");
     Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable()
@@ -141,7 +143,7 @@ private ArrayList playert = new ArrayList<Player>();
             {
             	 Random random = new Random();
             		UtilFirework.playFirework(i.getLocation(), FireworkEffect.builder().flicker(false).withColor(Color.YELLOW).with(Type.BURST).trail(false).build());
-            	    i.getWorld().playSound(i.getLocation(), Sound.FIREWORK_LAUNCH, 1.0F, 1.0F);
+            		UtilSound.playSound(i.getLocation(), Sounds.FIREWORK_LAUNCH, 1.0F, 1.0F);
       
             	    for (int k = 0; k < 15; k++)
             	    {

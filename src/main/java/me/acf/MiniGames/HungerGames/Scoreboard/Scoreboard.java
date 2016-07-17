@@ -3,7 +3,7 @@ package me.acf.MiniGames.HungerGames.Scoreboard;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import me.acf.MiniGames.Arcade;
@@ -24,7 +24,7 @@ public class Scoreboard {
 	  private static boolean voltar = false;
 	  private static int i = 0;
 		 public static void CriarScoreboard(Player j)  {
-			   ScoreboardAPI scoreboard = new ScoreboardAPI(Main.NomeDoServidor);
+			   ScoreboardAPI scoreboard = new ScoreboardAPI();
 		
 			   scoreboard.send(j);
 			   

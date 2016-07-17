@@ -3,7 +3,7 @@ package me.hub;
 import java.io.PrintStream;
 
 import me.hub.API.Util.UtilTime;
-import net.minecraft.server.v1_8_R3.ICommand;
+import net.minecraft.server.v1_10_R1.ICommand;
 
 import org.bukkit.Server;
 import org.bukkit.event.Listener;

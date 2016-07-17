@@ -33,6 +33,8 @@ import me.hub.API.Chat;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilLocation;
 import me.hub.API.Util.UtilParticles;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.config.Config;
@@ -183,7 +185,7 @@ public class Music extends MiniPlugin {
 
           music = nome;
           Gadgets.MsgFormat("Você ativou o " + nome, jogador);
-		  jogador.playSound(jogador.getLocation(), Sound.NOTE_PIANO, 1.0F, 1.0F);
+          UtilSound.playSound(jogador.getLocation(), Sounds.NOTE_PIANO, 1.0F, 1.0F);
 		    final Block b = jogador.getWorld().getBlockAt(jogador.getLocation().add(0, 1, 0));
 		    b.setMetadata("JUKEBOX", new FixedMetadataValue(Main.plugin, "BLOCKS"));
 		    b.setType(Material.JUKEBOX);

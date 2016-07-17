@@ -15,8 +15,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Entity;
@@ -48,10 +48,12 @@ import me.hub.API.Util.UtilLocation;
 import me.hub.API.Util.UtilMath;
 import me.hub.API.Util.UtilParticles;
 import me.hub.API.Util.UtilPlayer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
-import net.minecraft.server.v1_8_R3.EntityItem;
+import net.minecraft.server.v1_10_R1.EntityItem;
 
 public class Tsunami extends GadGetsLoader
 
@@ -96,7 +98,7 @@ private ArrayList playert = new ArrayList<Player>();
         proj.setVelocity(proj.getVelocity().multiply(2));
         this._balls.add(proj);
         playert.add(player);
-        player.getWorld().playSound(player.getLocation(), Sound.WATER, 1.5F, 1.2F);
+        UtilSound.playSound(player.getLocation(), Sounds.WATER, 1.5F, 1.2F);
         Gadgets.Quantidade(event.getPlayer(), GetName());
 	 
 	} catch (Exception e) {
@@ -114,7 +116,7 @@ private ArrayList playert = new ArrayList<Player>();
     }
     Random random = new Random();
     final Entity i = event.getEntity();
-    i.getWorld().playSound(i.getLocation(), Sound.EXPLODE, 1.0F, 1.0F);
+    UtilSound.playSound(i.getLocation(), Sounds.EXPLODE, 1.0F, 1.0F);
     i.getWorld().playEffect(i.getLocation(), Effect.EXPLOSION_LARGE, 103);
     for (int k = 0; k < 5; k++)
     {
@@ -161,7 +163,7 @@ private ArrayList playert = new ArrayList<Player>();
       e.setCancelled(true);
       if (item.getItemStack().getType() == Material.WATER_BUCKET)
       {
-        p.playSound(p.getLocation(), Sound.WATER, 1.5F, 1.0F);
+        UtilSound.playSound(p, Sounds.WATER, 1.5F, 1.0F);
         item.remove();
       }
     }

@@ -61,7 +61,6 @@ me\acf\lobby\comandos\tpano.class
 me\acf\MiniGames\HungerGames\Conta.class
 me\acf\KitPvP\kitAPI\Habilidade\Disable$1.class
 me\acf\lobby\gadgets\montaria\HorseEcologist.class
-me\hub\blood\BloodEvent.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\ForceField$1.class
 me\acf\MiniGames\OneInTheChamber\kits\Kits.class
 me\acf\MiniGames\OneInTheChamber\kits\Kit.class
@@ -168,7 +167,6 @@ me\acf\lobby\gadgets\Morph.class
 me\acf\KitPvP\kitAPI\Menu.class
 me\acf\MiniGames\API\CopyDirectory.class
 me\acf\MiniGames\Style\Utils\MGSpectator$1.class
-me\acf\lobby\extend\MobSpawn.class
 me\hub\loja\event\InventoryShopErrorEvent.class
 me\acf\KitPvP\kitAPI\Habilidade\Drain$1.class
 me\acf\lobby\gadgets\Pet.class
@@ -205,8 +203,6 @@ me\acf\MiniGames\HungerGames\PVP$1.class
 me\acf\KitPvP\kitAPI\Habilidade\Urgal.class
 me\acf\lobby\gadgets\loader\ParticleLoader.class
 me\acf\MiniGames\SpleggTnT\kits\Menu.class
-me\hub\blood\Blood.class
-me\acf\KitPvP\End.class
 me\acf\MiniGames\SpleggTnT\Entrar.class
 me\acf\KitPvP\kitAPI\BarKit.class
 me\acf\KitPvP\kitAPI\Menu$1$1$1$1.class
@@ -229,7 +225,6 @@ me\acf\lobby\gadgets\Menu$1.class
 me\acf\SkyBlock\comandos\Loja.class
 me\acf\lobby\Lag\TPS.class
 me\acf\MiniGames\OneInTheChamber\kits\Menu$1.class
-me\acf\FullPvP\End.class
 me\acf\KitPvP\kitAPI\Kit.class
 me\acf\MiniGames\eventos\GameIniciandoEvent.class
 me\acf\MiniGames\SkyWars\SkyWars$4.class
@@ -239,7 +234,6 @@ me\acf\lobby\servidores\Bussola.class
 me\acf\MiniGames\SkyWars\kits\Menu$1.class
 me\acf\FullPvP\comandos\ftpaccept.class
 me\acf\lobby\gadgets\Music$1.class
-me\acf\SkyBlock\End.class
 me\acf\KitPvP\kitAPI\Kits.class
 me\acf\MiniGames\SpleggTnT\Utils\EventoComandos.class
 me\hub\loja\event\InventoryShopEvent$1.class

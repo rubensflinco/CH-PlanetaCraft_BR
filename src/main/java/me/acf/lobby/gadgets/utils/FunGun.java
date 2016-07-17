@@ -20,6 +20,8 @@ import me.acf.lobby.gadgets.Gadgets;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.hub.API.Util.UtilBlock;
 import me.hub.API.Util.UtilPlayer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 public class FunGun extends GadGetsLoader
@@ -68,7 +70,7 @@ private HashSet<Projectile> _balls = new HashSet();
     proj.setVelocity(proj.getVelocity().multiply(2));
     this._balls.add(proj);
 
-    player.getWorld().playSound(player.getLocation(), Sound.CAT_HISS, 1.5F, 1.2F);  
+    UtilSound.playSound(player.getLocation(), Sounds.CAT_HISS, 1.5F, 1.2F);  
   
 } catch (Exception e) {
 }
@@ -89,7 +91,7 @@ private HashSet<Projectile> _balls = new HashSet();
     loc.getWorld().playEffect(loc.clone().add(local,local,local), Effect.LAVADRIP, 20);
     }
     _balls.remove(event.getEntity());
-    loc.getWorld().playSound(loc, Sound.CAT_MEOW, 1.5F, 1.2F);
+    UtilSound.playSound(loc, Sounds.CAT_MEOW, 1.5F, 1.2F);
    
     
     

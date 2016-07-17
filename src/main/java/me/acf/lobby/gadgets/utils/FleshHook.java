@@ -6,6 +6,8 @@ import java.util.List;
 import me.acf.lobby.gadgets.Gadgets;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.hub.Main;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
@@ -147,7 +149,7 @@ public void onUpdate(Atualizar e)
             }
             i.getWorld().playEffect(i.getLocation(), Effect.CRIT, 2);
 	  	      
-            i.getWorld().playSound(i.getLocation(), Sound.CLICK, 0.1F, 1.0F);
+            UtilSound.playSound(i.getLocation(), Sounds.CLICK, 0.1F, 1.0F);
           } 
         }
       }

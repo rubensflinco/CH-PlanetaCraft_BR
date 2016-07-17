@@ -19,6 +19,8 @@ import me.acf.FormatText.Format;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 /**
@@ -76,8 +78,8 @@ public class Disable extends MiniPlugin{
 	    	   p.sendMessage("§cVocê desativou o " + disable.get(p).getName());
 	    	   k.put(disable.get(p), Kit.verkit(disable.get(p)));
 	    	   Kit.AddKit(disable.get(p), "§a§lDesativado");
-	    	   p.playSound(p.getLocation(), Sound.IRONGOLEM_DEATH, 1.0F, 1.0F);
-	    	   disable.get(p).playSound(disable.get(p).getLocation(), Sound.IRONGOLEM_DEATH, 1.0F, 1.0F);
+	    	   UtilSound.playSound(p, Sounds.IRONGOLEM_DEATH, 1.0F, 1.0F);
+	    	   UtilSound.playSound(disable.get(p).getLocation(), Sounds.IRONGOLEM_DEATH, 1.0F, 1.0F);
 	           Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable()
 		        {
 		          public void run()
@@ -88,8 +90,8 @@ public class Disable extends MiniPlugin{
 					   k.remove(disable.get(p));
 					   disable.remove(p);
 					   disable.get(p).sendMessage("§aVocê foi ativado!!");
-					   p.playSound(p.getLocation(), Sound.IRONGOLEM_WALK, 1.0F, 1.0F);
-					   disable.get(p).playSound(disable.get(p).getLocation(), Sound.IRONGOLEM_WALK, 1.0F, 1.0F);
+					   UtilSound.playSound(p, Sounds.IRONGOLEM_WALK, 1.0F, 1.0F);
+					   UtilSound.playSound(disable.get(p).getLocation(), Sounds.IRONGOLEM_WALK, 1.0F, 1.0F);
 		          }
 		          }
 		        }, 100L);

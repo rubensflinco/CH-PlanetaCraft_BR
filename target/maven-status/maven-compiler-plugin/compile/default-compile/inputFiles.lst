@@ -19,7 +19,6 @@ C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGa
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\HungerGames\kits\Habilidades\Kangaroo.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\gadgets\Pet.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\Conta.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\KitPvP\End.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\SkyBlock\comandos\enderchest.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\Teleport.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\HungerGames\kits\Habilidades\Confusion.java
@@ -27,7 +26,6 @@ C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\Robo\RoboMananger.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\OneInTheChamber\Utils\EventoComandos.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\SpleggTnT\Conta.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\extend\MobSpawn.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\OneInTheChamber\Sair.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\hub\loja\ProdutosType.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\OneInTheChamber\Conta.java
@@ -75,7 +73,6 @@ C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPv
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\KitPvP\kitAPI\Habilidade\Hulk.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\Arcade.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\SkyWars\kits\Menu.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\hub\blood\Blood.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\comandos\ftpa.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\HungerGames\Scoreboard\Scoreboard.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\gadgets\ViewPlayers.java
@@ -112,7 +109,6 @@ C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGa
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\KitPvP\kitAPI\Habilidade\Stomper.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\KitPvP\PVP.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\KitPvP\Sair.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\SkyBlock\End.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\FPConfig.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\loja\Menu.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\HungerGames\kits\Habilidades\Stomper.java
@@ -197,12 +193,10 @@ C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\comandos\shop.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\Kits\Kits.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\HungerGames\kits\Habilidades\Snail.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\hub\blood\BloodEvent.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\gadgets\utils\PlanetsBomb.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\lobby\gadgets\montaria\HorseHorror.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\SpleggTnT\kits\Menu.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\comandos\home.java
-C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\End.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\hub\MiniPlugin.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\FullPvP\comandos\Fpcoins.java
 C:\Users\CLIENTE\Documents\GitHub\CH-PlanetaCraft_BR\src\main\java\me\acf\MiniGames\eventos\Utils\UtilsWin.java

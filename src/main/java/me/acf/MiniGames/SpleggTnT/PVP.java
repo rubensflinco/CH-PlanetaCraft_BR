@@ -2,6 +2,7 @@ package me.acf.MiniGames.SpleggTnT;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
@@ -11,12 +12,15 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
+
 import me.acf.MiniGames.SpleggTnT.Scoreboard.Scoreboard;
 import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.acf.MiniGames.Style.Utils.MGPremios;
 import me.acf.MiniGames.Style.Utils.MGSpectator;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Scoreboard.ScoreboardAPI;
 
 /**
@@ -45,7 +49,7 @@ public class PVP extends MiniPlugin {
 		e.getPlayer().getInventory().clear();
 		Scoreboard.CriarScoreboard(e.getPlayer());
 		final Player p = e.getPlayer();
-		p.playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 2.0F);
+		UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 2.0F);
 	    p.setFireTicks(0);
 	    Conta.Reload(p);
 	    ScoreboardAPI.remover(p);

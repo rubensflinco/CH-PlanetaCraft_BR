@@ -31,6 +31,8 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Enchant;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.hub.config.Config;
 import me.site.account.Account;
@@ -69,7 +71,7 @@ public class PVP extends MiniPlugin {
 		Entrar.Give(e.getPlayer());
 		Scoreboard.CriarScoreboard(e.getPlayer());
 		final Player p = e.getPlayer();
-		p.playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 2.0F);
+		UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 2.0F);
 	    p.setFireTicks(0);
 	    Conta.Reload(p);
 	    ScoreboardAPI.remover(p);
@@ -85,7 +87,7 @@ public class PVP extends MiniPlugin {
 			final Player p = e.getEntity();
 		  try {
 		e.setDeathMessage(null);
-		e.getEntity().playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 2.0F);
+		UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 2.0F);
 		p.getInventory().setArmorContents(null);
 		p.getInventory().clear();
 		Entrar.Give(p);
@@ -118,7 +120,7 @@ public class PVP extends MiniPlugin {
 	    }
 	    }, 10L);
 		}  catch (Exception e5) {
-				e.getEntity().playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 2.0F);
+			UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 2.0F);
 				p.getInventory().setArmorContents(null);
 				p.getInventory().clear();
 				Entrar.Give(p);
@@ -221,7 +223,7 @@ public class PVP extends MiniPlugin {
 	  @EventHandler(priority=EventPriority.MONITOR)
 	  public void Dano(EntityDamageByEntityEvent event)
 	  {
-		Sound sound = Sound.HURT_FLESH;
+		Sounds sound = Sounds.HURT_FLESH;
 		float vol = 1.0F;
 		float pit = 1.0F;
         Random r = new Random();
@@ -264,8 +266,8 @@ public class PVP extends MiniPlugin {
 	             jogador.setVelocity(new Vector());
 	        }
 	       
-		   jogador.playSound(jogador.getLocation(), sound, vol, pit);
-		   p.playSound(p.getLocation(), sound, vol, pit);
+	        UtilSound.playSound(jogador, sound, vol, pit);
+	        UtilSound.playSound(p, sound, vol, pit);
 		    }
 	    }
 	    

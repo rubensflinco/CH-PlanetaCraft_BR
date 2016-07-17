@@ -16,6 +16,8 @@ import me.acf.lobby.gadgets.Menu;
 import me.acf.lobby.gadgets.Morph;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.acf.lobby.gadgets.loader.MorphLoader;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 
@@ -48,7 +50,7 @@ try {
         return;
       }    
 	
-	player.getWorld().playSound(player.getLocation(), Sound.PIG_IDLE, 1f, (float)(0.75 + Math.random() * 0.5));
+    UtilSound.playSound(player.getLocation(), Sounds.PIG_IDLE, 1f, (float)(0.75 + Math.random() * 0.5));
 } catch (Exception e) {
 	
 }

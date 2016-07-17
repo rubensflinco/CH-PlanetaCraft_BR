@@ -21,6 +21,8 @@ import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
@@ -34,11 +36,6 @@ import me.site.account.Account;
 import me.site.account.rank.Rank;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPCRegistry;
-import net.minecraft.server.v1_8_R3.BlockPosition;
-import net.minecraft.server.v1_8_R3.EntityPlayer;
-import net.minecraft.server.v1_8_R3.IBlockData;
-import net.minecraft.server.v1_8_R3.PacketPlayOutBlockAction;
-import net.minecraft.server.v1_8_R3.World;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -46,8 +43,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Sign;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.entity.Endermite;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -102,7 +97,6 @@ public class KitPvPManager extends MiniPlugin{
 		Kits kits = new Kits();
 		Kit kit = new Kit(plugin);
 		Arena arena = new Arena(plugin);
-		End end = new End(plugin);
 		Entrar entra = new Entrar(plugin);
 	    head.desativar = true;
 		JumpBlocos jump = new JumpBlocos(plugin);
@@ -447,7 +441,7 @@ public class KitPvPManager extends MiniPlugin{
     	        	  else
     	        	  {
     	        		  Format.Comando("Placa", "Itens reparados com §aerros", p);
-    	        		  p.playSound(p.getLocation(), Sound.IRONGOLEM_HIT, 1.0F, 1.0F);
+    	        		  UtilSound.playSound(p, Sounds.IRONGOLEM_HIT, 1.0F, 1.0F);
     	        	  }
     	            }
     	          }

@@ -9,6 +9,8 @@ import me.acf.lobby.gadgets.Gadgets;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.hub.Main;
 import me.hub.API.Util.UtilBlock;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.NMS.CustomEntityFirework_1_8_5_R03;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
@@ -128,8 +130,8 @@ private ArrayList playert = new ArrayList<Player>();
  	            Color c2 = getColor(r2i);
  	            FireworkEffect effect = FireworkEffect.builder().flicker(r.nextBoolean()).withColor(c1).withFade(c2).with(type).trail(r.nextBoolean()).build();
  	            i.getWorld().playEffect(i.getLocation(), Effect.FIREWORKS_SPARK, 2);
- 	            i.getWorld().playSound(i.getLocation(), Sound.FIREWORK_LAUNCH, 0.1F, 1.0F);
- 	            CustomEntityFirework_1_8_5_R03.spawn(i.getLocation().clone().add(+0.5,0,0.5), effect);
+ 	           UtilSound.playSound(i.getLocation(), Sounds.FIREWORK_LAUNCH, 0.1F, 1.0F);
+ 	           CustomEntityFirework_1_8_5_R03.spawn(i.getLocation().clone().add(+0.5,0,0.5), effect);
             } 
           }
           }

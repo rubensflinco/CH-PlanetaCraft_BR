@@ -9,9 +9,13 @@ import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.hub.API.Util.UtilBlock;
 import me.hub.API.Util.UtilFirework;
 import me.hub.API.Util.UtilPlayer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.recharge.Recharge;
+
+
 
 
 import org.bukkit.Color;
@@ -78,7 +82,7 @@ private ArrayList playert = new ArrayList<Player>();
     proj.setPassenger(player);
     this._balls.add(proj);
     playert.add(event.getPlayer());
-    player.getWorld().playSound(player.getLocation(), Sound.CHICKEN_EGG_POP, 1.5F, 1.2F);
+    UtilSound.playSound(player.getLocation(), Sounds.CHICKEN_EGG_POP, 1.5F, 1.2F);
 		} catch (Exception e) {
 			
 		}

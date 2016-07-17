@@ -2,6 +2,7 @@ package me.acf.MiniGames.SkyWars.Utils;
  
 import java.io.File;
 import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -14,9 +15,12 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import me.acf.MiniGames.SkyWars.SkyWars;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 
 		public class EscolherMapa extends MiniPlugin {
 			
@@ -64,7 +68,7 @@ metav.setDisplayName("§f");
      inv.setItem(line, mapa1);
     }}
     p.openInventory(inv);
-    p.playSound(p.getLocation(), Sound.NOTE_BASS, 40.0F, 1.0F);
+    UtilSound.playSound(p, Sounds.NOTE_BASS, 40.0F, 1.0F);
     
   }
    
@@ -88,7 +92,7 @@ metav.setDisplayName("§f");
          e.setCancelled(true);
          String mapa = ""+SkyWars.VotouMapa.get(p.getName())+"";
      	if (mapa.equals(source.getName())){
-    		p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+    		UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
     		p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você ja votou no "+source.getName()+"!");
   	}
     	else
@@ -110,7 +114,7 @@ metav.setDisplayName("§f");
 			 p.setGameMode(GameMode.SPECTATOR);
 		     p.setMaxHealth(20);
 		     p.setHealth(20);
-		     p.playSound(p.getLocation(), Sound.LEVEL_UP, 10.0F, 1.0F); 
+		     UtilSound.playSound(p, Sounds.LEVEL_UP, 10.0F, 1.0F); 
 		     SkyWars.EscolherMapa.remove(p);
 		     SkyWars.EscolherMapa.add(p);
 		      }
@@ -134,12 +138,12 @@ metav.setDisplayName("§f");
      		int votos1 = Integer.parseInt(GET)+1;
      		SkyWars.VotosMapa.put(""+source.getName(), ""+votos1);
      		}
-      p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+      UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você votou no : §f "+Main.plugin.getConfig().getString(""+source.getName()+".Nome")+" §7!");
     	 }
     		else
     		{
-        		p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+        		UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
         		p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Esse Mapa esta offline !");
     		}
     	}

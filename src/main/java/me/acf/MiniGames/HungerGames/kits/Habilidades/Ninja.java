@@ -16,6 +16,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.acf.FormatText.Format;
 import me.acf.MiniGames.HungerGames.kits.Kit;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 /**
@@ -73,7 +75,7 @@ public class Ninja extends MiniPlugin{
 	               return;
 	             }
 	    	   p.teleport(teleport.get(p).getLocation());
-	    	   p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+	    	   UtilSound.playSound(p, Sounds.ENDERMAN_TELEPORT, 1.0F, 1.0F);
 	    	   teleport.remove(p);
 	      }
 	      else

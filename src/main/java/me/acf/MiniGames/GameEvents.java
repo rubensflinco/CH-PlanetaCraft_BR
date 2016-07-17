@@ -47,6 +47,8 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Chat;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.comandos.geral.fly;
 import me.site.account.Account;
 import me.site.account.AccountWeb;
@@ -349,7 +351,7 @@ public class GameEvents extends MiniPlugin {
 				 event.getPlayer().sendMessage("      §f§lSEJA BEM-VINDO; §7§l" + event.getPlayer().getName());
 				 event.getPlayer().sendMessage("                 §f§lAO §a§l"+Bukkit.getServer().getServerName().toUpperCase());
 				 event.getPlayer().sendMessage(" ");
-			     event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.NOTE_PLING, 1, 0);
+				 UtilSound.playSound(event.getPlayer(), Sounds.NOTE_PLING, 1, 0);
 				 event.getPlayer().setFoodLevel(20);
 				 event.getPlayer().setHealth(20);
 				 Servidor.AddJoin();
@@ -362,7 +364,7 @@ public class GameEvents extends MiniPlugin {
 			    	{
 			    		Bukkit.broadcastMessage("§c§l666 Súscipe ludio ludius " + event.getPlayer().getName());
 			    		for (Player j : UtilServer.Jogadores()) {
-			    			j.playSound(j.getLocation(), Sound.AMBIENCE_THUNDER, 6.0F, 6.0F);
+			    			UtilSound.playSound(j, Sounds.AMBIENCE_THUNDER, 6.0F, 6.0F);
 			    			Chat.ActionBar(event.getPlayer(), "§4§lO JOGADOR NUMERO 666 ENTROU (" + event.getPlayer().getName() + ")");
 			    		
 			    	}

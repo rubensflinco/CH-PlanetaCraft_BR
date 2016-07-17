@@ -36,6 +36,8 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.site.account.AccountWeb;
 
@@ -84,7 +86,7 @@ public class MGSpectator extends MiniPlugin
 			
 		  if ((p.getItemInHand().getType() == Material.BOOK) && ((e.getAction() == Action.LEFT_CLICK_AIR) || (e.getAction() == Action.LEFT_CLICK_BLOCK))) 
 		    {
-			   p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+			  UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 			   e.setCancelled(true);
 		      }
@@ -118,7 +120,7 @@ public class MGSpectator extends MiniPlugin
 		    	    {
 			      if (e.getCurrentItem().getType().equals(Material.THIN_GLASS))
 			      {
-			    	p.playSound(p.getLocation(), Sound.LEVEL_UP, 0.5F, 0.2F);
+			    	  UtilSound.playSound(p, Sounds.LEVEL_UP, 0.5F, 0.2F);
 			        e.setCancelled(true);
 			        p.closeInventory();
 			      }else
@@ -128,16 +130,16 @@ public class MGSpectator extends MiniPlugin
 		        		if (MiniGamesMananger.Specter.contains(p)){
 		           p.closeInventory();
 		           MGSpectator.Menu2(p);
-		           p.playSound(p.getLocation(), Sound.CHEST_OPEN, 10.0F, 1.0F);
+		           UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 		        		}else{
 			        		p.sendMessage("§cOPS §7Você não é um espectador.");
 			        		p.closeInventory();
-			        		p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);	
+			        		UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);	
 		        		}
 		        	}else{
 		        		p.sendMessage("§cOPS §7Jogo ainda não começou..");
 		        		p.closeInventory();
-		        		p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+		        		UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 		        	}
 		           e.setCancelled(true);
 		         }else
@@ -145,7 +147,7 @@ public class MGSpectator extends MiniPlugin
 		        {
 		        	p.closeInventory();
 		        	   Bungee.SendPlayerToServer(p, "lobby");
-			           p.playSound(p.getLocation(), Sound.LEVEL_UP, 10.0F, 1.0F);
+		        	   UtilSound.playSound(p, Sounds.LEVEL_UP, 10.0F, 1.0F);
 			           e.setCancelled(true);
 		        }else
 		        if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§9Próxima sala"))
@@ -154,11 +156,11 @@ public class MGSpectator extends MiniPlugin
 			     String Servidor = AccountWeb.Conectar(Main.site + "/API/sala.php?modo=CONSUTAR_ON&nome=" + Main.plugin.getConfig().getString("Carregar"), "nome");
 			    	if (Servidor == null)
 			    	 {
-			    	 p.playSound(p.getLocation(), Sound.ANVIL_LAND, 0.5F, 0.2F);
+			    		UtilSound.playSound(p, Sounds.ANVIL_LAND, 0.5F, 0.2F);
 			    	 p.sendMessage("§cTodas as salas de §f"+Main.plugin.getConfig().getString("Carregar")+"§c estão fechadas ou em jogos.");
 			    	 }else{
 				     p.closeInventory();
-			    	 p.playSound(p.getLocation(), Sound.LEVEL_UP, 0.5F, 0.2F);
+				     UtilSound.playSound(p, Sounds.LEVEL_UP, 0.5F, 0.2F);
 		             p.sendMessage("§cLocalizado a sala §a " + Servidor);
 				     Bungee.SendPlayerToServer(p, Servidor);
 			         e.setCancelled(true);

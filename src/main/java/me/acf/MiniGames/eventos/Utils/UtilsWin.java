@@ -21,7 +21,9 @@ import me.acf.lobby.gadgets.utils.Firework;
 import me.hub.Main;
 import me.hub.API.Chat;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTitle;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.hub.NMS.CustomEntityFirework_1_8_5_R03;
 
@@ -81,7 +83,7 @@ public class UtilsWin {
 	  Bukkit.broadcastMessage("                          §e§l " + msg.toUpperCase());
 	  Bukkit.broadcastMessage(" ");
 	  for (Player player : UtilServer.Jogadores()) {
-	  player.playSound(player.getLocation(), Sound.LEVEL_UP, 2f, 1f);
+		  UtilSound.playSound(player, Sounds.LEVEL_UP, 2f, 1f);
 	  Chat.ActionBar(player, "§f§lJOGADOR §a§l" + msg.toUpperCase() + "§f§l GANHOU ESTA PARTIDA");
 	  }
 	  jogador.setGameMode(GameMode.SPECTATOR);
@@ -102,7 +104,7 @@ public class UtilsWin {
             Color c2 = Firework.getColor(r2i);
             FireworkEffect effect = FireworkEffect.builder().flicker(r.nextBoolean()).withColor(c1).withFade(c2).with(type).trail(r.nextBoolean()).build();
             jogador.getWorld().playEffect(loc, Effect.FIREWORKS_SPARK, 2);
-            jogador.getWorld().playSound(loc, Sound.FIREWORK_LAUNCH, 0.1F, 1.0F);
+            UtilSound.playSound(jogador, Sounds.FIREWORK_LAUNCH, 0.1F, 1.0F);
             CustomEntityFirework_1_8_5_R03.spawn(jogador.getLocation().clone().add(+0.5,0,0.5), effect);  
             jogador.getLocation().add(0,1,0);
             type = Type.BURST;

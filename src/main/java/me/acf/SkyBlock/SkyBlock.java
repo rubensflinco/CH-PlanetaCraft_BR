@@ -49,7 +49,6 @@ public class SkyBlock extends MiniPlugin {
 	 */
 	public SkyBlock(JavaPlugin plugin) {
 		super("SkyBlockManager", plugin);
-          End end = new End(plugin);
           Entrar entrar = new Entrar(plugin);
           me.security.SecurityManager security = new me.security.SecurityManager(Main.plugin);
 			 new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");

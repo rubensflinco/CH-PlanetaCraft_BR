@@ -13,6 +13,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilInv;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 
 /**
  * @author adriancf
@@ -47,7 +49,7 @@ public class Vitality extends MiniPlugin{
 	          }
 	        }
 	        catch (ArrayIndexOutOfBoundsException localArrayIndexOutOfBoundsException) {}
-	        k.playSound(k.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
+	        UtilSound.playSound(k, Sounds.LEVEL_UP, 1.0F, 1.0F);
 	        return;
 	      }
 	    }

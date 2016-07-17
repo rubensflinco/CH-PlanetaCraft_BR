@@ -18,6 +18,8 @@ import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilParticles;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 
 public class JumpBlocos
   extends MiniPlugin
@@ -38,7 +40,7 @@ public class JumpBlocos
       {
         jump.remove(p.getName());
         p.setVelocity(p.getVelocity().setY(3.0D));
-        p.playSound(p.getLocation(), Sound.SLIME_WALK2, 1.0F, 1.0F);
+        UtilSound.playSound(p, Sounds.SLIME_WALK2, 1.0F, 1.0F);
         jump.add(p.getName());
       }
       else if ((e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.EMERALD_BLOCK) && (e.getTo().getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN).getType() == Material.BEDROCK))
@@ -46,7 +48,7 @@ public class JumpBlocos
         jump.remove(p.getName());
         p.setVelocity(p.getLocation().getDirection().multiply(5.0D));
         p.setVelocity(new Vector(p.getVelocity().getX(), 1.5D, p.getVelocity().getZ()));
-        p.playSound(p.getLocation(), Sound.FIREWORK_LAUNCH, 40.0F, 1.0F);
+        UtilSound.playSound(p, Sounds.FIREWORK_LAUNCH, 40.0F, 1.0F);
         p.getWorld().playEffect(p.getLocation(), Effect.ENDER_SIGNAL, 5);
       
         jump.add(p.getName());
@@ -56,7 +58,7 @@ public class JumpBlocos
         jump.remove(p.getName());
         p.setVelocity(p.getLocation().getDirection().multiply(15.0D));
         p.setVelocity(new Vector(p.getVelocity().getX(), 1.5D, p.getVelocity().getZ()));
-        p.playSound(p.getLocation(), Sound.FIREWORK_LAUNCH, 40.0F, 1.0F);
+        UtilSound.playSound(p, Sounds.FIREWORK_LAUNCH, 40.0F, 1.0F);
         p.getWorld().playEffect(p.getLocation(), Effect.ENDER_SIGNAL, 5);
   
       }

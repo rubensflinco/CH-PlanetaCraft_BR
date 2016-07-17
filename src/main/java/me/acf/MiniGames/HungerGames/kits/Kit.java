@@ -22,6 +22,8 @@ import me.acf.FormatText.Format;
 import me.acf.MiniGames.HungerGames.Conta;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.hub.config.Config;
 import me.site.account.Account;
@@ -117,14 +119,14 @@ public class Kit extends MiniPlugin {
 	    	    {
 	        if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§f-"))
 	        {
-	           p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+	           UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 	           e.setCancelled(true);
 	           return;
 	         }
 	        if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c<--"))
 	        {
 	           p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Não contem mais paginas desse lado");
-	           p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+	           UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 	           e.setCancelled(true);
 	           return;
 	         }
@@ -132,7 +134,7 @@ public class Kit extends MiniPlugin {
 	          if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c-->"))
 	        {
 	           p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Não contem mais paginas desse lado");
-	           p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+	           UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 	           e.setCancelled(true);
 	           return;
 	         }
@@ -149,14 +151,14 @@ public class Kit extends MiniPlugin {
 	    	    		 {
 	    	    	 if (kitapi.get(p).equals(NomeKIT)){
 	    		           p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você já escolheu esse KIT !");
-	    		           p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+	    		           UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 	    		           e.setCancelled(true);
 	    	    	 }else{
 	    	    	String Name = e.getCurrentItem().getItemMeta().getDisplayName();
 	    	    	 if (Name.contains("§a[Gratis]")){
 	    	    		   p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
 	    	    	       Kit.AddKit(p, NomeKIT);
-	    	    	       p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+	    	    	       UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
 	    	    	       e.setCancelled(true);
 	    	    	       p.closeInventory();
 	    	    	 }else
@@ -164,12 +166,12 @@ public class Kit extends MiniPlugin {
 		    	    	       e.setCancelled(true);
 		    	    	       p.closeInventory();
 					  		if (!Conta.kits.get(p).contains(NomeKIT)){
-		    	    	       p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+		    	    	       UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 		    	    	       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cVocê não tem esse kit você tenque comprar ele na LOJA !");
 					  		}else{
 	    					   p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
 	    		    	       Kit.AddKit(p, NomeKIT);
-	    		    	        p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+	    		    	        UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
 					  		}
 	    	    		 }else
 	    	    		 if (Name.contains("§6[Vip]")){
@@ -177,11 +179,11 @@ public class Kit extends MiniPlugin {
 	    					   {
 	    						       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
 	    		    	    	       Kit.AddKit(p, NomeKIT);
-	    		    	    	       p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+	    		    	    	       UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
 	    		    	    	       e.setCancelled(true);
 	    		    	    	       p.closeInventory();
 	    	    			 }else{
-		    	    			   p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+		    	    			   UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 	  		    	    	       e.setCancelled(true);
 	  		    	    	       p.closeInventory();
 		    	    			 }
@@ -191,11 +193,11 @@ public class Kit extends MiniPlugin {
 		    					   {
 		    						       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
 		    		    	    	       Kit.AddKit(p, NomeKIT);
-		    		    	    	       p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 10.0F, 1.0F);
+		    		    	    	       UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
 		    		    	    	       e.setCancelled(true);
 		    		    	    	       p.closeInventory();
 		    					   }else{
-			    	    			   p.playSound(p.getLocation(), Sound.ANVIL_LAND, 10.0F, 1.0F);
+			    	    			   UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 		  		    	    	       e.setCancelled(true);
 		  		    	    	       p.closeInventory();
 			    	    			 }

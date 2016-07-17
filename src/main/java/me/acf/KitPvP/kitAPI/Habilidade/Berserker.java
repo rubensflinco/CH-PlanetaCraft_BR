@@ -13,6 +13,8 @@ import org.bukkit.potion.PotionEffectType;
 
 import me.acf.KitPvP.kitAPI.Kit;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 
 /**
  * @author adriancf
@@ -40,7 +42,7 @@ public class Berserker extends MiniPlugin {
 	      {
 	        p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 400, 0));
 	        p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 400, 0));
-	        p.playSound(p.getLocation(), Sound.AMBIENCE_THUNDER, 1.0F, 1.0F);
+	        UtilSound.playSound(p, Sounds.AMBIENCE_THUNDER, 1.0F, 1.0F);
 	        return;
 	      }
 	    }

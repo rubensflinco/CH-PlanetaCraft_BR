@@ -42,6 +42,8 @@ import me.acf.MiniGames.eventos.Utils.UtilsWin;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 
@@ -95,17 +97,18 @@ public class SpleggTnT extends MiniPlugin {
     }
 	
 	  @EventHandler
-	  public void Dano(EntityDamageEvent event) {
+	  public void Dano(final EntityDamageEvent event) {
 		  if (Arcade.estilo.equals(ArcadeType.JOGANDO)){
 		    if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID))
 		    {
 			      final Player p = (Player)event.getEntity();
-			      event.setCancelled(true);
 			      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
 			      p.damage(20);
+			      event.setCancelled(true);
 				  }}, 6L);
-		    }
+		    }else{
 			  event.setCancelled(true);
+		    }
 		  }
 	  }
 	  
@@ -129,25 +132,25 @@ public class SpleggTnT extends MiniPlugin {
 	    {
 	      if ((hand.getType() == Material.WOOD_SPADE) && (Kit.verkit(p).contains("default"))){
 		          p.launchProjectile(Egg.class);
-		        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+		        UtilSound.playSound(p, Sounds.CHICKEN_EGG_POP, 1.0F, 1.0F);
 		      }
 	      if ((hand.getType() == Material.IRON_SPADE) && (Kit.verkit(p).contains("Ferro"))){
 	    	  for (Integer i = Integer.valueOf(0); i.intValue() < 2; i = Integer.valueOf(i.intValue() + 1)) {
 		        p.launchProjectile(Egg.class);
 	    	  }
-		        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+		        UtilSound.playSound(p, Sounds.CHICKEN_EGG_POP, 1.0F, 1.0F);
 		      }
 	      if ((hand.getType() == Material.GOLD_SPADE) && (Kit.verkit(p).contains("Ouro"))){
 	        for (Integer i = Integer.valueOf(0); i.intValue() < 3; i = Integer.valueOf(i.intValue() + 1)) {
 	          p.launchProjectile(Egg.class);
 	        }
-	        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+	        UtilSound.playSound(p, Sounds.CHICKEN_EGG_POP, 1.0F, 1.0F);
 	      }
 	      if ((hand.getType() == Material.DIAMOND_SPADE) && (Kit.verkit(p).contains("Diamante"))){
 	        for (Integer i = Integer.valueOf(0); i.intValue() < 4; i = Integer.valueOf(i.intValue() + 1)) {
 	          p.launchProjectile(Egg.class);
 	        }
-	        p.playSound(p.getLocation(), Sound.CHICKEN_EGG_POP, 1.0F, 1.0F);
+	        UtilSound.playSound(p, Sounds.CHICKEN_EGG_POP, 1.0F, 1.0F);
 	      }
 	    }
 	  }

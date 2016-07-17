@@ -80,7 +80,6 @@ public class FullPvPManager extends MiniPlugin {
 		Blood blod = new Blood(plugin);
 		PVP pvp = new PVP(plugin);
 		Sair sair = new Sair(plugin);
-		End end = new End(plugin);
 		Baltop bal = new Baltop(plugin);
 		
 		new CriadorComandos().Ler_Comandos(Main.plugin, "me.acf.FullPvP.comandos");
@@ -165,7 +164,6 @@ public class FullPvPManager extends MiniPlugin {
 	      for (Player p : UtilServer.Jogadores())
 	      {
 	    	  UtilInv.save(p);
-	    	  End.Premio(p, r.nextInt(3600));
 	      }
 	  }
 	  

@@ -24,6 +24,8 @@ import me.acf.lobby.gadgets.Menu;
 import me.acf.lobby.gadgets.Morph;
 import me.acf.lobby.gadgets.loader.GadGetsLoader;
 import me.acf.lobby.gadgets.loader.MorphLoader;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.recharge.Recharge;
 
 
@@ -67,7 +69,7 @@ try {
 	egg.setShooter(player);
 	ovo.add(egg);
 
-	player.getWorld().playSound(player.getLocation(), Sound.CHICKEN_EGG_POP, 0.5f, 1f);
+	UtilSound.playSound(player.getLocation(), Sounds.CHICKEN_EGG_POP, 0.5f, 1f);
 } catch (Exception e) {
 	
 }
@@ -81,8 +83,8 @@ public void EggHit(ProjectileHitEvent event)
 	{
 		if (!ovo.contains(event.getEntity()))
 		return;
-		event.getEntity().getWorld().playSound(event.getEntity().getLocation(), Sound.CHICKEN_WALK, 0.5f, 1f);
-		event.getEntity().getWorld().playSound(event.getEntity().getLocation(), Sound.EXPLODE, 0.5f, 1f);
+		UtilSound.playSound(event.getEntity().getLocation(), Sounds.CHICKEN_WALK, 0.5f, 1f);
+		UtilSound.playSound(event.getEntity().getLocation(), Sounds.EXPLODE, 0.5f, 1f);
 		event.getEntity().remove();
 	}
 }

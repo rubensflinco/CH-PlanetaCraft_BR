@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import me.acf.lobby.gadgets.Gadgets;
 import me.hub.API.Util.UtilTime;
-import net.minecraft.server.v1_8_R3.ICommand;
+import net.minecraft.server.v1_10_R1.ICommand;
 
 import org.bukkit.Material;
 import org.bukkit.Server;

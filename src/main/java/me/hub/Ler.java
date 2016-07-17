@@ -1,17 +1,13 @@
 package me.hub;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 
-import me.acf.FullPvP.FullPvPManager;
-import me.acf.KitPvP.KitPvPManager;
 import me.acf.MiniGames.API.CopyDirectory;
-import me.acf.MiniGames.HungerGames.HungerGames;
-import me.acf.MiniGames.OneInTheChamber.OneInTheChamber;
-import me.acf.MiniGames.SkyWars.SkyWars;
-import me.acf.MiniGames.SpleggTnT.SpleggTnT;
 import me.acf.Robo.RoboMananger;
-import me.acf.SkyBlock.SkyBlock;
 import me.acf.chat.Chat;
 import me.acf.lobby.chair.Chair;
 import me.acf.lobby.extend.Entrar;
@@ -42,6 +38,8 @@ public class Ler {
 
 	 private static BlockRestore _blockRestore;
 	 
+	 static List<String> versions = new ArrayList<String>();
+	 
 	 public static void Ler()
 	 {		 
 		 if (Bukkit.getServerName().contains("Robo")){
@@ -49,42 +47,134 @@ public class Ler {
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("Lobby")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "Lobby");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("Logando")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "Registro");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("Construcoes")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "Construcoes");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("SB")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "SkyBlock");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("FP")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "FullPvP");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("KP")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 versions.add("MINECRAFT_1_7_5");
+			 versions.add("MINECRAFT_1_7_10");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "KitPvP");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("SW")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "SkyWars");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("HG")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "HungerGames");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("OITC")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "OneInTheChamber");
 		 Main.plugin.saveConfig();
 		 }
 		 if (Bukkit.getServerName().contains("STNT")){
+			 versions = Main.plugin.getConfig().getStringList("versions");
+			 versions.add("MINECRAFT_1_10");
+			 versions.add("MINECRAFT_1_8");
+			 versions.add("MINECRAFT_1_9");
+			 versions.add("MINECRAFT_1_9_1");
+			 versions.add("MINECRAFT_1_9_2");
+			 versions.add("MINECRAFT_1_9_4");
+			 Main.plugin.getConfig().addDefault("versions", versions);
 		 Main.plugin.getConfig().set("Carregar", "SpleggTnT");
 		 Main.plugin.saveConfig();
 		 }
@@ -150,9 +240,10 @@ public class Ler {
 			 new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");
 		     AdminEvents AdminEvents = new AdminEvents(Main.plugin);
 			 Account account = new Account(Main.plugin);
-		     PunishMananger punish = new PunishMananger(Main.plugin);
-		     DonateMananger donate = new DonateMananger(Main.plugin);
 		     Servidor server = new Servidor();
+		     
+		        PunishMananger punish = new PunishMananger(Main.plugin);
+		    	DonateMananger donate = new DonateMananger(Main.plugin);
 		 }
 		 if (Main.plugin.getConfig().getString("Carregar").equals("Robo")) {
 			 Bungee bungee = new Bungee(Main.plugin);
@@ -160,8 +251,6 @@ public class Ler {
 		     RoboMananger RoboMananger = new RoboMananger(Main.plugin);
 			 
 			 Account account = new Account(Main.plugin);
-		     PunishMananger punish = new PunishMananger(Main.plugin);
-		     DonateMananger donate = new DonateMananger(Main.plugin);
 		     Servidor server = new Servidor();
 		 }
 	 }
@@ -177,7 +266,7 @@ public class Ler {
 
 		        PunishMananger punish = new PunishMananger(Main.plugin);
 		    	DonateMananger donate = new DonateMananger(Main.plugin);
-		    	SpleggTnT SpleggTnT = new SpleggTnT(Main.plugin);
+		    	me.acf.MiniGames.SpleggTnT.SpleggTnT SpleggTnT = new me.acf.MiniGames.SpleggTnT.SpleggTnT(Main.plugin);
 		    	
 		    	CopyDirectory CopyDirectory = new CopyDirectory();
 		    	
@@ -195,7 +284,7 @@ public class Ler {
 		        AntiHack.Initialize(Main.plugin, bungee);
 		        Servidor server = new Servidor();
 		        Admin admin = new Admin(Main.plugin);
-		        BarAPI bar = new BarAPI(Main.plugin);
+		        BarAPI bar = new BarAPI();
 		       
 		         if (!Servidor.GetMain())
 		        server.ModoGame("ON");
@@ -216,7 +305,7 @@ public class Ler {
 
 		        PunishMananger punish = new PunishMananger(Main.plugin);
 		    	DonateMananger donate = new DonateMananger(Main.plugin);
-		    	OneInTheChamber OneInTheChamber = new OneInTheChamber(Main.plugin);
+		    	me.acf.MiniGames.OneInTheChamber.OneInTheChamber OneInTheChamber = new me.acf.MiniGames.OneInTheChamber.OneInTheChamber(Main.plugin);
 		    	
 		    	CopyDirectory CopyDirectory = new CopyDirectory();
 		    	
@@ -235,7 +324,7 @@ public class Ler {
 		        AntiHack.Initialize(Main.plugin, bungee);
 		        Servidor server = new Servidor();
 		        Admin admin = new Admin(Main.plugin);
-		        BarAPI bar = new BarAPI(Main.plugin);
+		        BarAPI bar = new BarAPI();
 		       
 		         if (!Servidor.GetMain())
 		        server.ModoGame("ON");
@@ -256,7 +345,7 @@ public class Ler {
 
 			        PunishMananger punish = new PunishMananger(Main.plugin);
 			    	DonateMananger donate = new DonateMananger(Main.plugin);
-			    	HungerGames HungerGames = new HungerGames(Main.plugin);
+			    	me.acf.MiniGames.HungerGames.HungerGames HungerGames = new me.acf.MiniGames.HungerGames.HungerGames(Main.plugin);
 
 			    	me.acf.MiniGames.HungerGames.PVP PVP = new me.acf.MiniGames.HungerGames.PVP(Main.plugin);
 			    	me.acf.MiniGames.API.Bussola Bussola = new me.acf.MiniGames.API.Bussola(Main.plugin);
@@ -267,7 +356,7 @@ public class Ler {
 			        AntiHack.Initialize(Main.plugin, bungee);
 			        Servidor server = new Servidor();
 			        Admin admin = new Admin(Main.plugin);
-			        BarAPI bar = new BarAPI(Main.plugin);
+			        BarAPI bar = new BarAPI();
 			       
 			         if (!Servidor.GetMain())
 			        server.ModoGame("ON");
@@ -288,7 +377,7 @@ public class Ler {
 
 		        PunishMananger punish = new PunishMananger(Main.plugin);
 		    	DonateMananger donate = new DonateMananger(Main.plugin);
-		    	SkyWars SkyWars = new SkyWars(Main.plugin);
+		    	me.acf.MiniGames.SkyWars.SkyWars SkyWars = new me.acf.MiniGames.SkyWars.SkyWars(Main.plugin);
 		    	
 		    	CopyDirectory CopyDirectory = new CopyDirectory();
 		    	
@@ -306,7 +395,7 @@ public class Ler {
 		        AntiHack.Initialize(Main.plugin, bungee);
 		        Servidor server = new Servidor();
 		        Admin admin = new Admin(Main.plugin);
-		        BarAPI bar = new BarAPI(Main.plugin);
+		        BarAPI bar = new BarAPI();
 		       
 		         if (!Servidor.GetMain())
 		        server.ModoGame("ON");
@@ -326,7 +415,7 @@ public class Ler {
 
 	        PunishMananger punish = new PunishMananger(Main.plugin);
 	    	DonateMananger donate = new DonateMananger(Main.plugin);
-	    	SkyBlock manager = new SkyBlock(Main.plugin);
+	    	me.acf.SkyBlock.SkyBlock manager = new me.acf.SkyBlock.SkyBlock(Main.plugin);
 	    	
 	        Enchant enchant = new Enchant(Main.plugin);
 	        Recharge.Initialize(Main.plugin);
@@ -335,7 +424,7 @@ public class Ler {
 	        Bussola bussola = new Bussola(Main.plugin);
 	        Servidor server = new Servidor();
 	        Admin admin = new Admin(Main.plugin);
-	        BarAPI bar = new BarAPI(Main.plugin);
+	        BarAPI bar = new BarAPI();
 	       
 	         if (!Servidor.GetMain())
 	        server.ModoGame("ON");
@@ -354,7 +443,7 @@ public class Ler {
 
 	        PunishMananger punish = new PunishMananger(Main.plugin);
 	    	DonateMananger donate = new DonateMananger(Main.plugin);
-	    	FullPvPManager manager = new FullPvPManager(Main.plugin);
+	    	me.acf.FullPvP.FullPvPManager manager = new me.acf.FullPvP.FullPvPManager(Main.plugin);
 	    	
 	        Enchant enchant = new Enchant(Main.plugin);
 	        Recharge.Initialize(Main.plugin);
@@ -363,7 +452,7 @@ public class Ler {
 	        Bussola bussola = new Bussola(Main.plugin);
 	        Servidor server = new Servidor();
 	        Admin admin = new Admin(Main.plugin);
-	        BarAPI bar = new BarAPI(Main.plugin);
+	        BarAPI bar = new BarAPI();
 	       
 	         if (!Servidor.GetMain())
 	        server.ModoGame("ON");
@@ -383,7 +472,7 @@ public class Ler {
 
 	        PunishMananger punish = new PunishMananger(Main.plugin);
 	    	DonateMananger donate = new DonateMananger(Main.plugin);
-	    	KitPvPManager kitpvp = new KitPvPManager(Main.plugin);
+	    	me.acf.KitPvP.KitPvPManager kitpvp = new me.acf.KitPvP.KitPvPManager(Main.plugin);
 	    	
 	        Enchant enchant = new Enchant(Main.plugin);
 	        Recharge.Initialize(Main.plugin);
@@ -391,7 +480,7 @@ public class Ler {
 	        AntiHack.Initialize(Main.plugin, bungee);
 	        Servidor server = new Servidor();
 	        Admin admin = new Admin(Main.plugin);
-	        BarAPI bar = new BarAPI(Main.plugin);
+	        BarAPI bar = new BarAPI();
 	       
 	         if (!Servidor.GetMain())
 	        server.ModoGame("ON");
@@ -425,7 +514,7 @@ public class Ler {
         Bussola bussola = new Bussola(Main.plugin);
         Servidor server = new Servidor();
         Admin admin = new Admin(Main.plugin);
-        BarAPI bar = new BarAPI(Main.plugin);
+        BarAPI bar = new BarAPI();
         Perfil perfil = new Perfil(Main.plugin);
         Publicidade pu = new Publicidade(Main.plugin);
         me.hub.API.pet.Pet pet = new me.hub.API.pet.Pet(Main.plugin);
@@ -456,7 +545,7 @@ public class Ler {
         Bussola bussola = new Bussola(Main.plugin);
         Servidor server = new Servidor();
         Admin admin = new Admin(Main.plugin);
-        BarAPI bar = new BarAPI(Main.plugin);
+        BarAPI bar = new BarAPI();
         
          if (!Servidor.GetMain())
         server.ModoGame("ON");

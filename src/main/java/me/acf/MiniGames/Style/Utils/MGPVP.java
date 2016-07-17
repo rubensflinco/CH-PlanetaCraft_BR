@@ -37,7 +37,9 @@ import me.hub.Main;
 import me.hub.API.Chat;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTitle;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Bungee.Bungee;
 import me.hub.recharge.Recharge;
 import me.site.account.AccountWeb;
@@ -63,7 +65,7 @@ public class MGPVP {
 	    {
 		    final Player k = p.getKiller();
 		    MiniGamesMananger.jogadores.get(k).Matou++;
-		    p.playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 1.0F);
+		    UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 1.0F);
 			Chat.ActionBar(p, "§5Você morreu pelo(a) §f"+k.getName()+"§5 caso queira sair digite §f/lobby");
 			Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7O jogador §f"+p.getName()+"§7 morreu pelo(a) §f"+k.getName()+"§7 .");
 			UtilTitle titulo1 = new UtilTitle("§5Matou p/ §f"+p.getName()+"§5 !","§7§lVocê ganhou §f3§7§l Planets",2,3,2);
@@ -73,7 +75,7 @@ public class MGPVP {
 	    }
 	    else
 	    {
-			   p.playSound(p.getLocation(), Sound.SKELETON_DEATH, 10.0F, 1.0F);
+	    	UtilSound.playSound(p, Sounds.SKELETON_DEATH, 10.0F, 1.0F);
 			   Chat.ActionBar(p, "§5Você morreu caso queira sair digite §f/lobby");
 			   Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7O jogador §f"+p.getName()+"§7 morreu .");
 			   UtilTitle titulo = new UtilTitle("§5Você morreu !","§7§lCaso queira sair digite §f/lobby",3,5,3);

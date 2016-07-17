@@ -41,9 +41,11 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.Schematic;
 import me.hub.API.Util.UtilSchematic;
+import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTitle;
 import me.hub.API.Util.UtilSchematic.Modo;
 import me.hub.API.Util.UtilServer;
+import me.hub.API.Util.Sound.Sounds;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
@@ -171,7 +173,7 @@ public class HungerGames extends MiniPlugin {
 					p.setGameMode(GameMode.SURVIVAL);
 					p.getInventory().clear();
 					Kit.GiveKit(p);
-					p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 10.0F, 1.0F); 
+					UtilSound.playSound(p, Sounds.WITHER_SPAWN, 10.0F, 1.0F); 
 			           }
 				}
 			}
@@ -237,7 +239,7 @@ public class HungerGames extends MiniPlugin {
 		for (final Player p : UtilServer.Jogadores())
 		{
 			p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cMini Feast naceu nas cordenadas X : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.X")+"§c Z : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.Z"));
-		    p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 10.0F, 1.0F); 
+		    UtilSound.playSound(p, Sounds.WITHER_SPAWN, 10.0F, 1.0F); 
 		}
     	
     	
@@ -249,7 +251,7 @@ public class HungerGames extends MiniPlugin {
 			for (final Player p : UtilServer.Jogadores())
 			{
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cFeast vai nacer nas cordenadas X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§c Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"));
-				p.playSound(p.getLocation(), Sound.ARROW_HIT, 10.0F, 1.0F); 
+				UtilSound.playSound(p, Sounds.ARROW_HIT, 10.0F, 1.0F); 
 	        	try {
 					HungerGames.feast = HungerGames.arc.SchematicLoader("Feast.schematic");
 				} catch (IOException e) {
@@ -272,7 +274,7 @@ public class HungerGames extends MiniPlugin {
 			for (final Player p : UtilServer.Jogadores())
 			{
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §6Feast vai nacer nas cordenadas X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§6 Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"));
-				p.playSound(p.getLocation(), Sound.ARROW_HIT, 10.0F, 1.0F); 
+				UtilSound.playSound(p, Sounds.ARROW_HIT, 10.0F, 1.0F); 
 			}
         }
         if (arc.tempo == 720){
@@ -301,7 +303,7 @@ public class HungerGames extends MiniPlugin {
 	  	    for (final Player p : UtilServer.Jogadores())
 			{
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §aFeast naceu nas cordenadas X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§a Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"));
-				p.playSound(p.getLocation(), Sound.WITHER_SPAWN, 10.0F, 1.0F); 
+				UtilSound.playSound(p, Sounds.WITHER_SPAWN, 10.0F, 1.0F); 
 			}
         	
         	
@@ -312,7 +314,7 @@ public class HungerGames extends MiniPlugin {
 				UtilTitle titulo = new UtilTitle("§5Corra para o Feast !","§7A borda do mundo começou a fechar",2,4,2);
 				titulo.broadcast();
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7A borda do mundo começou a fechar corra pro §fFeast §7em §f5 Minutos§c elá vai fechar por completo!");
-				p.playSound(p.getLocation(), Sound.ARROW_HIT, 10.0F, 1.0F); 
+				UtilSound.playSound(p, Sounds.ARROW_HIT, 10.0F, 1.0F); 
 			}
         }
         
