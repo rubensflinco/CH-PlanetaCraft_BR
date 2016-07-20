@@ -234,10 +234,9 @@ public class HungerGames extends MiniPlugin {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	UtilTitle titulo = new UtilTitle("§5Mini Feast naceu !","§7Cordenadas §7X : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.X")+"§7 Z : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.Z"),2,4,2);
-    	titulo.broadcast();
-		for (final Player p : UtilServer.Jogadores())
+    	for (final Player p : UtilServer.Jogadores())
 		{
+        	UtilTitle.sendTitle(p,20,40,20,"§5Mini Feast naceu !","§7Cordenadas §7X : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.X")+"§7 Z : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.Z"));
 			p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cMini Feast naceu nas cordenadas X : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.X")+"§c Z : §f"+Main.plugin.getConfig().getInt("MiniFeast.cord.Z"));
 		    UtilSound.playSound(p, Sounds.WITHER_SPAWN, 10.0F, 1.0F); 
 		}
@@ -298,10 +297,9 @@ public class HungerGames extends MiniPlugin {
 			}
         	Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "worldborder center "+HungerGames.arc.world.getSpawnLocation().getBlockX()+" "+HungerGames.arc.world.getSpawnLocation().getBlockZ()+"");
 	  	    Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "worldborder set 40.9 300");
-			UtilTitle titulo = new UtilTitle("§5Feast naceu !","§7Cordenadas §7X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§7 Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"),2,4,2);
-			titulo.broadcast();
 	  	    for (final Player p : UtilServer.Jogadores())
 			{
+	  	    	UtilTitle.sendTitle(p,20,40,20,"§5Feast naceu !","§7Cordenadas §7X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§7 Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"));
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §aFeast naceu nas cordenadas X : §f"+Main.plugin.getConfig().getInt("Feast.cord.X")+"§a Z : §f"+Main.plugin.getConfig().getInt("Feast.cord.Z"));
 				UtilSound.playSound(p, Sounds.WITHER_SPAWN, 10.0F, 1.0F); 
 			}
@@ -311,18 +309,16 @@ public class HungerGames extends MiniPlugin {
         if (arc.tempo == 720){
 			for (final Player p : UtilServer.Jogadores())
 			{
-				UtilTitle titulo = new UtilTitle("§5Corra para o Feast !","§7A borda do mundo começou a fechar",2,4,2);
-				titulo.broadcast();
+				UtilTitle.sendTitle(p,20,40,20,"§§5Corra para o Feast !","§7A borda do mundo começou a fechar");
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7A borda do mundo começou a fechar corra pro §fFeast §7em §f5 Minutos§c elá vai fechar por completo!");
 				UtilSound.playSound(p, Sounds.ARROW_HIT, 10.0F, 1.0F); 
 			}
         }
         
         if (arc.tempo == 1020){
-        	UtilTitle titulo = new UtilTitle("§5A grande Final !","§7Solte os dragões !",2,4,2);
-			titulo.broadcast();
 			for (final Player p : UtilServer.Jogadores())
 			{
+				UtilTitle.sendTitle(p,20,40,20,"§5A grande Final !","§7Solte os dragões !");
 				p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Final da partida batalhe até a morte tome cuidado com os dragão !");
 			}
 			Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "summon EnderDragon "+HungerGames.arc.world.getSpawnLocation().getBlockX()+" 85 "+HungerGames.arc.world.getSpawnLocation().getBlockZ()+"");
@@ -344,7 +340,7 @@ public class HungerGames extends MiniPlugin {
 	  {
 	    if (event.getCause() == EntityDamageEvent.DamageCause.VOID)
 	    {
-	      Entity ent = event.getEntity();
+	      final Entity ent = event.getEntity();
 	      if (ent == null) {
 	        return;
 	      }
@@ -355,6 +351,9 @@ public class HungerGames extends MiniPlugin {
 	      {
 	    	  if (GameEvents.Proteger){
 	        ((Player)ent).teleport(ent.getWorld().getSpawnLocation());
+			 Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
+			        ((Player)ent).teleport(ent.getWorld().getSpawnLocation());
+					      }}, 6L);
 	        ((Player)ent).setFallDistance(0.0F);
 	        event.setCancelled(true);
 	    	  }

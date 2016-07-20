@@ -75,7 +75,7 @@ public class UtilsWin {
 		  msg = " " + jogador.getName();
 		  
 	  }
-		if (wim == "Ninguem"){
+		if (wim != "Ninguem"){
 	  MGPremios.Givar(jogador, true);
 	  
 	  Bukkit.broadcastMessage(" ");
@@ -85,6 +85,7 @@ public class UtilsWin {
 	  for (Player player : UtilServer.Jogadores()) {
 		  UtilSound.playSound(player, Sounds.LEVEL_UP, 2f, 1f);
 	  Chat.ActionBar(player, "§f§lJOGADOR §a§l" + msg.toUpperCase() + "§f§l GANHOU ESTA PARTIDA");
+	  UtilTitle.sendTitle(player,40,90,40,"§f"+msg.toUpperCase()+"§5 Ganhou!","§7§lReiniciando...");
 	  }
 	  jogador.setGameMode(GameMode.SPECTATOR);
 	  
@@ -115,8 +116,6 @@ public class UtilsWin {
       }
 		}
 	  
-		UtilTitle titulo = new UtilTitle("§f"+msg.toUpperCase()+"§5 Ganhou!","§7§lReiniciando...",4,9,4);
-		titulo.broadcast();
 		
 	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
 	   	      public void run() {

@@ -121,6 +121,7 @@ me\acf\lobby\gadgets\loader\GadGetsLoader.class
 me\acf\lobby\gadgets\montaria\HorseWater.class
 me\acf\lobby\gadgets\morph\Cow.class
 me\acf\KitPvP\comandos\Spawn.class
+me\acf\MiniGames\OneInTheChamber\OneInTheChamber$5.class
 me\acf\MiniGames\SpleggTnT\kits\Menu$1$1$1.class
 me\acf\MiniGames\SkyWars\Conta.class
 me\acf\lobby\extend\Lobby$1.class
@@ -181,6 +182,7 @@ me\acf\MiniGames\SkyWars\kits\Kit.class
 me\acf\FullPvP\comandos\shop.class
 me\acf\KitPvP\kitAPI\Habilidade\Anchor$3.class
 me\acf\KitPvP\kitAPI\Habilidade\Confusion.class
+me\acf\MiniGames\SkyWars\SkyWars$5.class
 me\acf\MiniGames\OneInTheChamber\Sair.class
 me\acf\KitPvP\scoreboard\Scoreboard.class
 me\acf\lobby\loja\Menu.class
@@ -233,6 +235,7 @@ me\acf\FullPvP\Teleport$1.class
 me\acf\lobby\servidores\Bussola.class
 me\acf\MiniGames\SkyWars\kits\Menu$1.class
 me\acf\FullPvP\comandos\ftpaccept.class
+me\acf\MiniGames\HungerGames\HungerGames$1.class
 me\acf\lobby\gadgets\Music$1.class
 me\acf\KitPvP\kitAPI\Kits.class
 me\acf\MiniGames\SpleggTnT\Utils\EventoComandos.class
@@ -261,6 +264,7 @@ me\acf\KitPvP\PVP$1.class
 me\acf\MiniGames\OneInTheChamber\Utils\EventoComandos.class
 me\acf\MiniGames\team\TeamData.class
 me\acf\lobby\extend\Top3.class
+me\acf\MiniGames\SpleggTnT\SpleggTnT$5.class
 me\acf\SkyBlock\comandos\enderchest.class
 me\acf\lobby\gadgets\utils\FleshHook$1.class
 me\acf\lobby\gadgets\utils\MelonBomba$2.class

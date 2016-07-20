@@ -51,6 +51,10 @@ public class dropinv
     int size = materials.length;
     int index = random.nextInt(size);
     Material randomMaterial = materials[index];
+    
+    if ((randomMaterial == Material.BEDROCK) || (randomMaterial == Material.BARRIER) || (randomMaterial == Material.COMMAND) || (randomMaterial == Material.COMMAND_CHAIN) || (randomMaterial == Material.COMMAND_MINECART) || (randomMaterial == Material.COMMAND_REPEATING))
+    return new ItemStack(Material.CAKE, 64);
+    
     return new ItemStack(randomMaterial, random.nextInt(64));
   }
   

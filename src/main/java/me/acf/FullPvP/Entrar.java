@@ -5,12 +5,17 @@ package me.acf.FullPvP;
 
 import java.util.ArrayList;
 
+import net.citizensnpcs.api.trait.trait.Inventory;
+
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.FullPvP.scoreboard.Scoreboard;
@@ -41,6 +46,15 @@ public class Entrar extends MiniPlugin {
 	}
 	public ArrayList<Player> joins = new ArrayList<>();
 	public int evento = 100;
+	
+	  public static void RemoveItemBUG(Player p)
+	  {
+		  PlayerInventory inv = p.getInventory();
+		  inv.remove(Material.COMMAND);
+		  inv.remove(Material.COMMAND_CHAIN);
+		  inv.remove(Material.COMMAND_MINECART);
+		  inv.remove(Material.COMMAND_REPEATING);
+	  }
 	
 	@EventHandler
 	public void Entrar(final PlayerJoinEvent event)
@@ -88,6 +102,7 @@ public class Entrar extends MiniPlugin {
 	    
 	    	}
 	    }
+	     RemoveItemBUG(event.getPlayer());
 	}
 
 

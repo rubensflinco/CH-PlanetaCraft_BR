@@ -80,8 +80,6 @@ public class MiniGamesMananger extends MiniPlugin {
 	private int max = 0;
 	private float level = 0.99F;
 	public Sounds spawn = Sounds.WITHER_SPAWN;
-	public static UtilTitle tituloIniciando = new UtilTitle("§a","§6Iniciando MiniGame",0,3,0);
-	public static UtilTitle tituloInvisibilidade = new UtilTitle("§a","§6Ativando PvP",0,3,0);
 	
 	public static HashMap<Player,UserData> jogadores = new HashMap<>();
 	public static ArrayList<Player> Vivos = new ArrayList<>();
@@ -222,21 +220,30 @@ public class MiniGamesMananger extends MiniPlugin {
         	Bukkit.broadcastMessage("§5§l"+ Bukkit.getServerName() +" §7Iniciando em §c§l" + tempo + " Segundos");
         	Som(Sounds.CLICK);
         }
+
         if (tempo == 3) {
-		tituloIniciando.setTitle("§a3");
-		tituloIniciando.broadcast();
+            for (Player p : UtilServer.Jogadores())
+            {
+              UtilTitle.sendTitle(p,0,30,0,"§a3","§6Iniciando MiniGame");
+            }
         }
         if (tempo == 2) {
-    		tituloIniciando.setTitle("§62");
-    		tituloIniciando.broadcast();
+            for (Player p : UtilServer.Jogadores())
+            {
+              UtilTitle.sendTitle(p,0,30,0,"§63","§6Iniciando MiniGame");
+            }
         }
         if (tempo == 1) {
-    		tituloIniciando.setTitle("§c1");
-    		tituloIniciando.broadcast();
+            for (Player p : UtilServer.Jogadores())
+            {
+              UtilTitle.sendTitle(p,0,30,0,"§c1","§6Iniciando MiniGame");
+            }
         }
         if (tempo == 0) {
-    		tituloIniciando.setTitle("§cGO");
-    		tituloIniciando.broadcast();
+            for (Player p : UtilServer.Jogadores())
+            {
+              UtilTitle.sendTitle(p,0,30,0,"§cGO","§6Iniciando MiniGame");
+            }
         }
 		if (tempo <= 100)
 		{
@@ -256,20 +263,16 @@ public class MiniGamesMananger extends MiniPlugin {
         {
         	Chat.ActionBar(p, "§a§lPvP vai ativar em §e§l" + timeLeft);
             if (tempo == 3) {
-            	tituloInvisibilidade.setTitle("§a3");
-            	tituloInvisibilidade.broadcast();
+                  UtilTitle.sendTitle(p,0,30,0,"§a3","§6Ativando PvP");
                 }
                 if (tempo == 2) {
-                	tituloInvisibilidade.setTitle("§62");
-                	tituloInvisibilidade.broadcast();
+                	UtilTitle.sendTitle(p,0,30,0,"§62","§6Ativando PvP");
                 }
                 if (tempo == 1) {
-                	tituloInvisibilidade.setTitle("§c1");
-                	tituloInvisibilidade.broadcast();
+                	UtilTitle.sendTitle(p,0,30,0,"§c1","§6Ativando PvP");
                 }
                 if (tempo == 0) {
-                	tituloInvisibilidade.setTitle("§cGO");
-                	tituloInvisibilidade.broadcast();
+                	UtilTitle.sendTitle(p,0,30,0,"§cGO","§6Ativando PvP");
                 }
         }
 	}

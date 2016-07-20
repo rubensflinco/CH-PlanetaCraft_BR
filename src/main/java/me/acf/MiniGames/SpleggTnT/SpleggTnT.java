@@ -103,7 +103,7 @@ public class SpleggTnT extends MiniPlugin {
 		    {
 			      final Player p = (Player)event.getEntity();
 			      Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
-			      p.damage(20);
+			      p.damage(10);
 			      event.setCancelled(true);
 				  }}, 6L);
 		    }else{
@@ -321,7 +321,7 @@ public class SpleggTnT extends MiniPlugin {
 	  {
 	    if (event.getCause() == EntityDamageEvent.DamageCause.VOID)
 	    {
-	      Entity ent = event.getEntity();
+	      final Entity ent = event.getEntity();
 	      if (ent == null) {
 	        return;
 	      }
@@ -331,7 +331,10 @@ public class SpleggTnT extends MiniPlugin {
 	      if ((ent instanceof Player))
 	      {
 	    	  if (GameEvents.Proteger){
+	         ((Player)ent).teleport(ent.getWorld().getSpawnLocation());
+			 Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() { public void run() {
 	        ((Player)ent).teleport(ent.getWorld().getSpawnLocation());
+			      }}, 6L);
 	        ((Player)ent).setFallDistance(0.0F);
 	        event.setCancelled(true);
 	    	  }
