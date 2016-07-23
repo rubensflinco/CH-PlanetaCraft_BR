@@ -69,6 +69,18 @@ public class KitAPI {
 					   }
 				}
 				else
+			    	if (s.contains("§a"))
+			    	{
+			    			if (kit.contains(","))
+							{
+								kit = kit + "," + s; 
+							}
+							else
+							{
+								kit = s + ",";
+							}	
+			    	}
+			    	else
 	    	if (s.contains("§c"))
 	    	{
 	    		try {
@@ -111,9 +123,9 @@ public class KitAPI {
     
 	public static void AddKit(String nome, Inventory inv)
 	{
-		kit.put(nome.replace("§5", "").replace("§6", "").replace("§c", "").replace("§o", ""), inv);
+		kit.put(nome.replace("§5", "").replace("§6", "").replace("§c", "").replace("§o", "").replace("§a", ""), inv);
 		kits.add(nome);
-		permkit.put(nome.replace("§5", "").replace("§6", "").replace("§c", "").replace("§o", ""), nome);
+		permkit.put(nome.replace("§5", "").replace("§6", "").replace("§c", "").replace("§o", "").replace("§a", ""), nome);
 		System.out.print("Kit> " + nome + " adicionado!");
 	}
 	
@@ -121,16 +133,16 @@ public class KitAPI {
     {
     	if (!kit.containsKey(nome))
     	{
-    		Format.Erro("O kit§a " + nome + " não existe", p);
+    		Format.Erro("O kit§a " + nome + "§7 não existe", p);
     		return;
     	}
 
     	if (!verificar(nome, p))
     	return;
 	    
-    	if (nome.contains("Reset"))
+    	if (nome.contains("iniciante"))
     	{
-  			   if (!Tempo(p, nome,99999))
+  			   if (!Tempo(p, nome,999999))
     				return;
   			 Conta.Reload(p);
   			 Scoreboard.CriarScoreboard(p);
@@ -252,6 +264,14 @@ public class KitAPI {
 		   }
 		   else 
 			   return false;
+	}
+	
+	if (KitAPI.permkit.get(nome).contains("§a"))
+	{
+			   if (!Tempo(p, nome,1))
+				return false;
+			   
+			   return true;
 	}
 	
 	if (KitAPI.permkit.get(nome).contains("§c"))

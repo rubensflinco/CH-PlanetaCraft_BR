@@ -27,12 +27,9 @@ public class Kit implements CommandExecutor {
 		   
 		   if (args.length <= 0)
 		   {
-			   Format.Comando("§a§lKit", "Seus kits: §a" + KitAPI.SeusKits(jogador).replace(",", " "), jogador);
+			   Format.Comando(" §a§lKit", "Seus kits: \n §a§lKit §c- §f/kit §a" + KitAPI.SeusKits(jogador).replace(",", "\n §a§lKit §c- §f/kit §a"), jogador);
 				return true;
 		   }
-	        if (!Recharge.Instance.use(jogador, "Kit", 33900L, true, true)) {
-		        return true;
-		      }
 		   KitAPI.GiveKit(args[0], jogador);
 		return false;
 	  }

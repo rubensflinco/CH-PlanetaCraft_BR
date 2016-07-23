@@ -35,6 +35,7 @@ import me.hub.API.Util.UtilHolo;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.UtilTablist;
 import me.hub.API.Util.Sound.Sounds;
 import me.hub.config.Config;
 import me.site.account.Account;
@@ -63,6 +64,10 @@ public class Entrar extends MiniPlugin {
 	{
 		event.setJoinMessage(null);
 		
+		UtilTablist.setHeader(event.getPlayer(), "§0 ", "§a§lPlanetacraft§f§l_§e§lBR", "§a ", "§f"+event.getPlayer().getCustomName(), "§c ", "§f§lSALA §f: §a§l"+Bukkit.getServerName(), "§1 ");
+		
+		UtilTablist.setFooter(event.getPlayer(), "§2 ", "§f§lSITE §f: §a§lwww.planetacraft.com.br", "§3 ", "  §f§lADQUIRIR JÁ §6§lVIP §f§lEM §a§lwww.planetacraft.com.br/loja  ", "§4 ");
+
 		Chat.ActionBar(event.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO KITPVP DO PLANETACRAFT_BR");
 		 event.getPlayer().sendMessage(" ");
 		 event.getPlayer().sendMessage("      §f§lSEJA BEM-VINDO; §7§l" + event.getPlayer().getName());

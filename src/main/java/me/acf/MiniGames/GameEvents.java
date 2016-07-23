@@ -48,6 +48,7 @@ import me.hub.MiniPlugin;
 import me.hub.API.Chat;
 import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.UtilTablist;
 import me.hub.API.Util.Sound.Sounds;
 import me.hub.comandos.geral.fly;
 import me.site.account.Account;
@@ -336,7 +337,10 @@ public class GameEvents extends MiniPlugin {
 				}
 				event.setJoinMessage("§8§lEntrou §f"+event.getPlayer().getName()+" §7("+MiniGamesMananger.jogadores.size()+"/"+Bukkit.getServer().getMaxPlayers()+")");
 				
-			   
+				UtilTablist.setHeader(event.getPlayer(), "§0 ", "§a§lPlanetacraft§f§l_§e§lBR", "§a ", "§f"+event.getPlayer().getCustomName(), "§c ", "§f§lSALA §f: §a§l"+Bukkit.getServerName(), "§1 ");
+				
+				UtilTablist.setFooter(event.getPlayer(), "§2 ", "§f§lSITE §f: §a§lwww.planetacraft.com.br", "§3 ", "  §f§lADQUIRIR JÁ §6§lVIP §f§lEM §a§lwww.planetacraft.com.br/loja  ", "§4 ");
+
 			   event.setJoinMessage(null);
 			   event.getPlayer().getInventory().clear();
 			   event.getPlayer().setLevel(0);

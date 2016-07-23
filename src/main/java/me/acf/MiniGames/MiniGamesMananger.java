@@ -118,22 +118,22 @@ public class MiniGamesMananger extends MiniPlugin {
 	public void LobbyMenu(PlayerCommandPreprocessEvent event)
 	{
 		Player p = event.getPlayer();
-		if (event.getMessage().contains("/lobby")){
+		if (event.getMessage().toLowerCase().startsWith("/lobby")){
 		       event.setCancelled(true);
 			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
-		if (event.getMessage().contains("/hub")){
+		if (event.getMessage().toLowerCase().startsWith("/hub")){
 			   event.setCancelled(true);
 			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
-		if (event.getMessage().contains("/sair")){
+		if (event.getMessage().toLowerCase().startsWith("/sair")){
 			   event.setCancelled(true);
 			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);
 		}
-		if (event.getMessage().contains("/leave")){
+		if (event.getMessage().toLowerCase().startsWith("/leave")){
 			   event.setCancelled(true);
 			   UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 			   MGSpectator.Menu1(p);

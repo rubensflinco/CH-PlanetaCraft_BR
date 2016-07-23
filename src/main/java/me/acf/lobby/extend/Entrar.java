@@ -27,6 +27,7 @@ import me.hub.API.Util.UtilEnchant;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilNPC;
 import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.UtilTablist;
 import me.hub.API.Util.Sound.Sounds;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -46,6 +47,9 @@ public class Entrar implements Listener {
 		
 		e.setJoinMessage(null);
 		
+		UtilTablist.setHeader(e.getPlayer(), "§0 ", "§a§lPlanetacraft§f§l_§e§lBR", "§a ", "§f"+e.getPlayer().getCustomName(), "§c ", "§f§lSALA §f: §a§l"+Bukkit.getServerName(), "§1 ");
+		
+		UtilTablist.setFooter(e.getPlayer(), "§2 ", "§f§lSITE §f: §a§lwww.planetacraft.com.br", "§3 ", "  §f§lADQUIRIR JÁ §6§lVIP §f§lEM §a§lwww.planetacraft.com.br/loja  ", "§4 ");
 
 	    Location spawn = Bukkit.getWorld(e.getPlayer().getLocation().getWorld().getName()).getSpawnLocation();
         Scoreboard.CriarScoreboard(e.getPlayer());

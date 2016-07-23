@@ -133,6 +133,47 @@ public class FullPvPManager extends MiniPlugin {
 	      event.getPlayer().sendMessage("§f§lMS §6§l" + UtilPlayer.Ping(event.getPlayer()));
 	      event.setCancelled(true);
 	    }
+	    if (event.getMessage().toLowerCase().startsWith("/warp ajuda"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"), -10,104,-6, 90,0), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp plotme"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("plotworld"), 0,67,0), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp mina"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"), -43,75,-150, 180,0), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp madeira"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"), 38,101,-70, -90,0), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp loja"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"), 54,101,-11, -52,0), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp arena"))
+	    {
+	      Teleport.TeleportTempo(new Location(Bukkit.getWorld("world"), 3,101,102), event.getPlayer());
+	      event.setCancelled(true);
+	    }else
+	    if (event.getMessage().toLowerCase().startsWith("/warp"))
+	    {
+	      event.getPlayer().sendMessage("§c§lWARP §7Warps disponiveis:");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp ajuda");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp plotme");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp mina");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp madeira");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp loja");
+	      event.getPlayer().sendMessage("§c§lWARP §c- §f/warp arena");
+	      event.setCancelled(true);
+	    }
 	    
 	  }
 
@@ -232,10 +273,12 @@ public class FullPvPManager extends MiniPlugin {
 			     if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
 				       event.setCancelled(true);
 			           event.getEntity().teleport(Bukkit.getWorld("world").getSpawnLocation());
+			           event.getEntity().teleport(Bukkit.getWorld("world").getSpawnLocation());
 			           if ((event.getEntity() instanceof Player))
 					    {
 				        	 Player p = (Player)event.getEntity();
 				        	 p.setBedSpawnLocation(Bukkit.getWorld("world").getSpawnLocation());
+				        	 p.teleport(Bukkit.getWorld("world").getSpawnLocation());
 					    }
 			     }
 		   }

@@ -463,11 +463,11 @@ public class Lobby extends MiniPlugin{
 		    		  String Servidor = AccountWeb.Conectar(Main.site + "/API/sala.php?modo=CONSUTAR_ON&nome=" + nome, "nome");
 		    		  if (Servidor == null)
 		    		  {
-		    			  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
+		    			  UtilSound.playSound(e.getPlayer(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
 		    			e.getPlayer().sendMessage("§cTodas as salas estão fechadas ou em jogos aguarde!");
 		    			  return;
 		    		  }
-		    		  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.LEVEL_UP, 0.5F, 0.2F);
+		    		  UtilSound.playSound(e.getPlayer(), Sounds.LEVEL_UP, 0.5F, 0.2F);
 	             e.getPlayer().sendMessage("§cLocalizado a sala §a " + Servidor);
 			      Bungee.SendPlayerToServer(e.getPlayer(), Servidor);
 		    	  }
@@ -475,7 +475,7 @@ public class Lobby extends MiniPlugin{
 		    	  if (nome.contains("§c§lEM BREVE"))
 		    	  {
 		    		  e.getPlayer().sendMessage("§4§lNPC §fEi para de cliquar em min meu nome é em breve oque você esta esperando que saia da aqui ?");
-		    		  UtilSound.playSound(e.getPlayer().getLocation(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
+		    		  UtilSound.playSound(e.getPlayer(), Sounds.ANVIL_LAND, 0.5F, 0.2F);
 		    	  }
 				  }catch (Exception ec) {}
 		      }

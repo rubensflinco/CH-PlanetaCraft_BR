@@ -35,23 +35,23 @@ public class Teleport {
 		   {
 			   jogador.teleport(location);
 			   loc.remove(jogador);
-			   jogador.sendMessage("§aTeleportando...");
+			   jogador.sendMessage("§9§lTP §aTeleportando...");
 			   return;
 		   }
-		jogador.sendMessage("§aTeleportando você em 3 segundos.");
+		jogador.sendMessage("§9§lTP §aTeleportando você em 3 segundos.");
 	   Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			   
 			   public void run() {
 				   if (CombatLog.EstaEmCombat(jogador))
 				   {
-					   jogador.sendMessage("§cVocê esta em combat.");
+					   jogador.sendMessage("§9§lTP §cVocê esta em combat.");
 					   loc.remove(jogador);
 					   return;
 				   }
 				   if ((jogador.isOnline()) || (jogador != null)) {
 				   jogador.teleport(location);
 				   loc.remove(jogador);
-				   jogador.sendMessage("§aTeleportando...");
+				   jogador.sendMessage("§9§lTP §aTeleportando...");
 				   }
 			   }
 		 }, 60L);
