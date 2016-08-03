@@ -11,6 +11,7 @@ import me.acf.FormatText.Format;
 import me.acf.KitPvP.kitAPI.BarKit;
 import me.acf.KitPvP.kitAPI.Kit;
 import me.acf.KitPvP.kitAPI.Kits;
+import me.acf.KitPvP.kitAPI.LojaDeKits;
 import me.acf.KitPvP.kitAPI.Menu;
 import me.acf.KitPvP.scoreboard.Scoreboard;
 import me.acf.MiniGames.MiniGamesMananger;
@@ -18,6 +19,7 @@ import me.acf.lobby.Lag.TPS;
 import me.acf.lobby.extend.MobSpawn;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
@@ -98,6 +100,7 @@ public class KitPvPManager extends MiniPlugin{
 		Kit kit = new Kit(plugin);
 		Arena arena = new Arena(plugin);
 		Entrar entra = new Entrar(plugin);
+		LojaDeKits LojaDeKits = new LojaDeKits(plugin);
 	    head.desativar = true;
 		JumpBlocos jump = new JumpBlocos(plugin);
 	    new CriadorComandos().Ler_Comandos(Main.plugin, "me.security.registrar.comandos");
@@ -358,7 +361,7 @@ public class KitPvPManager extends MiniPlugin{
 	      BarKit.BarKit(p);
 		  if (UtilPlayer.Ping(p) > 800)
 		  {
-			  me.hub.API.Chat.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
+			  UtilActionBar.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
 			  
 		  }
 		  if (UtilPlayer.Ping(p) > 1500)

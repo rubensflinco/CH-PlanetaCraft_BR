@@ -3,17 +3,15 @@
  */
 package me.acf.MiniGames.HungerGames.kits;
 
-import java.util.ArrayList;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import me.acf.MiniGames.HungerGames.Conta;
 import me.hub.Main;
+import me.hub.API.Util.UtilSound;
+import me.hub.API.Util.Sound.Sounds;
 
 /**
  * @author adriancf
@@ -92,6 +90,6 @@ public class Menu {
 		   	    , 2L);
 		  }
 		  p.openInventory(inv);
-		  
+		  UtilSound.playSound(p, Sounds.CHEST_OPEN, 10.0F, 1.0F);
 	}
 }

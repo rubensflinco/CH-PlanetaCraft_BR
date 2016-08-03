@@ -7,11 +7,9 @@ import org.bukkit.Color;
 import org.bukkit.Effect;
 import org.bukkit.FireworkEffect;
 import org.bukkit.GameMode;
-import org.bukkit.Sound;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.MiniGamesMananger;
@@ -19,7 +17,7 @@ import me.acf.MiniGames.Style.Utils.MGPremios;
 import me.acf.lobby.Lag.TPS;
 import me.acf.lobby.gadgets.utils.Firework;
 import me.hub.Main;
-import me.hub.API.Chat;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTitle;
@@ -63,19 +61,19 @@ public class UtilsWin {
 	{
 		
 		
-		String msg;
-		
-	  if (jogador == null)
-	  {
-			msg = "§f§lNinguem";
-			System.out.print("Não tivemos vencedores :(");
-	  }
-	  else
-	  {
-		  msg = " " + jogador.getName();
-		  
-	  }
 		if (wim != "Ninguem"){
+			String msg;
+			
+			  if (jogador == null)
+			  {
+					msg = "§f§lNinguem";
+					System.out.print("Não tivemos vencedores :(");
+			  }
+			  else
+			  {
+				  msg = " " + jogador.getName();
+				  
+			  }
 	  MGPremios.Givar(jogador, true);
 	  
 	  Bukkit.broadcastMessage(" ");
@@ -84,7 +82,7 @@ public class UtilsWin {
 	  Bukkit.broadcastMessage(" ");
 	  for (Player player : UtilServer.Jogadores()) {
 		  UtilSound.playSound(player, Sounds.LEVEL_UP, 2f, 1f);
-	  Chat.ActionBar(player, "§f§lJOGADOR §a§l" + msg.toUpperCase() + "§f§l GANHOU ESTA PARTIDA");
+	  UtilActionBar.ActionBar(player, "§f§lJOGADOR §a§l" + msg.toUpperCase() + "§f§l GANHOU ESTA PARTIDA");
 	  UtilTitle.sendTitle(player,40,90,40,"§f"+msg.toUpperCase()+"§5 Ganhou!","§7§lReiniciando...");
 	  }
 	  jogador.setGameMode(GameMode.SPECTATOR);
@@ -114,28 +112,29 @@ public class UtilsWin {
 			e.printStackTrace();
 		} 
       }
-		}
-	  
-		
-	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+   	      public void run() {
+   	    	Bungee.SendAllPlayers("lobby");
+  	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
 	   	      public void run() {
 	   	    	Bungee.SendAllPlayers("lobby");
-	  	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
-		   	      public void run() {
-		   	    	Bungee.SendAllPlayers("lobby");
-			  	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
-				   	      public void run() {
-				   	    	Bungee.SendAllPlayers("lobby");
-				   			Bukkit.getServer().shutdown();
-				   	      } 
-				   	    }
-				   	    , 40L);
-		   	      } 
-		   	    }
-		   	    , 20L);
+		  	   	  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+			   	      public void run() {
+			   	    	Bungee.SendAllPlayers("lobby");
+			   			Bukkit.getServer().shutdown();
+			   	      } 
+			   	    }
+			   	    , 40L);
 	   	      } 
 	   	    }
-	   	    , 160L);
+	   	    , 20L);
+   	      } 
+   	    }
+   	    , 160L);
+		}else{
+	   	Bungee.SendAllPlayers("lobby");
+		Bukkit.getServer().shutdown();
+		}
 	}
 	
 	

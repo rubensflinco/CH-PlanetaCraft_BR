@@ -27,6 +27,7 @@ import me.acf.MiniGames.HungerGames.kits.Habilidades.Vacuum;
 import me.acf.MiniGames.HungerGames.kits.Habilidades.Viper;
 import me.hub.Main;
 import me.hub.API.Util.UtilInv;
+import me.hub.API.Util.UtilNumber;
 import me.hub.config.Config;
 
 /**
@@ -57,27 +58,27 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitDefault");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.APPLE, 3, (byte)0, "§aMaça default", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.APPLE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.");
+	    AddKit(Material.APPLE,"§9default §a[Gratis]", pvp, "Kit sem habilidade.", 0);
 	}
 	public void KitNinja()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitNinja");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.ENDER_PEARL,"§9Ninja §6[Vip]", pvp, "Batendo em um jogador e depois abertando shift você é teleportado.");
+	    AddKit(Material.ENDER_PEARL,"§9Ninja §6[Vip]", pvp, "Batendo em um jogador e depois abertando shift você é teleportado.", 0);
 	    Ninja ninja = new Ninja(Main.plugin);
 	}
 	public void KitViper()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitViper");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.SPIDER_EYE,"§9Viper §c[Pago-Planets]", pvp, "Coloca veneno no jogador que você bater.");
+	    AddKit(Material.SPIDER_EYE,"§9Viper §c[Pago-Planets]", pvp, "Coloca veneno no jogador que você bater.", 2000);
 	    Viper viper = new Viper(Main.plugin);
 	}
 	public void KitUnix()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitfUnix");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.REDSTONE,"§9Unix §5[Vip+]", pvp, "Você tem 10% de chance de tirar 4 coração a mais.");
+	    AddKit(Material.REDSTONE,"§9Unix §5[Vip+]", pvp, "Você tem 10% de chance de tirar 4 coração a mais.", 0);
 	    Unix unix = new Unix(Main.plugin);
 	}
 	public void KitPhantom()
@@ -85,7 +86,7 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitPhantom");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.FEATHER, 1, (byte)0, "§a§lKit Phantom", ""));
-	    AddKit(Material.FEATHER,"§9Phantom §6[Vip]", pvp, "Você pode voar cliquando na pena.");
+	    AddKit(Material.FEATHER,"§9Phantom §6[Vip]", pvp, "Você pode voar cliquando na pena.", 0);
 	    Phantom phantom = new Phantom(Main.plugin);
 	}
 	public void KitKangaroo()
@@ -93,7 +94,7 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitKangaroo");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.FIREWORK, 1, (byte)0, "§a§lKit Kangaroo", ""));
-	    AddKit(Material.FIREWORK,"§9Kangaroo §c[Pago-Planets]", pvp, "Você pode dar um super pulo.");
+	    AddKit(Material.FIREWORK,"§9Kangaroo §c[Pago-Planets]", pvp, "Você pode dar um super pulo.", 2000);
 	    Kangaroo kangaroo = new Kangaroo(Main.plugin);
 	}
 	public void KitForceField()
@@ -101,7 +102,7 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitForceField");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.IRON_FENCE, 1, (byte)0, "§a§lKit ForceField", ""));
-	    AddKit(Material.IRON_FENCE,"§9Forcefield §5[Vip+]", pvp, "Você pode bater um jogadores ao seu redor durante um tempo.");
+	    AddKit(Material.IRON_FENCE,"§9Forcefield §5[Vip+]", pvp, "Você pode bater um jogadores ao seu redor durante um tempo.", 0);
 	    ForceField phantom = new ForceField(Main.plugin);
 	}
 	public void KitUrgal()
@@ -109,7 +110,7 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitUrgal");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.GOLD_NUGGET, 2, (byte)0, "§a§lKit Urgal", ""));
-	    AddKit(Material.GOLD_NUGGET,"§9Urgal §5[Vip+]", pvp, "Cliquando nas pepitas de ouro você ganha força.");
+	    AddKit(Material.GOLD_NUGGET,"§9Urgal §5[Vip+]", pvp, "Cliquando nas pepitas de ouro você ganha força.", 0);
 	    Urgal urgal = new Urgal(Main.plugin);
 	}
 	public void KitVacuum()
@@ -117,47 +118,49 @@ public class Kits {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitVacuum");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
 	    pvp.addItem(UtilInv.AddItemReturn(Material.ENDER_PEARL, 1, (byte)0, "§a§lKit Vacuum", ""));
-	    AddKit(Material.ENDER_PEARL,"§9Vacuum §6[Vip]", pvp, "Puxa jogadores procimos para perto de você.");
+	    AddKit(Material.ENDER_PEARL,"§9Vacuum §6[Vip]", pvp, "Puxa jogadores procimos para perto de você.", 0);
 	    Vacuum phantom = new Vacuum(Main.plugin);
 	}
 	public void KitSnail()
     {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitSnail");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.SOUL_SAND,"§9Snail §c[Pago-Planets]", pvp, "Batendo no jogador você pode deixar ele lerdo.");
+	    AddKit(Material.SOUL_SAND,"§9Snail §c[Pago-Planets]", pvp, "Batendo no jogador você pode deixar ele lerdo.", 2000);
 	    Snail kit = new Snail(Main.plugin);
 	}
 	public void KitPoseidon()
     {
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitPoseidon");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.WATER_BUCKET,"§9Poseidon §6[Vip]", pvp, "Quando você estiver dentro da água você vai dar mais dano.");
+	    AddKit(Material.WATER_BUCKET,"§9Poseidon §6[Vip]", pvp, "Quando você estiver dentro da água você vai dar mais dano.", 0);
 	    Poseidon kit = new Poseidon(Main.plugin);
 	}
 	public void KitFrosty()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitFrosty");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.SNOW_BLOCK,"§9Frosty §c[Pago-Planets]", pvp, "Você anda mais rapido sobre a neve.");
+	    AddKit(Material.SNOW_BLOCK,"§9Frosty §c[Pago-Planets]", pvp, "Você anda mais rapido sobre a neve.", 0);
 	    Frosty ninja = new Frosty(Main.plugin);
 	}
 	public void KitStomper()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitStomper");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.IRON_BOOTS,"§9Stomper §6[Vip]", pvp, "Quando você pular em cima de uma pessoa você vai dar o dano que você levaria nelá.");
+	    AddKit(Material.IRON_BOOTS,"§9Stomper §6[Vip]", pvp, "Quando você pular em cima de uma pessoa você vai dar o dano que você levaria nelá.", 0);
 	    Stomper stomper = new Stomper(Main.plugin);
 	}
 	public void KitConfusion()
 	{
 	    Inventory pvp = Bukkit.createInventory(null, 9, "KitConfusion");
 	    pvp.addItem(UtilInv.AddItemReturn(Material.COMPASS, 1, (byte)0, "§aBussola §6CLICK", ""));
-	    AddKit(Material.SEEDS,"§9Confusion §c[Pago-Planets]", pvp, "Batendo no jogador você pode deixar ele com confusão.");
+	    AddKit(Material.SEEDS,"§9Confusion §c[Pago-Planets]", pvp, "Batendo no jogador você pode deixar ele com confusão.", 2000);
 	    Confusion viper = new Confusion(Main.plugin);
 	}
 	
-	public void AddKit(Material item, String nome, Inventory inv, String desc)
+	public void AddKit(Material item, String nome, Inventory inv, String desc, int preco1)
 	{
+		String NomeKitLimpo = nome.replace("§a[Gratis]", "").replace("§c[Pago-Planets]", "").replace("§6[Vip]", "").replace("§5[Vip+]", "");
+		String preco = ""+preco1;
 		String NomeKIT = nome.replace("§a[Gratis]", "").replace("§c[Pago-Planets]", "").replace("§6[Vip]", "").replace("§5[Vip+]", "");
 		ItemStack is = new ItemStack(item);
 		ItemMeta im = is.getItemMeta();
@@ -184,6 +187,36 @@ public class Kits {
 		Kit.kits.put(NomeKIT, is);
 		Kit.kit.put(NomeKIT, inv);
 		Kit.kitsMENU.put(nome, is);
+		
+		if (preco1 > 0){
+			ItemStack is2 = new ItemStack(item);
+			ItemMeta im2 = is2.getItemMeta();
+			im2.setDisplayName(NomeKitLimpo);
+			ArrayList<String> lore2 = new ArrayList();
+			lore2.add("§1 ");
+			lore2.add("§6§lNecessário");
+			lore2.add("§fPlanets : ₱ "+UtilNumber.getNumber(preco));
+			lore2.add("§a§lDescrição");
+			if (desc == null){
+			lore2.add("§f* EM BREVE");
+			}else{
+		    lore2.add("§f* "+desc);
+			}
+			lore2.add("§2 ");
+			lore2.add("§c§lItems");
+			for (ItemStack invI2 : inv.getContents()){
+				if (invI2 != null){
+			if (invI2.getItemMeta().getDisplayName() == null){}else{
+			lore2.add("§f+ "+invI2.getItemMeta().getDisplayName());	
+			}
+			}
+			}
+			im2.setLore(lore2);
+			is2.setItemMeta(im2);
+			Kit.kitsLOJAMENU.put(nome, is2);
+			Kit.kitsLOJApreco.put(NomeKitLimpo, preco);
+		}
+		
 	}
 	
 	

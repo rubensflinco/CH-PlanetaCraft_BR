@@ -1,5 +1,6 @@
 me\acf\MiniGames\HungerGames\kits\Kits.class
 me\acf\MiniGames\Style\Utils\MGPVP.class
+me\acf\MiniGames\OneInTheChamber\kits\LojaDeKits$1.class
 me\acf\FullPvP\PVP.class
 me\acf\KitPvP\kitAPI\Habilidade\Camel.class
 me\acf\lobby\gadgets\utils\MelonBomba$1.class
@@ -12,6 +13,7 @@ me\acf\MiniGames\SpleggTnT\SpleggTnT$4.class
 me\acf\KitPvP\PVP.class
 me\acf\lobby\gadgets\pet\PetChicken.class
 me\acf\KitPvP\CombatLog.class
+me\acf\KitPvP\kitAPI\LojaDeKits$1.class
 me\hub\loja\ShopType.class
 me\acf\KitPvP\kitAPI\Habilidade\Frosty.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\Poseidon.class
@@ -24,10 +26,12 @@ me\acf\lobby\gadgets\utils\PlanetsBomb$1.class
 me\acf\MiniGames\SpleggTnT\SpleggTnT.class
 me\acf\lobby\gadgets\Music.class
 me\acf\FullPvP\loja\Comprar\ComprarAPI.class
+me\acf\MiniGames\OneInTheChamber\kits\LojaDeKits.class
 me\acf\MiniGames\OneInTheChamber\OneInTheChamber.class
 me\acf\FullPvP\comandos\feed.class
 me\acf\MiniGames\SkyWars\PVP.class
 me\acf\MiniGames\HungerGames\Sair.class
+me\acf\KitPvP\kitAPI\LojaDeKits.class
 me\acf\MiniGames\MiniGamesMananger$LadoTeam.class
 me\hub\loja\event\InventoryShopCheck.class
 me\acf\MiniGames\HungerGames\kits\Menu$1.class
@@ -56,6 +60,7 @@ me\acf\lobby\gadgets\particles\ParticleEffectCapFire.class
 me\acf\MiniGames\API\TeleportPlayer.class
 me\acf\MiniGames\SpleggTnT\kits\Kit.class
 me\acf\lobby\gadgets\utils\ColorBomb$1.class
+me\acf\MiniGames\SpleggTnT\kits\LojaDeKits$1.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\ForceField.class
 me\acf\lobby\comandos\tpano.class
 me\acf\MiniGames\HungerGames\Conta.class
@@ -71,14 +76,17 @@ me\acf\MiniGames\HungerGames\kits\Habilidades\Stomper.class
 me\acf\MiniGames\HungerGames\Scoreboard\Scoreboard.class
 me\acf\FullPvP\comandos\repair.class
 me\acf\SkyBlock\Sair.class
+me\acf\MiniGames\HungerGames\kits\LojaDeKits.class
 me\acf\lobby\gadgets\utils\ColorBomb$2.class
 me\acf\MiniGames\eventos\GameInvencivelEvent.class
 me\acf\lobby\gadgets\Particles.class
 me\acf\lobby\gadgets\montaria\HorseHorror$1.class
+me\acf\MiniGames\SpleggTnT\kits\LojaDeKits.class
 me\acf\KitPvP\comandos\Spawn$1.class
 me\acf\MiniGames\eventos\Utils\UtilsWin.class
 me\hub\publicidade\PublicidadeMananger.class
 me\acf\MiniGames\SkyWars\kits\Menu$1$1$1$1.class
+me\acf\MiniGames\GameEvents$1.class
 me\acf\FullPvP\comandos\mina.class
 me\acf\MiniGames\HungerGames\PVP.class
 me\acf\lobby\extend\Scoreboard.class
@@ -188,7 +196,9 @@ me\acf\KitPvP\scoreboard\Scoreboard.class
 me\acf\lobby\loja\Menu.class
 me\acf\MiniGames\HungerGames\kits\Habilidades\Snail.class
 me\acf\KitPvP\Entrar.class
+me\acf\MiniGames\HungerGames\kits\LojaDeKits$1.class
 me\acf\MiniGames\SpleggTnT\SpleggTnT$1.class
+me\acf\MiniGames\SkyWars\kits\LojaDeKits$1.class
 me\acf\MiniGames\SpleggTnT\Scoreboard\Scoreboard.class
 me\acf\lobby\extend\Lobby.class
 me\acf\MiniGames\OneInTheChamber\Entrar.class
@@ -211,7 +221,6 @@ me\acf\KitPvP\kitAPI\Menu$1$1$1$1.class
 me\acf\MiniGames\SkyWars\Entrar.class
 me\hub\Ler.class
 me\acf\SkyBlock\SkyBlock.class
-me\acf\MiniGames\SpleggTnT\kits\Habilidades\VidaExtra.class
 me\acf\MiniGames\SpleggTnT\Conta.class
 me\acf\KitPvP\kitAPI\Habilidade\Stomper.class
 me\acf\MiniGames\Style\UserData.class
@@ -305,6 +314,7 @@ me\acf\lobby\gadgets\utils\Firework.class
 me\acf\FullPvP\FPConfig.class
 me\acf\MiniGames\SkyWars\kits\Kits.class
 me\acf\KitPvP\kitAPI\Habilidade\Laucher.class
+me\acf\MiniGames\SkyWars\kits\LojaDeKits.class
 me\acf\MiniGames\SpleggTnT\SpleggTnT$2.class
 me\acf\MiniGames\OneInTheChamber\OneInTheChamber$1.class
 me\acf\FullPvP\comandos\home.class

@@ -9,7 +9,6 @@ import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.SkyWars.kits.Kit;
-import me.hub.Main;
 import me.hub.API.Util.UtilNumber;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.site.account.Account;

@@ -7,7 +7,6 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.SkullType;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,13 +15,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
-
 import me.acf.lobby.gadgets.ViewPlayers;
 import me.acf.lobby.perfil.Manager;
 import me.acf.servidor.Servidor;
-import me.hub.API.Chat;
 import me.hub.API.Enchant;
 import me.hub.API.Util.BarAPI;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilEnchant;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilNPC;
@@ -63,7 +61,7 @@ public class Entrar implements Listener {
 	    Give(e.getPlayer());
 
         
-	    Chat.ActionBar(e.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO LOBBY DO SERVIDOR");
+	    UtilActionBar.ActionBar(e.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO LOBBY DO SERVIDOR");
 	    e.getPlayer().sendMessage(" ");
 	    e.getPlayer().sendMessage("      §f§lSEJA BEM-VINDO; §7§l" + e.getPlayer().getName());
 	    e.getPlayer().sendMessage("                 §f§lAO LOBBY §a§l 1");

@@ -13,7 +13,6 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.Style.UserData;
 import me.hub.API.Util.UtilTime;

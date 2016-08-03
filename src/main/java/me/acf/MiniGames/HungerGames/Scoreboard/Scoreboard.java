@@ -5,12 +5,10 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.HungerGames.kits.Kit;
-import me.hub.Main;
 import me.hub.API.Util.UtilNumber;
 import me.hub.Scoreboard.ScoreboardAPI;
 import me.site.account.Account;

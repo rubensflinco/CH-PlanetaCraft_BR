@@ -1,14 +1,13 @@
  package me.acf.FullPvP.comandos;
 
-import java.io.PrintStream;
 import java.util.Random;
-
 import me.acf.FullPvP.Kits.Kits;
 import me.hub.Main;
-import me.hub.API.Chat;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.UtilTime;
+import me.hub.API.Util.UtilTitle;
 import me.hub.API.Util.message.Message;
 import me.hub.comandos.ComandosAPI;
 import me.site.account.Account;
@@ -20,7 +19,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class dropinv
@@ -69,7 +67,8 @@ public class dropinv
         String timeLeft = UtilTime.convertString(milliseconds, 0, UtilTime.TimeUnit.FIT);
         for (Player p : UtilServer.Jogadores())
         {
-          Chat.ActionBar(p, "§4§lDROP INV §b§l" + timeLeft);
+          UtilTitle.sendTitle(p,0,30,0,"§5Evento acontecendo !","§4§lDROP INV §b§l" + timeLeft);
+          UtilActionBar.ActionBar(p, "§4§lDROP INV §b§l" + timeLeft);
           Random random = new Random();
           p.getInventory().addItem(new ItemStack[] { dropinv.item() });
           p.getInventory().addItem(new ItemStack[] { dropinv.item() });

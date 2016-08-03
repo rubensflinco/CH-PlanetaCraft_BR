@@ -23,6 +23,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.acf.FormatText.Format;
 import me.acf.KitPvP.Arena;
+import me.acf.KitPvP.Conta;
 import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.UtilServer;
@@ -53,6 +54,8 @@ public class Kit extends MiniPlugin {
 	public static HashMap<String,Inventory> kit = new HashMap<>();
 	public static Map<String,ItemStack> kits = new HashMap<>();
 	public static Map<String,ItemStack> kitsMENU = new HashMap<>();
+	public static Map<String,ItemStack> kitsLOJAMENU = new HashMap<>();
+	public static HashMap<String,String> kitsLOJApreco = new HashMap<>();
 	public static List<Entity> arena = new ArrayList<>();
 	public static List<Entity> semkit = new ArrayList<>();
 	
@@ -178,8 +181,14 @@ public class Kit extends MiniPlugin {
 	    	    		 if (Name.contains("§c[Pago-Planets]")){
 		    	    	       e.setCancelled(true);
 		    	    	       p.closeInventory();
+					  		if (!Conta.kits.get(p).contains(NomeKIT.replace("§9", ""))){
 		    	    	       UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
-		    	    	       p.sendMessage("§cEM BREVE VAMOS TER ESSE KIT PRA VENDER!");
+		    	    	       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cVocê não tem esse kit você tenque comprar ele na LOJA !");
+					  		}else{
+	    					   p.sendMessage("§5§l"+ Bukkit.getServerName() +" §7Você selecionou o kit " + NomeKIT);
+	    		    	       Kit.AddKit(p, NomeKIT);
+	    		    	        UtilSound.playSound(p, Sounds.SUCCESSFUL_HIT, 10.0F, 1.0F);
+					  		}
 	    	    		 }else
 	    	    		 if (Name.contains("§6[Vip]")){
 	    					   if ((Account.getRank(p)).Has(p, Rank.VIP, true))

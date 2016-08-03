@@ -6,13 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
-
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.block.BlockFace;
@@ -22,12 +18,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.Style.UserData;
 import me.acf.MiniGames.Style.UserData.Style;
@@ -41,8 +33,8 @@ import me.acf.lobby.extend.MobSpawn;
 import me.acf.servidor.Servidor;
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Chat;
 import me.hub.API.Util.Schematic;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilBlockText;
 import me.hub.API.Util.UtilSchematic;
 import me.hub.API.Util.UtilSchematic.Modo;
@@ -51,11 +43,9 @@ import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTime;
 import me.hub.API.Util.UtilTitle;
 import me.hub.API.Util.Sound.Sounds;
-import me.hub.Bungee.Bungee;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.blood.Blood;
-import me.site.account.AccountWeb;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
 import net.citizensnpcs.api.npc.NPCRegistry;
@@ -201,7 +191,7 @@ public class MiniGamesMananger extends MiniPlugin {
         String timeLeft = UtilTime.convertString(milliseconds, 0, UtilTime.TimeUnit.FIT);
         for (Player p : UtilServer.Jogadores())
         {
-        	Chat.ActionBar(p, "§a§lIniciando em §e§l" + timeLeft);
+        	UtilActionBar.ActionBar(p, "§a§lIniciando em §e§l" + timeLeft);
         	p.setLevel(tempo);
         }
         if (tempo == 60) {
@@ -261,7 +251,7 @@ public class MiniGamesMananger extends MiniPlugin {
         String timeLeft = UtilTime.convertString(milliseconds, 0, UtilTime.TimeUnit.FIT);
         for (Player p : UtilServer.Jogadores())
         {
-        	Chat.ActionBar(p, "§a§lPvP vai ativar em §e§l" + timeLeft);
+        	UtilActionBar.ActionBar(p, "§a§lPvP vai ativar em §e§l" + timeLeft);
             if (tempo == 3) {
                   UtilTitle.sendTitle(p,0,30,0,"§a3","§6Ativando PvP");
                 }

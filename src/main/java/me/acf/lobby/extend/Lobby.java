@@ -61,6 +61,7 @@ import me.hub.Main;
 import me.hub.MiniPlugin;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilAction;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilNPC;
 import me.hub.API.Util.UtilParticles;
 import me.hub.API.Util.UtilPlayer;
@@ -410,7 +411,7 @@ public class Lobby extends MiniPlugin{
   
     		  if (UtilPlayer.Ping(p) > 800)
     		  {
-    			  me.hub.API.Chat.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
+    			  UtilActionBar.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
     			  
     		  }
     		  if (UtilPlayer.Ping(p) > 1500)

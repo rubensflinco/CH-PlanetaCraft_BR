@@ -75,10 +75,6 @@ public class Mina extends MiniPlugin {
             }
 		}
 
-			if (ih.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) >= 10)
-			{
-				event.setCancelled(true);
-				event.getPlayer().sendMessage("§c§lVocê esta usando um item que so pode ser usado nas minas!");
-			}	
+
 	}
 }

@@ -4,12 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.Egg;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -24,7 +22,6 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.GameEvents;
 import me.acf.MiniGames.MiniGamesMananger;
@@ -33,6 +30,7 @@ import me.acf.MiniGames.API.TeleportPlayer;
 import me.acf.MiniGames.SpleggTnT.Scoreboard.Scoreboard;
 import me.acf.MiniGames.SpleggTnT.kits.Kit;
 import me.acf.MiniGames.SpleggTnT.kits.Kits;
+import me.acf.MiniGames.SpleggTnT.kits.LojaDeKits;
 import me.acf.MiniGames.SpleggTnT.kits.Menu;
 import me.acf.MiniGames.Style.UserData.Style;
 import me.acf.MiniGames.eventos.GameIniciandoEvent;
@@ -71,6 +69,7 @@ public class SpleggTnT extends MiniPlugin {
 	    Kit Kit = new Kit(plugin);
 		Kits Kits = new Kits();
 		Menu Menu = new Menu();
+		LojaDeKits LojaDeKits = new LojaDeKits(plugin);
 		
 	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
 	   	  for (Entity ov : entities){

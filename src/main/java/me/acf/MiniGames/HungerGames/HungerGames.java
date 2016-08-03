@@ -6,12 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,7 +18,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.FormatText.Format;
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
@@ -31,6 +28,7 @@ import me.acf.MiniGames.HungerGames.Feast.MiniFeastGeradorCord;
 import me.acf.MiniGames.HungerGames.Scoreboard.Scoreboard;
 import me.acf.MiniGames.HungerGames.kits.Kit;
 import me.acf.MiniGames.HungerGames.kits.Kits;
+import me.acf.MiniGames.HungerGames.kits.LojaDeKits;
 import me.acf.MiniGames.HungerGames.kits.Menu;
 import me.acf.MiniGames.Style.UserData.Style;
 import me.acf.MiniGames.eventos.GameIniciandoEvent;
@@ -87,7 +85,7 @@ public class HungerGames extends MiniPlugin {
   	    Kit Kit = new Kit(plugin);
   	    Kits Kits = new Kits();
   	    Menu Menu = new Menu();
-
+  	    LojaDeKits LojaDeKits = new LojaDeKits(plugin);
 	}
 	
 	  @EventHandler

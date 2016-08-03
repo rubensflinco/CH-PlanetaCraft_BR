@@ -25,6 +25,7 @@ import me.acf.lobby.Lag.TPS;
 import me.antiHack.autoclick.Click;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
@@ -127,7 +128,7 @@ public class SkyBlock extends MiniPlugin {
 		  {
 			  if (UtilPlayer.Ping(p) > 800)
 			  {				  
-				  me.hub.API.Chat.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
+				  UtilActionBar.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
 				  
 			  }
 			  if (UtilPlayer.Ping(p) > 1500)
@@ -135,7 +136,7 @@ public class SkyBlock extends MiniPlugin {
 				  p.kickPlayer("§c§lEXTREMO LAG\n§f§lMS: §a§l"+ UtilPlayer.Ping(p));
 			  }
 				 if (p.getInventory().firstEmpty() == -1) {
-					  me.hub.API.Chat.ActionBar(p, "§f§lSEU INVENTARIO ESTA LOTADO!");
+					  UtilActionBar.ActionBar(p, "§f§lSEU INVENTARIO ESTA LOTADO!");
 					   p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 2));
 				 }
 			  

@@ -6,10 +6,8 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
-import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Jukebox;
@@ -26,10 +24,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Chat;
 import me.hub.API.Util.Particles;
 import me.hub.API.Util.UtilLocation;
 import me.hub.API.Util.UtilParticles;

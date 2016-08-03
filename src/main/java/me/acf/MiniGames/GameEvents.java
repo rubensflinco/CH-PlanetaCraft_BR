@@ -6,7 +6,6 @@ package me.acf.MiniGames;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -36,23 +35,20 @@ import org.bukkit.event.vehicle.VehicleDestroyEvent;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.event.vehicle.VehicleEntityCollisionEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade.ArcadeType;
-import me.acf.MiniGames.HungerGames.Conta;
 import me.acf.MiniGames.Style.UserData;
 import me.acf.MiniGames.Style.Utils.MGPremios;
 import me.acf.MiniGames.Style.Utils.MGSpectator;
 import me.acf.servidor.Servidor;
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Chat;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilServer;
 import me.hub.API.Util.UtilSound;
 import me.hub.API.Util.UtilTablist;
 import me.hub.API.Util.Sound.Sounds;
 import me.hub.comandos.geral.fly;
 import me.site.account.Account;
-import me.site.account.AccountWeb;
 
 /**
  * @author adriancf
@@ -324,7 +320,7 @@ public class GameEvents extends MiniPlugin {
 			public int evento = 100;
 			
 		   @EventHandler
-		   public void Entrar(PlayerJoinEvent event)
+		   public void Entrar(final PlayerJoinEvent event)
 		   {
 			   UserData user = new UserData(event.getPlayer());
 			   
@@ -336,11 +332,6 @@ public class GameEvents extends MiniPlugin {
 			        MiniGamesMananger.Vivos.add(event.getPlayer());
 				}
 				event.setJoinMessage("§8§lEntrou §f"+event.getPlayer().getName()+" §7("+MiniGamesMananger.jogadores.size()+"/"+Bukkit.getServer().getMaxPlayers()+")");
-				
-				UtilTablist.setHeader(event.getPlayer(), "§0 ", "§a§lPlanetacraft§f§l_§e§lBR", "§a ", "§f"+event.getPlayer().getCustomName(), "§c ", "§f§lSALA §f: §a§l"+Bukkit.getServerName(), "§1 ");
-				
-				UtilTablist.setFooter(event.getPlayer(), "§2 ", "§f§lSITE §f: §a§lwww.planetacraft.com.br", "§3 ", "  §f§lADQUIRIR JÁ §6§lVIP §f§lEM §a§lwww.planetacraft.com.br/loja  ", "§4 ");
-
 			   event.setJoinMessage(null);
 			   event.getPlayer().getInventory().clear();
 			   event.getPlayer().setLevel(0);
@@ -350,7 +341,7 @@ public class GameEvents extends MiniPlugin {
 			   
 			   event.getPlayer().teleport(MiniGamesMananger.world.getSpawnLocation());
 			   fly.Desativar(event.getPlayer());
-				Chat.ActionBar(event.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO "+Bukkit.getServer().getServerName().toUpperCase() + " DO PLANETACRAFT_BR");
+				UtilActionBar.ActionBar(event.getPlayer(), "§e§l" + "SEJA BEM-VINDO AO "+Bukkit.getServer().getServerName().toUpperCase() + " DO PLANETACRAFT_BR");
 				 event.getPlayer().sendMessage(" ");
 				 event.getPlayer().sendMessage("      §f§lSEJA BEM-VINDO; §7§l" + event.getPlayer().getName());
 				 event.getPlayer().sendMessage("                 §f§lAO §a§l"+Bukkit.getServer().getServerName().toUpperCase());
@@ -369,7 +360,7 @@ public class GameEvents extends MiniPlugin {
 			    		Bukkit.broadcastMessage("§c§l666 Súscipe ludio ludius " + event.getPlayer().getName());
 			    		for (Player j : UtilServer.Jogadores()) {
 			    			UtilSound.playSound(j, Sounds.AMBIENCE_THUNDER, 6.0F, 6.0F);
-			    			Chat.ActionBar(event.getPlayer(), "§4§lO JOGADOR NUMERO 666 ENTROU (" + event.getPlayer().getName() + ")");
+			    			UtilActionBar.ActionBar(event.getPlayer(), "§4§lO JOGADOR NUMERO 666 ENTROU (" + event.getPlayer().getName() + ")");
 			    		
 			    	}
 			    	if (joins.size() == evento)
@@ -384,9 +375,14 @@ public class GameEvents extends MiniPlugin {
 			    
 			    	}
 			    }
-			     
-			    
-			   
+				  Bukkit.getScheduler().runTaskLater(Main.plugin, new Runnable() {
+					   public void run() {
+					UtilTablist.setHeader(event.getPlayer(), "§0 ", "§a§lPlanetacraft§f§l_§e§lBR", "§a ", "§f"+event.getPlayer().getCustomName(), "§c ", "§f§lSALA §f: §a§l"+Bukkit.getServerName(), "§1 ");
+					
+					UtilTablist.setFooter(event.getPlayer(), "§2 ", "§f§lSITE §f: §a§lwww.planetacraft.com.br", "§3 ", "  §f§lADQUIRIR JÁ §6§lVIP §f§lEM §a§lwww.planetacraft.com.br/loja  ", "§4 ");
+				        }
+				    }
+				   , 5L);
 		   }
 
 }

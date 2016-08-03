@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
@@ -26,7 +25,6 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.GameEvents;
@@ -35,6 +33,7 @@ import me.acf.MiniGames.API.TeleportPlayer;
 import me.acf.MiniGames.OneInTheChamber.Scoreboard.Scoreboard;
 import me.acf.MiniGames.OneInTheChamber.kits.Kit;
 import me.acf.MiniGames.OneInTheChamber.kits.Kits;
+import me.acf.MiniGames.OneInTheChamber.kits.LojaDeKits;
 import me.acf.MiniGames.OneInTheChamber.kits.Menu;
 import me.acf.MiniGames.Style.UserData.Style;
 import me.acf.MiniGames.eventos.GameIniciandoEvent;
@@ -73,6 +72,7 @@ public class OneInTheChamber extends MiniPlugin {
 	    Kit Kit = new Kit(plugin);
 		Kits Kits = new Kits();
 		Menu Menu = new Menu();
+		LojaDeKits LojaDeKits = new LojaDeKits(plugin);
 		
 	   	  List<Entity> entities = Bukkit.getWorld("world").getEntities();
 	   	  for (Entity ov : entities){

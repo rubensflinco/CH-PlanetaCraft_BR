@@ -6,7 +6,6 @@ import me.hub.Main;
 
 public class FeastGeradorCord {
 
-	private static int randomtask;
 	
 	public static void RandomCord()
 	  {

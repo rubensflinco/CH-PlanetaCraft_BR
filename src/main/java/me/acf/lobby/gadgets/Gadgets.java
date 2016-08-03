@@ -34,7 +34,7 @@ import me.acf.lobby.loja.Loja;
 import me.acf.lobby.perfil.Perfil;
 import me.hub.Main;
 import me.hub.MiniPlugin;
-import me.hub.API.Chat;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilLocation;
 import me.hub.config.Config;
 
@@ -115,7 +115,7 @@ public class Gadgets extends MiniPlugin {
 	      int level = Integer.parseInt(Config.GetGadgets(jogador, nome));
 	      level = level + valor;
 
-	      Chat.ActionBar(jogador, nome + " §9》§a§l" + level+"§9《");
+	      UtilActionBar.ActionBar(jogador, nome + " §9》§a§l" + level+"§9《");
 	      Config.SetGadgets(jogador, nome, "" + level);
 	  }
 	  
@@ -129,11 +129,11 @@ public class Gadgets extends MiniPlugin {
 	      if (level <= 0)
 			  {
 		    	  jogador.getInventory().setItem(5, null);
-		    	  Chat.ActionBar(jogador, nome + " §4》§c§lACABOU§4《");
+		    	  UtilActionBar.ActionBar(jogador, nome + " §4》§c§lACABOU§4《");
 		    	  return;
 			  }
 	      
-	      Chat.ActionBar(jogador, nome + " §9》§a§l" + level+"§9《");
+	      UtilActionBar.ActionBar(jogador, nome + " §9》§a§l" + level+"§9《");
 	   
 	  }
 	  

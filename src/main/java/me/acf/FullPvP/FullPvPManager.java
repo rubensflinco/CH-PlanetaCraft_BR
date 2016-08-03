@@ -3,7 +3,6 @@
  */
 package me.acf.FullPvP;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -21,14 +19,11 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.plugin.PluginAwareness.Flags;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import com.sk89q.worldguard.bukkit.WGBukkit;
-import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 
 import me.acf.FormatText.Format;
@@ -41,13 +36,14 @@ import me.acf.FullPvP.scoreboard.Scoreboard;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.lobby.Lag.TPS;
 import me.acf.lobby.patentes.Patente;
-import me.antiHack.autoclick.Click;
 import me.hub.Main;
 import me.hub.MiniPlugin;
+import me.hub.API.Util.UtilActionBar;
 import me.hub.API.Util.UtilInv;
 import me.hub.API.Util.UtilPlayer;
 import me.hub.API.Util.UtilServer;
 import me.hub.Admin.Admin;
+import me.hub.Scoreboard.ScoreboardAPI;
 import me.hub.atualizar.Atualizar;
 import me.hub.atualizar.ModosUpdate;
 import me.hub.blood.Blood;
@@ -68,7 +64,7 @@ public class FullPvPManager extends MiniPlugin {
 	 */
 	
 	public static int Tempo = 500;
-	public static int prox = 36000;
+	public static int prox = 10800;
 	
 	public FullPvPManager(JavaPlugin plugin) {
 		super("FullPvPManager", plugin);
@@ -112,6 +108,11 @@ public class FullPvPManager extends MiniPlugin {
 			Format.Erro("Você esta em pvp com o §a" + CombatLog.combat.get(event.getPlayer()).getName(), event.getPlayer());
 			  return;
 		  }
+		    if (event.getMessage().toLowerCase().startsWith("/"))
+		    {
+		    	ScoreboardAPI.remover(event.getPlayer());
+			    Scoreboard.CriarScoreboard(event.getPlayer());
+		    }
 	    if ((event.getMessage().toLowerCase().startsWith("/me")) || 
 	      (event.getMessage().toLowerCase().startsWith("/bukkit")))
 	    {
@@ -248,11 +249,11 @@ public class FullPvPManager extends MiniPlugin {
 		  {
 			  if (CombatLog.EstaEmCombat(p))
 			  {
-				  me.hub.API.Chat.ActionBar(p, "§f§lVOCÊ ESTA EM PVP");
+				  UtilActionBar.ActionBar(p, "§f§lVOCÊ ESTA EM PVP");
 			  }
 			  if (UtilPlayer.Ping(p) > 800)
 			  {
-				  me.hub.API.Chat.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
+				 UtilActionBar.ActionBar(p, "§f§lVOCÊ ESTA COM §c§lLAG §f§lSEU PING É DE §6§l" + UtilPlayer.Ping(p) + " / 1500");
 				  
 			  }
 			  if (UtilPlayer.Ping(p) > 1500)
@@ -260,7 +261,7 @@ public class FullPvPManager extends MiniPlugin {
 				  p.kickPlayer("§c§lEXTREMO LAG\n§f§lMS: §a§l"+ UtilPlayer.Ping(p));
 			  }
 				 if (p.getInventory().firstEmpty() == -1) {
-					  me.hub.API.Chat.ActionBar(p, "§f§lSEU INVENTARIO ESTA LOTADO!");
+					  UtilActionBar.ActionBar(p, "§f§lSEU INVENTARIO ESTA LOTADO!");
 					   p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 2));
 				 }
 			  

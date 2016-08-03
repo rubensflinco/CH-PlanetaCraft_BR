@@ -9,7 +9,6 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -49,6 +48,8 @@ public class Kit extends MiniPlugin {
 	public static HashMap<String,Inventory> kit = new HashMap<>();
 	public static Map<String,ItemStack> kits = new HashMap<>();
 	public static Map<String,ItemStack> kitsMENU = new HashMap<>();
+	public static Map<String,ItemStack> kitsLOJAMENU = new HashMap<>();
+	public static HashMap<String,String> kitsLOJApreco = new HashMap<>();
 	
 	public static void GiveKit(Player p)
 	{
@@ -165,7 +166,7 @@ public class Kit extends MiniPlugin {
 	    	    		 if (Name.contains("§c[Pago-Planets]")){
 		    	    	       e.setCancelled(true);
 		    	    	       p.closeInventory();
-					  		if (!Conta.kits.get(p).contains(NomeKIT)){
+					  		if (!Conta.kits.get(p).contains(NomeKIT.replace("§9", ""))){
 		    	    	       UtilSound.playSound(p, Sounds.ANVIL_LAND, 10.0F, 1.0F);
 		    	    	       p.sendMessage("§5§l"+ Bukkit.getServerName() +" §cVocê não tem esse kit você tenque comprar ele na LOJA !");
 					  		}else{

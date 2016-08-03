@@ -1,17 +1,14 @@
 package me.acf.MiniGames.OneInTheChamber.Scoreboard;
 
 import java.util.HashMap;
-
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.Arcade;
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.Arcade.ArcadeType;
 import me.acf.MiniGames.OneInTheChamber.kits.Kit;
 import me.acf.MiniGames.Style.Utils.MGSpectator;
-import me.hub.Main;
 import me.hub.API.Util.UtilNumber;
 import me.hub.API.Util.UtilServer;
 import me.hub.Scoreboard.ScoreboardAPI;

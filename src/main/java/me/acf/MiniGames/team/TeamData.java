@@ -5,7 +5,6 @@ package me.acf.MiniGames.team;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-
 import me.acf.MiniGames.MiniGamesMananger;
 import me.acf.MiniGames.MiniGamesMananger.Time;
 

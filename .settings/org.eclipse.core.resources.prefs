@@ -1,5 +1,10 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/me/acf/KitPvP/kitAPI/LojaDeKits.java=UTF-8
+encoding//src/main/java/me/acf/MiniGames/HungerGames/kits/LojaDeKits.java=UTF-8
+encoding//src/main/java/me/acf/MiniGames/OneInTheChamber/kits/LojaDeKits.java=UTF-8
+encoding//src/main/java/me/acf/MiniGames/SkyWars/kits/LojaDeKits.java=UTF-8
+encoding//src/main/java/me/acf/MiniGames/SpleggTnT/kits/LojaDeKits.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8

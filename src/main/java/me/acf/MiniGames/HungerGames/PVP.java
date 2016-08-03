@@ -2,9 +2,7 @@ package me.acf.MiniGames.HungerGames;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +10,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
-
 import me.acf.MiniGames.HungerGames.Scoreboard.Scoreboard;
 import me.acf.MiniGames.Style.Utils.MGPVP;
 import me.acf.MiniGames.Style.Utils.MGPremios;

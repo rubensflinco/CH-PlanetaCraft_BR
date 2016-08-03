@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package me.acf.MiniGames;
 
 /**

@@ -6,8 +6,7 @@ import me.hub.Main;
 
 public class MiniFeastGeradorCord {
 
-	private static int randomtask;
-	
+
 	public static void RandomCord()
 	  {
 	        Random r = new Random();
